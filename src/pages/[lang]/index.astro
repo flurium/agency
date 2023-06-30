@@ -1,0 +1,64 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import Project from "../../components/Project.astro"
+import Link from "../../components/Link.svelte"
+import { getLang, staticIndex, getStaticPaths } from "../../translations"
+
+export { getStaticPaths }
+const language = getLang(Astro.params)
+const t = staticIndex[language]
+---
+
+<Layout title={t.meta.title} description={t.meta.description}>
+  <header>
+    <a href="/en">English</a>
+  </header>
+
+  <main>
+    <!-- Introduction section -->
+    <section class="py-20 m-auto px-6 max-w-4xl">
+      <h1 class="text-6xl font-extrabold">{t.introduction.header}</h1>
+      <p class="text-2xl leading-relaxed mt-12">
+        {t.introduction.about.benefits}
+        <Link href="#">{t.introduction.about.api}</Link>,
+        <Link href="#">{t.introduction.about.fullstack}</Link>,
+        <Link href="#">{t.introduction.about.static}</Link>.
+        {t.introduction.about.tech}
+      </p>
+      <p class="text-2xl leading-relaxed mt-4 mb-12">
+        {t.introduction.engagingParagraph}
+      </p>
+
+      <div class="flex gap-4 items-center">
+        <a href="#contact" class="py-2 px-4 rounded-md bg-violet-400 text-white">
+          {t.introduction.action.contact}
+        </a>
+        <span>{t.introduction.action.or}</span>
+        <Link href="#our-work">{t.introduction.action.seeWork}</Link>
+      </div>
+    </section>
+
+    <!-- Work section -->
+    <section class="py-20 bg-zinc-100" id="our-work">
+      <div class="m-auto px-6 max-w-screen-xl">
+        <h2 class="text-5xl font-bold mb-4 text-center">{t.work.header}</h2>
+        <h3 class="text-2xl text-center">{t.work.subheader}</h3>
+        <div class="flex flex-col gap-12 mt-12">
+          {
+            t.work.projects.map((project) => (
+              <Project
+                name={project.name}
+                banner={project.banner}
+                github={project.github}
+                website={project.website}
+                description={project.description}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+</Layout>

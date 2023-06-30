@@ -1,0 +1,15 @@
+---
+export type Props = {
+  img: string
+  role: string
+  name: string
+}
+
+const { img, role, name } = Astro.props
+---
+
+<div>
+  <img src={img} class="w-full rounded-md" />
+  <h3 class="font-semibold text-2xl mx-1 mt-3">{name}</h3>
+  <p class="opacity-90 mx-1">{role}</p>
+</div>
