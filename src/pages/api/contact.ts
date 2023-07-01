@@ -18,8 +18,8 @@ async function validate(input: any): Promise<ContactInfo | null> {
   return body.success ? body.data : null
 }
 
-function response(message: string, status: number) {
-  return new Response(JSON.stringify({ message }), { status })
+function response(status: number, message?: string) {
+  return new Response(message ? JSON.stringify({ message }) : null, { status })
 }
 
 async function sendMessage(message: string): Promise<boolean> {
@@ -49,23 +49,17 @@ export const post: APIRoute = async ({ request }) => {
   try {
     const json = await request.json()
     const data = await validate(json)
-    if (!data) return response("Request body doesn't match required schema.", 400)
+    if (!data) return response(400)
 
     const text = `New person want to contact us!\nName: ${data.name}\nEmail: ${data.email}\nContext: ${data.context}`
     const ok = await sendMessage(text)
 
     if (ok) {
-      return response(
-        "Your contact information is sent successfully. We will contact you as soon as possible.",
-        200
-      )
+      return response(200)
     }
 
-    return response(
-      "Sending service can't be used right now. Please try later or email us.",
-      500
-    )
+    return response(500)
   } catch (error) {
-    return response("Can't send contact data right now! Please try later.", 500)
+    return response(500)
   }
 }

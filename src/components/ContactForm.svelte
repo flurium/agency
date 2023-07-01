@@ -13,13 +13,13 @@
   async function submit() {
     name = name.trim()
     if(name == "") {
-      message = t.notification.nameCantBeEmpty
+      message = t.notification.client.nameCantBeEmpty
       return
     }
 
     const emailValidation = await z.string().email().safeParseAsync(email)
     if(emailValidation.success == false) {
-      message = t.notification.invalidEmail
+      message = t.notification.client.invalidEmail
       return
     }
 
@@ -32,18 +32,24 @@
           context
         })
       })
-      const body: { message: string } = await response.json()
 
-      message = body.message
-      setTimeout(() => message = null, 5000);
+      const status = response.status
 
-      if(response.ok) {
+      if(status == 200) {
+        message = t.notification.server.success
         name = ""
         email = ""
         context = ""
+      } else if(status == 400) {
+        message = t.notification.server.invalidBody
+      } else {
+        message = t.notification.server.unexpectedError
       }
+      
+      setTimeout(() => message = null, 5000);
     } catch(error) {
-      message = t.notification.cantSendNow
+      message = t.notification.client.cantSendNow
+      setTimeout(() => message = null, 5000);
     } 
   }
 </script>

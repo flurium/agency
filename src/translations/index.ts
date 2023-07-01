@@ -49,9 +49,16 @@ export const navbarTranslation: Transaltion<NavbarTranslation> = {
 export type ContactFormTranslation = {
   notification: {
     header: string
-    nameCantBeEmpty: string
-    invalidEmail: string
-    cantSendNow: string
+    client: {
+      nameCantBeEmpty: string
+      invalidEmail: string
+      cantSendNow: string
+    }
+    server: {
+      success: string
+      invalidBody: string
+      unexpectedError: string
+    }
   }
   name: {
     label: string
@@ -182,12 +189,19 @@ export const staticIndex: Transaltion<StaticIndex> = {
       form: {
         notification: {
           header: "Сповіщення, натисніть, щоб закрити",
-          nameCantBeEmpty:
-            "Ваше ім'я не може бути пустим. Будь ласка, вкажіть своє ім'я, щоб ми знали, як до вас звертатися.",
-          invalidEmail:
-            "Надану вами адресу електронної пошти введено неправильно, перевірте її.",
-          cantSendNow:
-            "Вибачте. Зараз ми не можемо надіслати вашу контактну інформацію. Спробуйте пізніше або надішліть нам лист.",
+          client: {
+            nameCantBeEmpty:
+              "Ваше ім'я не може бути пустим. Будь ласка, вкажіть своє ім'я, щоб ми знали, як до вас звертатися.",
+            invalidEmail:
+              "Надану вами адресу електронної пошти введено неправильно, перевірте її.",
+            cantSendNow:
+              "Вибачте. Зараз ми не можемо надіслати вашу контактну інформацію. Спробуйте пізніше або надішліть нам лист.",
+          },
+          server: {
+            success: "",
+            invalidBody: "",
+            unexpectedError: "",
+          },
         },
         name: {
           label: "Ваше ім'я",
@@ -293,12 +307,21 @@ export const staticIndex: Transaltion<StaticIndex> = {
       form: {
         notification: {
           header: "Notification, click to close",
-          nameCantBeEmpty:
-            "Name can't be empty. Please provide your name, so we know how to call you.",
-          invalidEmail:
-            "The email that you provided wasn't typed correctly, please check it.",
-          cantSendNow:
-            "Sorry. We can't send your contact information right now. Please try later or send email to us.",
+          client: {
+            nameCantBeEmpty:
+              "Name can't be empty. Please provide your name, so we know how to call you.",
+            invalidEmail:
+              "The email that you provided wasn't typed correctly, please check it.",
+            cantSendNow:
+              "Sorry. We can't send your contact information right now. Please try later or send email to us.",
+          },
+          server: {
+            success:
+              "Your contact information is sent successfully. We will contact you as soon as possible.",
+            invalidBody: "Request input doesn't match required schema.",
+            unexpectedError:
+              "Sending service can't be used right now. Please try later or email us.",
+          },
         },
         name: {
           label: "Your name",
