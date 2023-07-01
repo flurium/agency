@@ -1,5 +1,8 @@
 <script lang="ts">
+  import type { NavbarTranslation } from '../translations'
   import Link from './Link.svelte'
+
+  export let t: NavbarTranslation
 
   let open: boolean = false
 </script>
@@ -29,10 +32,11 @@
       </svg>
     </button>
 
-    <Link href="#our-work">Our work</Link>
-    <Link href="#team">Team</Link>
+    <Link href={t.switch.route}>{t.switch.label}</Link>
+    <Link href="#our-work">{t.ourWork}</Link>
+    <Link href="#team">{t.team}</Link>
     <a href="#contact" class="py-2 px-4 w-full rounded-md bg-violet-400 text-white text-center">
-      Contact
+      {t.contact}
     </a>
   </nav>
 {/if}

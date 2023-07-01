@@ -1,17 +1,39 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 import Project from "../../components/Project.astro"
+import Member from "../../components/Member.astro"
 import Link from "../../components/Link.svelte"
-import { getLang, staticIndex, getStaticPaths } from "../../translations"
+import ContactForm from "../../components/ContactForm.svelte"
+import ToggleNavbar from "../../components/ToggleNavbar.svelte"
+import {
+  getLang,
+  navbarTranslation,
+  staticIndex,
+  getStaticPaths,
+} from "../../translations"
 
 export { getStaticPaths }
-const language = getLang(Astro.params)
-const t = staticIndex[language]
+const lang = getLang(Astro.params)
+const t = staticIndex[lang]
+const navbarT = navbarTranslation[lang]
+
+const year = new Date().getFullYear()
 ---
 
 <Layout title={t.meta.title} description={t.meta.description}>
-  <header>
-    <a href="/en">English</a>
+  <header
+    class="max-w-screen-xl px-6 flex justify-between items-center m-auto py-6 gap-4"
+  >
+    <span class="select-none font-bold text-violet-400 text-3xl">Flurium</span>
+    <nav class="hidden sm:flex gap-8 items-center">
+      <Link href={navbarT.switch.route}>{navbarT.switch.label}</Link>
+      <Link href="#our-work">{navbarT.ourWork}</Link>
+      <Link href="#team">{navbarT.team}</Link>
+      <a href="#contact" class="py-2 px-4 rounded-md bg-violet-400 text-white">
+        {navbarT.contact}
+      </a>
+    </nav>
+    <ToggleNavbar t={navbarT} client:visible />
   </header>
 
   <main>
@@ -58,7 +80,36 @@ const t = staticIndex[language]
         </div>
       </div>
     </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="py-20 m-auto px-6 max-w-screen-lg">
+      <h2 class="text-5xl font-bold mb-4 text-center">{t.contact.header}</h2>
+      <p class="text-2xl mb-12 text-center">{t.contact.subheader}</p>
+      <ContactForm t={t.contact.form} client:visible />
+    </section>
+
+    <!-- Team section -->
+    <section id="team" class="py-20 bg-zinc-100">
+      <div class="m-auto px-6 max-w-screen-xl">
+        <h2 class="text-5xl font-bold mb-8">{t.team.header}</h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+          {
+            t.team.members.map((member) => (
+              <Member name={member.name} img={member.img} role={member.role} />
+            ))
+          }
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer></footer>
+  <footer class="max-w-screen-xl m-auto px-6 py-8 flex justify-between">
+    <span>© {year} Flurium. All rights reserved.</span>
+    <span>
+      The site is inspired by
+      <Link href="https://www.thinkmill.com.au" external>Thinkmill</Link>
+    </span>
+    <span>Made with 💛 in Ukraine.</span>
+  </footer>
 </Layout>

@@ -8,7 +8,7 @@ const { title, description } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -20,7 +20,7 @@ const { title, description } = Astro.props
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/og-image.png" />
   </head>
-  <body>
+  <body class="text-lg">
     <slot />
   </body>
 </html>

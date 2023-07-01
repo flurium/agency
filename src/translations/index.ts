@@ -20,6 +20,31 @@ type Transaltion<Content> = {
   [lang in Language]: Content
 }
 
+export type NavbarTranslation = {
+  switch: {
+    label: string
+    route: string
+  }
+  ourWork: string
+  team: string
+  contact: string
+}
+
+export const navbarTranslation: Transaltion<NavbarTranslation> = {
+  uk: {
+    switch: { label: "Eng", route: "/en" },
+    ourWork: "Наші роботи",
+    team: "Команда",
+    contact: "Зв'язатися",
+  },
+  en: {
+    switch: { label: "Укр", route: "/uk" },
+    ourWork: "Our work",
+    team: "Team",
+    contact: "Contact",
+  },
+}
+
 // Should be separated, because it's used in interactive conponent
 export type ContactFormTranslation = {
   notification: {
@@ -41,6 +66,12 @@ export type ContactFormTranslation = {
     placeholder: string
   }
   submit: string
+}
+
+export type MemberType = {
+  img: string
+  role: string
+  name: string
 }
 
 type StaticIndex = {
@@ -80,6 +111,10 @@ type StaticIndex = {
     header: string
     subheader: string
     form: ContactFormTranslation
+  }
+  team: {
+    header: string
+    members: MemberType[]
   }
 }
 
@@ -169,6 +204,31 @@ export const staticIndex: Transaltion<StaticIndex> = {
         submit: "Відправити контакти",
       },
     },
+    team: {
+      header: "Команда",
+      members: [
+        {
+          img: "/members/roman.png",
+          role: "Засновник & керівник команди",
+          name: "Кощей Роман",
+        },
+        {
+          img: "/members/vitalii.png",
+          role: "Основний full stack розробник",
+          name: "Литвиненко Віталій",
+        },
+        {
+          img: "/members/mariia.png",
+          role: "Full stack розробник",
+          name: "Щербак Марія",
+        },
+        {
+          img: "/members/dmytro.png",
+          role: "Кодер",
+          name: "Флюд Дмитро",
+        },
+      ],
+    },
   },
   en: {
     meta: {
@@ -254,6 +314,31 @@ export const staticIndex: Transaltion<StaticIndex> = {
         },
         submit: "Send message",
       },
+    },
+    team: {
+      header: "Team",
+      members: [
+        {
+          img: "/members/roman.png",
+          role: "Founder & Team Lead",
+          name: "Roman Koshchei",
+        },
+        {
+          img: "/members/vitalii.png",
+          role: "Core full stack developer",
+          name: "Vitalii Lytvynenko",
+        },
+        {
+          img: "/members/mariia.png",
+          role: "Full stack developer",
+          name: "Mariia Shcherbak",
+        },
+        {
+          img: "/members/dmytro.png",
+          role: "Coder",
+          name: "Dmytro Fliud",
+        },
+      ],
     },
   },
 }

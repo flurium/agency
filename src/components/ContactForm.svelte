@@ -2,7 +2,6 @@
   import { z } from "zod"
   import { fade } from 'svelte/transition'
   import type { ContactFormTranslation } from '../translations'
-  import plugin from 'tailwindcss'
 
   export let t: ContactFormTranslation 
 
@@ -25,7 +24,7 @@
     }
 
     try {
-      const response = await fetch(import.meta.env.PUBLIC_API_ORIGIN, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         body: JSON.stringify({
           name,
