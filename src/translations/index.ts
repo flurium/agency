@@ -198,9 +198,11 @@ export const staticIndex: Transaltion<StaticIndex> = {
               "Вибачте. Зараз ми не можемо надіслати вашу контактну інформацію. Спробуйте пізніше або надішліть нам лист.",
           },
           server: {
-            success: "",
-            invalidBody: "",
-            unexpectedError: "",
+            success:
+              "Ваша контактна інформація успішно надіслана. Ми зв'яжемося з вами якомога швидше.",
+            invalidBody: "Вхідні дані запиту не відповідають потрібній схемі.",
+            unexpectedError:
+              "Послугою надсилання зараз не можна скористатися. Спробуйте пізніше або надішлість нам лист.",
           },
         },
         name: {
@@ -318,7 +320,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
           server: {
             success:
               "Your contact information is sent successfully. We will contact you as soon as possible.",
-            invalidBody: "Request input doesn't match required schema.",
+            invalidBody: "Input of request doesn't match required schema.",
             unexpectedError:
               "Sending service can't be used right now. Please try later or email us.",
           },
