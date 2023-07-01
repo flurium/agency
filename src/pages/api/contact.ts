@@ -1,6 +1,9 @@
 import type { APIRoute } from "astro"
 import { z } from "zod"
 
+// to make on server
+export const prerender = false
+
 // validation
 const contactInfoSchema = z.object({
   name: z.string().trim(),
