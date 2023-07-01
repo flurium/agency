@@ -158,7 +158,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
           name: "BidMe",
           banner: "/projects/bidme/banner.png",
           github: "https://github.com/flurium/bidme",
-          website: "https://bidme.onrender.com",
+          website: "https://bidme.flurium.com",
           description: `
             BidMe – це аукціонна платформа, де клієнти можуть шукати,
             залишайте коментарі, додавайте в кошик або вибране та розміщуйте ставки на лоти. Продавці можуть
@@ -171,7 +171,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
           name: "Thing",
           banner: "/projects/thing/banner.png",
           github: "https://github.com/flurium/thing",
-          website: "https://thing-wtcg.onrender.com",
+          website: "https://thing.flurium.com",
           description: `
             Thing — це централізована платформа, яка спрощує онлайн-продажі. Клієнти
             без особливих зусиль переглядайте продукти, додавайте їх у кошик або вибране та залишайте коментарі.

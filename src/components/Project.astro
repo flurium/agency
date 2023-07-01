@@ -13,13 +13,10 @@ const { name, banner, github, website, description } = Astro.props
 ---
 
 <div class="rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-1">
-  <img class="rounded-md" src={banner} />
-  <div class="bg-white p-8 rounded-md flex flex-col">
-    <div class="flex-1">
-      <h4 class="text-3xl font-bold">{name}</h4>
-      <p class="mt-4">{description}</p>
-    </div>
-
+  <img class="rounded-md h-full" src={banner} />
+  <div class="bg-white p-8 rounded-md flex flex-col gap-4">
+    <h4 class="text-3xl font-bold">{name}</h4>
+    <p class="flex-1">{description}</p>
     <div class="flex gap-4">
       <Link href={github} external>GitHub</Link>
       <Link href={website} external>Website</Link>
