@@ -8,7 +8,7 @@
 </script>
 
 <nav class="block sm:hidden">
-  <button class="p-3 rounded-md text-2xl hover:bg-zinc-100" on:click={() => open = !open}>
+  <button class="p-3 rounded-md text-2xl hover:bg-zinc-100" aria-label="Navbar toggle button" on:click={() => open = !open}>
     <svg
       width="20"
       height="20"

@@ -1,4 +1,6 @@
 ---
+import { Image } from "@astrojs/image/components"
+
 export type Props = {
   img: string
   role: string
@@ -9,7 +11,14 @@ const { img, role, name } = Astro.props
 ---
 
 <div>
-  <img src={img} class="w-full rounded-md" />
+  <Image
+    width={256}
+    height={256}
+    src={img}
+    alt={`${name}'s photo`}
+    class="w-full rounded-md"
+    format="png"
+  />
   <h3 class="font-semibold text-2xl mx-1 mt-3">{name}</h3>
   <p class="opacity-90 mx-1">{role}</p>
 </div>

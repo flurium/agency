@@ -1,5 +1,6 @@
 ---
 import Link from "./Link.svelte"
+import { Image } from "@astrojs/image/components"
 
 type Props = {
   name: string
@@ -12,8 +13,17 @@ type Props = {
 const { name, banner, github, website, description } = Astro.props
 ---
 
-<div class="rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-1">
-  <img class="rounded-md h-full" src={banner} />
+<div
+  class="rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-1 content-start"
+>
+  <Image
+    width={800}
+    height={450}
+    format="png"
+    class="rounded-md"
+    src={banner}
+    alt={`${name} banner`}
+  />
   <div class="bg-white p-8 rounded-md flex flex-col gap-4">
     <h4 class="text-3xl font-bold">{name}</h4>
     <p class="flex-1">{description}</p>

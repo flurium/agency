@@ -176,7 +176,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
             Thing — це централізована платформа, яка спрощує онлайн-продажі. Клієнти
             без особливих зусиль переглядайте продукти, додавайте їх у кошик або вибране та залишайте коментарі.
             Продавці з легкістю демонструють товари, а панель адміністратора забезпечує безпеку
-            керування заборонами, категоріями та обов’язковими полями. Річ робить продажі легкими для всіх.
+            керування заборонами, категоріями та обов’язковими полями.
           `,
           images: [],
         },
@@ -297,7 +297,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
             Thing is a centralized platform that simplifies online selling. Customers 
             effortlessly browse products, add to cart or favorites, and leave comments. 
             Sellers showcase products with ease, while the admin panel ensures safety by 
-            managing bans, categories, and required fields. Thing makes selling effortless for all.
+            managing bans, categories, and required fields. 
           `,
           images: [""],
         },
