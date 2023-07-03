@@ -1,0 +1,25 @@
+---
+import type { NavbarTranslation } from "../../translations"
+import Link from "./Link.svelte"
+import ToggleNavbar from "./ToggleNavbar.svelte"
+
+type Props = {
+  t: NavbarTranslation
+}
+
+const { t } = Astro.props
+---
+
+<header class="max-w-screen-xl p-6 flex justify-between items-center m-auto gap-4">
+  <span class="select-none font-bold text-violet-400 text-3xl">Flurium</span>
+  <nav class="hidden sm:flex gap-8 items-center">
+    <Link href={t.switch.route}>{t.switch.label}</Link>
+    <Link href="#our-work">{t.ourWork}</Link>
+    <Link href="#team">{t.team}</Link>
+    <Link href="/blog">{t.blog}</Link>
+    <a href="#contact" class="py-2 px-4 rounded-md bg-violet-400 text-white">
+      {t.contact}
+    </a>
+  </nav>
+  <ToggleNavbar t={t} client:visible />
+</header>

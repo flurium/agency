@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { NavbarTranslation } from '../translations'
+  import type { NavbarTranslation } from '../../translations'
   import Link from './Link.svelte'
 
   export let t: NavbarTranslation

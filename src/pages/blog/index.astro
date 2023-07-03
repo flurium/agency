@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content"
+import NavLayout from "../../layouts/NavLayout.astro"
+import { navbarTranslation } from "../../translations"
+const blogPosts = await getCollection("blog")
+---
+
+<NavLayout
+  navbarTranslation={navbarTranslation["en"]}
+  title="Flurium Blog"
+  description="Flurium blog"
+>
+  <section class="bg-zinc-100 px-6 py-20 min-h-[75vh]">
+    <div class="max-w-screen-xl m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      {
+        blogPosts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="bg-white p-8 rounded-md">
+            <h3 class="font-semibold text-2xl mb-4">{post.data.title}</h3>
+            <p>{post.data.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</NavLayout>

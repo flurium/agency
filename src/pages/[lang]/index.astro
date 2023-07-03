@@ -1,40 +1,25 @@
 ---
 import Layout from "../../layouts/Layout.astro"
+import Footer from "../../components/nav/Footer.astro"
 import Project from "../../components/Project.astro"
 import Member from "../../components/Member.astro"
-import Link from "../../components/Link.svelte"
+import Link from "../../components/nav/Link.svelte"
 import ContactForm from "../../components/ContactForm.svelte"
-import ToggleNavbar from "../../components/ToggleNavbar.svelte"
+import Navbar from "../../components/nav/Navbar.astro"
 import {
   getLang,
   navbarTranslation,
   staticIndex,
   getStaticPaths,
 } from "../../translations"
-import { Image, Picture } from "@astrojs/image/components"
 export { getStaticPaths }
 const lang = getLang(Astro.params)
 const t = staticIndex[lang]
 const navbarT = navbarTranslation[lang]
-
-const year = new Date().getFullYear()
 ---
 
 <Layout title={t.meta.title} description={t.meta.description}>
-  <header
-    class="max-w-screen-xl px-6 flex justify-between items-center m-auto py-6 gap-4"
-  >
-    <span class="select-none font-bold text-violet-400 text-3xl">Flurium</span>
-    <nav class="hidden sm:flex gap-8 items-center">
-      <Link href={navbarT.switch.route}>{navbarT.switch.label}</Link>
-      <Link href="#our-work">{navbarT.ourWork}</Link>
-      <Link href="#team">{navbarT.team}</Link>
-      <a href="#contact" class="py-2 px-4 rounded-md bg-violet-400 text-white">
-        {navbarT.contact}
-      </a>
-    </nav>
-    <ToggleNavbar t={navbarT} client:visible />
-  </header>
+  <Navbar t={navbarT} />
 
   <main>
     <!-- Introduction section -->
@@ -104,12 +89,5 @@ const year = new Date().getFullYear()
     </section>
   </main>
 
-  <footer class="max-w-screen-xl m-auto px-6 py-8 flex justify-between">
-    <span>© {year} Flurium. All rights reserved.</span>
-    <span>
-      The site is inspired by
-      <Link href="https://www.thinkmill.com.au" external>Thinkmill</Link>
-    </span>
-    <span>Made with 💛 in Ukraine.</span>
-  </footer>
+  <Footer />
 </Layout>
