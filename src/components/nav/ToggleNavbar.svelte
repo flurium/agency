@@ -35,7 +35,7 @@
     <Link href={t.switch.route}>{t.switch.label}</Link>
     <Link href="#our-work">{t.ourWork}</Link>
     <Link href="#team">{t.team}</Link>
-    <a href="#contact" class="py-2 px-4 w-full rounded-md bg-violet-400 text-white text-center">
+    <a href="#contact" class="py-2 px-4 w-full rounded-md bg-primary-400 text-white text-center">
       {t.contact}
     </a>
   </nav>

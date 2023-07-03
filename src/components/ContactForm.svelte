@@ -88,5 +88,5 @@
     ></textarea>
   </label>
 
-  <button class="py-2 px-4 font-semibold rounded-md bg-violet-400 text-white">{t.submit}</button>
+  <button class="py-2 px-4 font-semibold rounded-md bg-primary-400 text-white">{t.submit}</button>
 </form>
