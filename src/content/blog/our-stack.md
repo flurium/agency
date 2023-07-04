@@ -1,111 +1,112 @@
 ---
 title: "The tech stack we bet on"
-description: "The technologies and a bit on infrastructure stack we bet on as Flurium agency."
+description: "Discover the cutting-edge tech stack employed by Flurium agency. From frontend frameworks like Svelte to backend solutions and infrastructure choices, explore their bets for optimized development and enhanced project performance."
 ---
 
-# The tech stack we bet on and you should too
+# The Tech Stack We Bet On and You Should Too
 
-The stacks change during the time, so we want to make sure our projects can keep competitive state as long as possible.
-As a business we want to provide the best value for situation,
-so we will consider some paths of stack depending on requirements.
+Technology stacks evolve over time, and we strive to ensure that our projects remain
+competitive for as long as possible. As a business, we aim to provide the best value
+for each situation, which is why we consider different stack options based on specific requirements.
 
-Because if we do use a good and performant, we should explain to our clients why it's important.
-Or we should just use the fastest to develop tool.
+When it comes to selecting the right technology, we believe in using performant tools
+and explaining their importance to our clients. Alternatively, we may opt for the fastest
+development tools depending on the project.
 
 ## Frontend
 
-React is popular, but I hate it and there is better alternatives.
-The problems with React: one of the slowest, drama, too much goes into fullstack, messy.
-So I am gonna bet on one of the new generation frameworks, such as: Svelte, Solid, Qwick, Astro.
+Although React is popular, we have explored alternative frameworks that we believe offer
+superior benefits. We have found some limitations with React, such as performance issues,
+complexities arising from its full-stack nature, and a somewhat messy development process.
+As a result, we have chosen to bet on the next generation of frameworks, including Svelte,
+Solid, Qwick, and Astro.
 
-I picked **Svelte** and SvelteKit as meta framework.
-Solid is fast, but Solid Start (their meta framework) isn't production ready.
-Qwick is very yong, but has company behind (which is good for developing).
-But Svelte is super, it's fast and clean to write, when you learnt it.
-Svelte has company behind ther back - Vercel, as a result it gets a lot of updates and latest features from Next.js like ISR.
-Svelte is performant and small, has certain structure, so it's easier to get into another project.
+In particular, we have selected **Svelte** and SvelteKit as our preferred meta framework.
+While Solid is fast, its meta framework, Solid Start, is not yet production-ready. Qwick,
+on the other hand, is relatively new but benefits from strong developer support. However,
+Svelte stands out due to its exceptional speed and clean syntax once you become proficient
+with it. Moreover, Svelte has the backing of Vercel, which ensures frequent updates and
+the inclusion of cutting-edge features from Next.js, such as Incremental Static Regeneration
+(ISR). Additionally, Svelte's performance and well-defined structure make it easier to
+transition between projects.
 
-If we need purely static website we may consider Astro as for this website.
+For purely static websites, Astro is a viable option worth considering.
 
 ## Backend
 
-There are 2 beckend solutions for different situations:
+We have identified two backend solutions to accommodate different scenarios:
 
-- Asp.Net Core
+- ASP.NET Core
 - Serverless SvelteKit
 
 ### Asp.Net Core
 
-Conditions and/or:
+ASP.NET Core is an excellent choice under the following conditions:
 
-- The amount of users is middle or large
-- Requirement for long running processes (for example, chat)
-- Execution speed metters
+- The project involves a moderate to large user base.
+- There is a need for long-running processes, such as chat functionality.
+- Execution speed is crucial.
 
-Asp.Net Core is very performant for almost any task.
-Can do long tasks like chat or background tasks like incrementing limits.
-We are good at it, because it was our main technology during studing.
-Is a bit harder to start, because front and back is seperated, so we need to sync types and connect them.
-But for the last thing I mentioned solution is to create template, where boilerplate configuration is done.
+ASP.NET Core offers exceptional performance for various tasks, including chat functionality or background processes like limit increments. Since it has been our main technology during our learning phase, we have gained significant expertise in it. Although it may have a slightly steeper learning curve due to the separation of front-end and back-end components, we have developed a template that streamlines the process by providing boilerplate configurations.
 
 ### Serverless SvelteKit
 
-Conditions and/or:
+Serverless architecture, particularly with SvelteKit, is a suitable option when:
 
-- The amount of users is small or middle
-- We need to develop fast. It can be requirement from client or the client doesn't give a sh\*t about it and has money.
+- The project caters to a small to moderate user base.
+- There is a need for rapid development. This requirement may stem from client expectations or the client's indifference towards development time and a willingness to invest financially.
 
-The serverless is cool, because you can scale infinitely while you have money.
-Small amount of serverless is cheap and even free, so it's good for startups.
-Fast to develop, because everything is inside of 1 SveltKit project with types.
+Serverless architecture offers scalability potential, allowing for infinite scaling as long as the budget allows. It is cost-effective, with the ability to handle small workloads at minimal or no cost, making it an attractive choice for startups. Serverless SvelteKit projects are fast to develop since everything is contained within a single SvelteKit project with integrated typing support.
 
 ## Infrastructure
 
-We can't always deside which infrastructure to use, but we will offer next ones.
+Although we do not always have complete control over the choice of infrastructure, we typically recommend the following options:
 
 ### Frontend and Serverless hosting
 
-I prefer [Vercel](https://vercel.com/) because they push limits the most, the service is great.
-The coolest features like ISR is there. Edge functions are faster than Lambda.
-Vercel support ton of frameworks with prebuilt configuration. Good pricing.
+Our preferred hosting provider is [Vercel](https://vercel.com/) due to its cutting-edge
+features and exceptional service quality. Vercel offers advantages such as support for
+numerous frameworks with prebuilt configurations, including powerful features like
+Incremental Static Regeneration (ISR). Vercel's edge functions also provide faster response
+times compared to Lambda. Furthermore, Vercel offers competitive pricing options.
 
-But if we want, we can consider using Netlify or Cloudflare or anything with Docker.
+However, if desired, we can consider alternatives such as Netlify or Cloudflare,
+or any hosting provider that supports Docker.
 
 ### Backend
 
-Docker is genuanly the best at the current moment, so everything that supports docker is good.
-Cool if service allow to create several instances of same app and service manage load by itself.
-I recommend [Fly](https://fly.io/), it has exellent performance.
-But you need to use CLI and setup GitHub CI by yourself (not hard if you did it once).
+At present, Docker is considered the most reliable option, and we recommend utilizing
+services that support Docker. It is advantageous if the service allows the creation of
+multiple instances of the same application and manages the load balancing automatically.
+One recommendation we have is [Fly](https://fly.io/), which delivers excellent performance.
+While it requires some initial setup, including using the CLI and configuring GitHub CI,
+these steps are relatively straightforward for those who have prior experience.
 
 ### Database
 
-I think PostgreSQL is geniualy one of the best databases. We also use CockroachDB,
-because it's very similar to PostgreSQL (can use the same drivers).
+When it comes to databases, we believe PostgreSQL is among the best choices. Additionally, we use CockroachDB, which is similar to PostgreSQL and can use the same drivers.
 
-To host database there is plenty of solutions.
+For database hosting, numerous solutions are available:
 
-If we use Serverless we can do:
-
-- [PlanetScale](https://planetscale.com/) (is actually like MySql, but it's good)
+- [PlanetScale](https://planetscale.com/) (offers functionality similar to MySQL but with notable advantages)
 - [Neon](https://neon.tech/)
 - [CockroachDB Cloud](https://cockroachlabs.cloud/)
 
-But it's not super popular case actually, so we can host database almost anywhere.
-Fly.io looks pretty good also for databases.
+However, database hosting is flexible, and we can choose almost any hosting provider.
+[Fly](https://fly.io/) also appears to be a promising option for hosting databases.
 
-We didn't use NoSql databases much, but I definetely will not conside MongoDB.
-Redis is good for Key-Value db and host it on [Upstash](https://upstash.com/).
+While we have limited experience with NoSQL databases, we generally do not recommend MongoDB.
+For key-value databases, Redis is a suitable choice, and it can be hosted on [Upstash](https://upstash.com/).
 
 ### Email sending
 
-Almost always we need to send emails.
-I recommend [Resend](https://resend.com/), because it's really cool.
-And for templating we should use [React Email](https://react.email/),
-it transforms JSX into email compatible html.
+Sending emails is often a crucial requirement for our projects. We recommend using
+[Resend](https://resend.com/) due to its excellent features and capabilities.
+For email templating, we suggest utilizing [React Email](https://react.email/),
+which seamlessly transforms JSX into email-compatible HTML.
 
-If we want to send information to ourselves, like info about new customer or new order.
-I would recommend to try use Telegram Bots.
-At our agency website the contact form just send a message to private telegram group.
-And eventually it is much efficient for us. We don't pay for it, we get notifications,
-everyone already use Telegram.
+When it comes to sending information internally, such as new customer or order notifications,
+we recommend exploring the use of Telegram Bots. For example, on our agency website, the
+contact form sends a message to a private Telegram group, providing an efficient solution.
+Telegram offers several benefits, including cost-effectiveness, reliable notifications,
+and widespread usage among our team members.
