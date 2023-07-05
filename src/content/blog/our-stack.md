@@ -1,5 +1,5 @@
 ---
-title: "The tech stack we bet on"
+title: "The Tech Stack We Bet On and You Should Too"
 description: "Discover the cutting-edge tech stack employed by Flurium agency. From frontend frameworks like Svelte to backend solutions and infrastructure choices, explore their bets for optimized development and enhanced project performance."
 ---
 

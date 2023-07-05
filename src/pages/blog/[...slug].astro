@@ -39,7 +39,20 @@ const { Content } = await post.render()
   h1 {
     @apply mb-12 text-4xl font-bold !important;
   }
-  p {
-    @apply mb-8 !important;
+  h2 {
+    @apply mt-8 mb-4 text-2xl font-semibold !important;
+  }
+  h3 {
+    @apply mt-6 mb-4 text-xl font-semibold !important;
+  }
+  p,
+  ul {
+    @apply mb-4 !important;
+  }
+  ul {
+    @apply list-disc list-inside !important;
+  }
+  a {
+    @apply underline decoration-zinc-300 hover:decoration-primary-400 !important;
   }
 </style>
