@@ -2,17 +2,19 @@
 export interface Props {
   title: string
   description: string
+  lang: string
 }
 
-const { title, description } = Astro.props
+const { lang, title, description } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />

@@ -17,7 +17,7 @@ const lang = getLang(Astro.params)
 const t = staticIndex[lang]
 ---
 
-<Layout title={t.meta.title} description={t.meta.description}>
+<Layout lang={lang} title={t.meta.title} description={t.meta.description}>
   <Navbar t={navbarTranslation[lang]} />
 
   <main>

@@ -7,13 +7,14 @@ import type { NavbarTranslation } from "../translations"
 export interface Props {
   title: string
   description: string
+  lang: string
   navbarTranslation: NavbarTranslation
 }
 
-const { title, description, navbarTranslation } = Astro.props
+const { lang, title, description, navbarTranslation } = Astro.props
 ---
 
-<Layout title={title} description={description}>
+<Layout lang={lang} title={title} description={description}>
   <Navbar t={navbarTranslation} />
 
   <main>
