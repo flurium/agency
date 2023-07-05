@@ -96,7 +96,6 @@ type StaticIndex = {
       api: string
       fullstack: string
       static: string
-      tech: string
     }
     engagingParagraph: string
     action: {
@@ -136,14 +135,13 @@ export const staticIndex: Transaltion<StaticIndex> = {
         "Агентство Flurium зі створення швидкого та масштабованого API за допомогою нових технологій. Оскільки бізнес має розвиватися – бізнес має бути онлайн.",
     },
     introduction: {
-      header: "Бізнес має розвиватися – бізнес має бути онлайн",
+      header: "Бізнес буде онлайн – бізнес розвиватиметься",
       about: {
         benefits:
-          "Маючи веб-сайт, ви отримуєте більше клієнтів, успішно конкуруєте з опонентами та автоматизуєте нудні завдання. Flurium спеціалізується на",
+          "Отримайте більше клієнтів, отримуйте більше замовлень. Автоматизуйте завдання, щоб отримати більше часу. Все, що вам потрібно, ви отримуєте з веб-сайтом. Flurium спеціалізується на",
         api: "pозробці API платформ",
         fullstack: "повноцінних динамічних веб-сайтів",
         static: "веб-сайтів на основі контенту",
-        tech: "Ми використовуємо передові технології, щоб забезпечити високу продуктивність.",
       },
       engagingParagraph:
         "Співпрацюйте з нами, щоб розкрити потенціал сучасних веб-рішень для вашого цифрового бачення.",
@@ -256,14 +254,13 @@ export const staticIndex: Transaltion<StaticIndex> = {
         "Flurium agency for building fast and scalable API with new technologies. Because business must grow - business must be online.",
     },
     introduction: {
-      header: "Business must grow - business must be online",
+      header: "Business will be online – business will grow",
       about: {
         benefits:
-          "When you have website you will get more customers, successfully compete with opponents and automate so boring tasks. Flurium specializes in ",
+          "Get more customers, get more orders. Automate tasks, so you get more time. Everything you need you get with a website. Flurium specializes in ",
         api: "API platform development",
         fullstack: "full-stack dynamic websites",
         static: "static content-based web sites",
-        tech: "We leverage cutting-edge technologies to deliver high-performance experiences.",
       },
       engagingParagraph:
         "Partner with us to unlock the potential of modern web solutions for your digital vision.",
