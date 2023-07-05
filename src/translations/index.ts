@@ -113,7 +113,6 @@ type StaticIndex = {
       github: string
       website: string
       description: string
-      images: string[]
     }[]
   }
   contact: {
@@ -166,7 +165,6 @@ export const staticIndex: Transaltion<StaticIndex> = {
             перелічіть їхні предмети, використовуючи розширену форму. Панель адміністратора керує користувачами, продавцями,
             категорії лотів, що забезпечує безпечний і ефективний аукціон.
           `,
-          images: [],
         },
         {
           name: "Thing",
@@ -179,7 +177,6 @@ export const staticIndex: Transaltion<StaticIndex> = {
             Продавці з легкістю демонструють товари, а панель адміністратора забезпечує безпеку
             керування заборонами, категоріями та обов’язковими полями.
           `,
-          images: [],
         },
       ],
     },
@@ -286,7 +283,6 @@ export const staticIndex: Transaltion<StaticIndex> = {
             list their items using a rich form. Admin panel manages users, sellers,
             lot categories, ensuring a secure and efficient auction experience.
           `,
-          images: [],
         },
         {
           name: "Thing",
@@ -299,7 +295,6 @@ export const staticIndex: Transaltion<StaticIndex> = {
             Sellers showcase products with ease, while the admin panel ensures safety by 
             managing bans, categories, and required fields. 
           `,
-          images: [""],
         },
       ],
     },
