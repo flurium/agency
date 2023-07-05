@@ -355,7 +355,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
         },
         {
           img: "/members/dmytro.png",
-          role: "Coder & Pain in the ass",
+          role: "Coder",
           name: "Dmytro Fliud",
         },
       ],
