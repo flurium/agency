@@ -23,8 +23,8 @@ const { post } = Astro.props
 const { Content } = await post.render()
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
-  <Navbar t={navbarTranslation["en"]} />
+<Layout lang="en" title={post.data.title} description={post.data.description}>
+  <Navbar lang="en" t={navbarTranslation["en"]} />
 
   <main class="bg-zinc-50">
     <article class="max-w-4xl m-auto px-6 py-12">
