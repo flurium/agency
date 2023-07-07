@@ -10,42 +10,15 @@ It must be separate chunk
 */
 
 export * from "./helpers"
+export * from "./nav"
 
 export const defaultLang = "uk" as const
 export const languages = ["uk", "en"] as const
 
 export type Language = (typeof languages)[number]
 
-type Transaltion<Content> = {
+export type Transaltion<Content> = {
   [lang in Language]: Content
-}
-
-export type NavbarTranslation = {
-  switch: {
-    label: string
-    route: string
-  }
-  ourWork: string
-  team: string
-  blog: string
-  contact: string
-}
-
-export const navbarTranslation: Transaltion<NavbarTranslation> = {
-  uk: {
-    switch: { label: "Eng", route: "/en" },
-    ourWork: "Наші роботи",
-    team: "Команда",
-    blog: "Блог",
-    contact: "Зв'язатися",
-  },
-  en: {
-    switch: { label: "Укр", route: "/uk" },
-    ourWork: "Our work",
-    team: "Team",
-    blog: "Blog",
-    contact: "Contact",
-  },
 }
 
 // Should be separated, because it's used in interactive conponent
