@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content"
-import NavLayout from "../../layouts/NavLayout.astro"
 import { navbarTranslation } from "../../translations"
+import Layout from "../../layouts/Layout.astro"
+
 const blogPosts = await getCollection("blog")
 ---
 
-<NavLayout
+<Layout
   lang="en"
   navbarTranslation={navbarTranslation["en"]}
   title="Flurium Blog"
@@ -25,4 +26,4 @@ const blogPosts = await getCollection("blog")
       }
     </div>
   </section>
-</NavLayout>
+</Layout>

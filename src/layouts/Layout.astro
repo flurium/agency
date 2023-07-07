@@ -1,11 +1,16 @@
 ---
+import type { Language, NavbarTranslation } from "../translations"
+import Footer from "../components/nav/Footer.astro"
+import Navbar from "../components/nav/Navbar.astro"
+
 export interface Props {
   title: string
   description: string
-  lang: string
+  lang: Language
+  navbarTranslation: NavbarTranslation
 }
 
-const { lang, title, description } = Astro.props
+const { lang, title, description, navbarTranslation } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -20,9 +25,17 @@ const { lang, title, description } = Astro.props
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="https://www.flurium.com/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang} />
   </head>
   <body class="text-lg selection:bg-primary-300 selection:bg-opacity-75">
-    <slot />
+    <Navbar lang={lang} />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
   </body>
 </html>

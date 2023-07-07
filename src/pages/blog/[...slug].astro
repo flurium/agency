@@ -3,8 +3,6 @@ import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import type { CollectionEntry } from "astro:content"
 import { navbarTranslation } from "../../translations"
-import Navbar from "../../components/nav/Navbar.astro"
-import Footer from "../../components/nav/Footer.astro"
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog")
@@ -23,16 +21,17 @@ const { post } = Astro.props
 const { Content } = await post.render()
 ---
 
-<Layout lang="en" title={post.data.title} description={post.data.description}>
-  <Navbar lang="en" t={navbarTranslation["en"]} />
-
-  <main class="bg-secondary-50">
+<Layout
+  lang="en"
+  title={post.data.title}
+  description={post.data.description}
+  navbarTranslation={navbarTranslation["en"]}
+>
+  <section class="bg-secondary-50">
     <article class="max-w-4xl m-auto px-6 py-12">
       <Content />
     </article>
-  </main>
-
-  <Footer />
+  </section>
 </Layout>
 
 <style is:global>

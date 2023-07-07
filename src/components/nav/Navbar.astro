@@ -1,15 +1,15 @@
 ---
-import type { Language, NavbarTranslation } from "../../translations"
+import { navbarTranslation, type Language } from "../../translations"
 import { TwitterIcon, GitHubIcon } from "../icons"
 import LanguageSwitch from "./LanguageSwitch.svelte"
 import ToggleNavbar from "./ToggleNavbar.svelte"
 
 type Props = {
   lang: Language
-  t: NavbarTranslation
 }
 
-const { lang, t } = Astro.props
+const { lang } = Astro.props
+const t = navbarTranslation[lang]
 ---
 
 <header class="max-w-screen-xl p-6 flex justify-between items-center m-auto gap-4">
