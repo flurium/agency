@@ -36,30 +36,30 @@ const { Content } = await post.render()
 </Layout>
 
 <style is:global>
-  h1 {
+  article > h1 {
     @apply mb-12 text-4xl font-bold !important;
   }
-  h2 {
+  article > h2 {
     @apply mt-8 mb-4 text-2xl font-semibold !important;
   }
-  h3 {
+  article > h3 {
     @apply mt-6 mb-4 text-xl font-semibold !important;
   }
-  p,
-  ul,
-  ol {
+  article > p,
+  article > ul,
+  article > ol {
     @apply mb-4 !important;
   }
-  ul {
+  article > ul {
     @apply list-disc list-inside !important;
   }
-  ol {
+  article > ol {
     @apply list-decimal list-inside !important;
   }
-  img {
+  article > img {
     @apply rounded-md !important;
   }
-  a {
+  article > a {
     @apply underline decoration-secondary-300 hover:decoration-primary-400 !important;
   }
 </style>
