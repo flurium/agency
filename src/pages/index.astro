@@ -1,4 +1,10 @@
 ---
----
+export const prerender = false
 
-<meta http-equiv="refresh" content="0;url=/uk/" />
+const acceptLanguage = Astro.request.headers.get("accept-language") ?? ""
+
+// supper simple no need for more at the current moment
+const lang = acceptLanguage.includes("uk") ? "uk" : "en"
+
+return Astro.redirect(lang)
+---
