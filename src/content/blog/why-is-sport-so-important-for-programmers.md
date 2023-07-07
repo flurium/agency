@@ -1,6 +1,7 @@
 ---
 title: "Why is sport so important for programmers?"
 description: "Discover the importance of sports for programmers, as a sedentary lifestyle can lead to health issues. Learn about the impact of back health and ways to improve heart function through low-impact exercises like swimming"
+author: Dmytro Fliud
 ---
 
 # Why is sport so important for programmers?

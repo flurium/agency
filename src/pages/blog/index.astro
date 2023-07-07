@@ -20,7 +20,8 @@ const blogPosts = await getCollection("blog")
         blogPosts.map((post) => (
           <a href={`/blog/${post.slug}`} class="bg-white p-8 rounded-md">
             <h3 class="font-semibold text-2xl mb-4">{post.data.title}</h3>
-            <p>{post.data.description}</p>
+            <p class="mt-2 my-4">{post.data.description}</p>
+            <span class="text-secondary-700">by {post.data.author}</span>
           </a>
         ))
       }

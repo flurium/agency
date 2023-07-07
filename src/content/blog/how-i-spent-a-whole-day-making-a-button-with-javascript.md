@@ -1,6 +1,7 @@
 ---
 title: "How I Spent an Entire Day Creating a Button with JavaScript"
 description: "Spent an eternity crafting a JavaScript button, cursing libraries and fate. Moral: be a master in something, unless you enjoy code-induced hair-pulling marathons!"
+author: Vitalii Lytvynenko
 ---
 
 # Once upon a time...

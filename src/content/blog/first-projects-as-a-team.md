@@ -1,6 +1,7 @@
 ---
 title: "First projects as a team."
 description: "Discover the lessons learned from our team's first projects. From overcoming challenges to effective teamwork, this article provides valuable insights for software developers on how to succeed and avoid common pitfalls"
+author: "Roman Koshchei"
 ---
 
 # First Projects as a Team

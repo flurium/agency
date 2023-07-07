@@ -24,7 +24,7 @@ const { Content } = await post.render()
 <Layout
   lang="en"
   title={post.data.title}
-  description={post.data.description}
+  description={`${post.data.description} by ${post.data.author}`}
   navbarTranslation={navbarTranslation["en"]}
 >
   <section class="bg-secondary-50">

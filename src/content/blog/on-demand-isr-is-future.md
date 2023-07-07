@@ -1,6 +1,7 @@
 ---
 title: "On-Demand  Static Regeneration is future of web"
 description: "Discover the future of web development with On-Demand Static Regeneration. Learn how to re-render specific pages without redeploying the entire website, resulting in faster updates and improved efficiency."
+author: Roman Koshchei
 ---
 
 # On-Demand Static Regeneration is future of web
