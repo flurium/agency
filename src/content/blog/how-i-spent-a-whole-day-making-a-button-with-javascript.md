@@ -66,7 +66,7 @@ The next challenge was to integrate the button into the project's existing desig
 ensuring it blended naturally. To achieve this, I had to write CSS classes and define
 the necessary properties to hide and display the button at specific positions.
 
-![Button](https://i.ibb.co/M8tm9K5/2023-07-07-031935.jpg)
+![Button](/btn.jpg)
 
 ## Moral?
 
