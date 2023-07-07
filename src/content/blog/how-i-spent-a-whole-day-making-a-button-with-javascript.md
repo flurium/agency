@@ -1,6 +1,6 @@
 ---
-title: "How I spent a whole day making a button with JavaScript"
-description: "Just a funny story"
+title: "Just a funny story"
+description: "How I spent a whole day making a button with JavaScript"
 ---
 
 # Once upon a time...
@@ -63,7 +63,7 @@ Here is the code, by the way:
 The next challenge was adapting the button to the project's existing design, making it blend naturally. 
 To achieve this, I had to write CSS classes and define the necessary properties to hide and display the button at specific positions.
 
-![Button](https://i.ibb.co/M8tm9K5/2023-07-07-031935.jpg)
+![Button](/btn.jpg)
 
 ## Moral?
 
