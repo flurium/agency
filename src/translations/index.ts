@@ -136,8 +136,8 @@ export const staticIndex: Transaltion<StaticIndex> = {
       header: {
         startBusinessWill: "Бізнес буде ",
         beOnline: "онлайн",
-        continueBusiness: " бізнес ",
-        grow: "розвиватиметься",
+        continueBusiness: " бізнес буде ",
+        grow: "розвиватися",
       },
       about:
         "Отримайте більше клієнтів, отримуйте більше замовлень. Автоматизуйте завдання, щоб отримати більше часу. Все, що вам потрібно, ви отримуєте з веб-сайтом.",
@@ -150,7 +150,8 @@ export const staticIndex: Transaltion<StaticIndex> = {
     },
     work: {
       header: "Наші роботи",
-      subheader: "Наше портфоліо є чітким доказом наших навичок і досвіду веб-розробки.",
+      subheader:
+        "Наше портфоліо є чітким доказом наших навичок і досвіду мобільної та ве б розробки.",
       projects: [
         {
           name: "BidMe",
@@ -267,7 +268,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
     work: {
       header: "Our work",
       subheader:
-        "Our portfolio provides clear evidence of our skills and experience in web development.",
+        "Our portfolio provides clear evidence of our skills and experience in mobile and web development.",
       projects: [
         {
           name: "BidMe",

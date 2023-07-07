@@ -30,9 +30,10 @@
 
 {#if open}
   
-  <div class="absolute flex flex-col shadow-lg p-5 gap-5 bg-white top-20 rounded-md z-10">
+  <div class="absolute  flex flex-col shadow-lg py-2 bg-white top-20 rounded-md z-10 border-secondary-100 border">
+
     {#each languages as language}
-      <a href={`/${language}`}>{t[language].full}</a>
+      <a class="hover:bg-secondary-50 px-5 py-2" href={`/${language}`}>{t[language].full}</a>
     {/each}
   </div>
 
