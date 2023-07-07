@@ -26,7 +26,7 @@ const { Content } = await post.render()
 <Layout lang="en" title={post.data.title} description={post.data.description}>
   <Navbar lang="en" t={navbarTranslation["en"]} />
 
-  <main class="bg-zinc-50">
+  <main class="bg-secondary-50">
     <article class="max-w-4xl m-auto px-6 py-12">
       <Content />
     </article>
@@ -53,6 +53,6 @@ const { Content } = await post.render()
     @apply list-disc list-inside !important;
   }
   a {
-    @apply underline decoration-zinc-300 hover:decoration-primary-400 !important;
+    @apply underline decoration-secondary-300 hover:decoration-primary-400 !important;
   }
 </style>

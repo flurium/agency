@@ -2,12 +2,12 @@
 import Layout from "./Layout.astro"
 import Footer from "../components/nav/Footer.astro"
 import Navbar from "../components/nav/Navbar.astro"
-import type { NavbarTranslation } from "../translations"
+import type { Language, NavbarTranslation } from "../translations"
 
 export interface Props {
   title: string
   description: string
-  lang: string
+  lang: Language
   navbarTranslation: NavbarTranslation
 }
 
@@ -15,7 +15,7 @@ const { lang, title, description, navbarTranslation } = Astro.props
 ---
 
 <Layout lang={lang} title={title} description={description}>
-  <Navbar t={navbarTranslation} />
+  <Navbar lang={lang} t={navbarTranslation} />
 
   <main>
     <slot />

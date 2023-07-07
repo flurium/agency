@@ -8,7 +8,7 @@
 </script>
 
 <nav class="block sm:hidden">
-  <button class="p-3 rounded-md text-2xl hover:bg-zinc-100" aria-label="Navbar toggle button" on:click={() => open = !open}>
+  <button class="p-3 rounded-md text-2xl hover:bg-secondary-100" aria-label="Navbar toggle button" on:click={() => open = !open}>
     <svg
       width="20"
       height="20"
@@ -26,7 +26,7 @@
 
 {#if open}
   <nav class="absolute top-0 right-0 p-6 w-1/2 bg-white rounded-md flex flex-col gap-4 sm:hidden items-end">
-    <button class="p-3 rounded-md text-2xl hover:bg-zinc-100" on:click={() => open = !open}>
+    <button class="p-3 rounded-md text-2xl hover:bg-secondary-100" on:click={() => open = !open}>
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 2L18 18M2 18L18 2" stroke="black" stroke-width="1.5"/>
       </svg>
@@ -35,7 +35,7 @@
     <Link href={t.switch.route}>{t.switch.label}</Link>
     <Link href="#our-work">{t.ourWork}</Link>
     <Link href="#team">{t.team}</Link>
-    <a href="#contact" class="py-2 px-4 w-full rounded-md bg-primary-400 text-white text-center">
+    <a href="#contact" class="py-2 px-4 w-full rounded-md bg-primary-500 text-white text-center">
       {t.contact}
     </a>
   </nav>

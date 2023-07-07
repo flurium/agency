@@ -12,80 +12,82 @@ import {
   staticIndex,
   getStaticPaths,
 } from "../../translations"
+import NavLayout from "../../layouts/NavLayout.astro"
 export { getStaticPaths }
 const lang = getLang(Astro.params)
 const t = staticIndex[lang]
 ---
 
-<Layout lang={lang} title={t.meta.title} description={t.meta.description}>
-  <Navbar lang={lang} t={navbarTranslation[lang]} />
+<NavLayout
+  lang={lang}
+  title={t.meta.title}
+  description={t.meta.description}
+  navbarTranslation={navbarTranslation[lang]}
+>
+  <!-- Introduction section -->
+  <section class="pb-20 pt-12 sm:pt-20 m-auto px-6 max-w-5xl">
+    <h1 class="text-5xl sm:text-7xl">
+      {t.introduction.header.startBusinessWill}
+      <span class="font-extrabold">{t.introduction.header.beOnline}</span> – <br />
+      {t.introduction.header.continueBusiness}
+      <span class="font-extrabold">{t.introduction.header.grow}</span>
+    </h1>
+    <p class="text-xl sm:text-3xl leading-relaxed mt-12 mb-16">
+      {t.introduction.about}
+    </p>
 
-  <main>
-    <!-- Introduction section -->
-    <section class="pb-20 pt-12 sm:pt-20 m-auto px-6 max-w-4xl">
-      <h1 class="text-5xl sm:text-6xl font-extrabold">{t.introduction.header}</h1>
-      <p class="text-2xl leading-relaxed mt-12">
-        {t.introduction.about.benefits}
-        <Link href="#">{t.introduction.about.api}</Link>,
-        <Link href="#">{t.introduction.about.fullstack}</Link>,
-        <Link href="#">{t.introduction.about.static}</Link>.
-      </p>
-      <p class="text-2xl leading-relaxed mt-4 mb-12">
-        {t.introduction.engagingParagraph}
-      </p>
+    <div class="flex gap-4 items-center">
+      <a
+        href="#contact"
+        class="py-4 px-6 font-semibold hover:bg-primary-600 rounded-md bg-primary-500 text-white"
+      >
+        {t.introduction.action.contact}
+      </a>
+      <span>{t.introduction.action.or}</span>
+      <Link href="#our-work">{t.introduction.action.seeWork}</Link>
+    </div>
+  </section>
 
-      <div class="flex gap-4 items-center">
-        <a href="#contact" class="py-2 px-4 rounded-md bg-primary-400 text-white">
-          {t.introduction.action.contact}
-        </a>
-        <span>{t.introduction.action.or}</span>
-        <Link href="#our-work">{t.introduction.action.seeWork}</Link>
+  <!-- Work section -->
+  <section class="py-20 bg-secondary-100" id="our-work">
+    <div class="m-auto px-6 max-w-screen-xl">
+      <h2 class="text-5xl font-bold mb-4 text-center">{t.work.header}</h2>
+      <h3 class="text-2xl text-center">{t.work.subheader}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-12 mt-12">
+        {
+          t.work.projects.map((project) => (
+            <Project
+              name={project.name}
+              banner={project.banner}
+              github={project.github}
+              website={project.website}
+              description={project.description}
+            />
+          ))
+        }
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Work section -->
-    <section class="py-20 bg-zinc-100" id="our-work">
-      <div class="m-auto px-6 max-w-screen-xl">
-        <h2 class="text-5xl font-bold mb-4 text-center">{t.work.header}</h2>
-        <h3 class="text-2xl text-center">{t.work.subheader}</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-12 mt-12">
-          {
-            t.work.projects.map((project) => (
-              <Project
-                name={project.name}
-                banner={project.banner}
-                github={project.github}
-                website={project.website}
-                description={project.description}
-              />
-            ))
-          }
-        </div>
+  <!-- Contact section -->
+  <section id="contact" class="py-20 m-auto px-6 max-w-screen-lg">
+    <h2 class="text-5xl font-bold mb-4 text-center">{t.contact.header}</h2>
+    <p class="text-2xl mb-12 text-center">{t.contact.subheader}</p>
+    <ContactForm t={t.contact.form} client:visible />
+  </section>
+
+  <!-- Team section -->
+  <section id="team" class="py-20 bg-secondary-100">
+    <div class="m-auto px-6 max-w-screen-xl">
+      <h2 class="text-5xl font-bold mb-8">{t.team.header}</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        {
+          t.team.members.map((member) => (
+            <Member name={member.name} img={member.img} role={member.role} />
+          ))
+        }
       </div>
-    </section>
-
-    <!-- Contact section -->
-    <section id="contact" class="py-20 m-auto px-6 max-w-screen-lg">
-      <h2 class="text-5xl font-bold mb-4 text-center">{t.contact.header}</h2>
-      <p class="text-2xl mb-12 text-center">{t.contact.subheader}</p>
-      <ContactForm t={t.contact.form} client:visible />
-    </section>
-
-    <!-- Team section -->
-    <section id="team" class="py-20 bg-zinc-100">
-      <div class="m-auto px-6 max-w-screen-xl">
-        <h2 class="text-5xl font-bold mb-8">{t.team.header}</h2>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-          {
-            t.team.members.map((member) => (
-              <Member name={member.name} img={member.img} role={member.role} />
-            ))
-          }
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <Footer />
-</Layout>
+    </div>
+  </section>
+</NavLayout>

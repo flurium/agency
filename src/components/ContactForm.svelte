@@ -69,21 +69,21 @@
 <form class="flex flex-col gap-6" on:submit|preventDefault={submit}>
   <label>
     <div class="font-semibold mb-1 ml-2">{t.name.label}</div>
-    <input class="py-3 px-5 block rounded-md w-full bg-zinc-50 outline-none" name="name" 
+    <input class="py-3 px-5 block rounded-md w-full bg-secondary-50 outline-none" name="name" 
       placeholder={t.name.placeholder} bind:value={name}>
   </label>
     
   <label>
     <div class="font-semibold mb-1 ml-2">{t.email.label}</div>
     <input 
-      class="py-3 px-5 block rounded-md w-full bg-zinc-50 outline-none" name="email"
+      class="py-3 px-5 block rounded-md w-full bg-secondary-50 outline-none" name="email"
       placeholder={t.email.placeholder} bind:value={email}>
   </label>
 
   <label>
     <div class="font-semibold mb-1 ml-2">{t.context.label}</div>
     <textarea name="context"
-      class="py-3 px-5 block rounded-md w-full bg-zinc-50 outline-none" 
+      class="py-3 px-5 block rounded-md w-full bg-secondary-50 outline-none" 
       placeholder={t.context.placeholder} rows="7" bind:value={context}
     ></textarea>
   </label>

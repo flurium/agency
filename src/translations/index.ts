@@ -90,14 +90,13 @@ type StaticIndex = {
     description: string
   }
   introduction: {
-    header: string
-    about: {
-      benefits: string
-      api: string
-      fullstack: string
-      static: string
+    header: {
+      startBusinessWill: string
+      beOnline: string
+      continueBusiness: string
+      grow: string
     }
-    engagingParagraph: string
+    about: string
     action: {
       contact: string
       or: string
@@ -134,16 +133,15 @@ export const staticIndex: Transaltion<StaticIndex> = {
         "Агентство Flurium зі створення швидкого та масштабованого API за допомогою нових технологій. Оскільки бізнес має розвиватися – бізнес має бути онлайн.",
     },
     introduction: {
-      header: "Бізнес буде онлайн – бізнес розвиватиметься",
-      about: {
-        benefits:
-          "Отримайте більше клієнтів, отримуйте більше замовлень. Автоматизуйте завдання, щоб отримати більше часу. Все, що вам потрібно, ви отримуєте з веб-сайтом. Flurium спеціалізується на",
-        api: "pозробці API платформ",
-        fullstack: "повноцінних динамічних веб-сайтів",
-        static: "веб-сайтів на основі контенту",
+      header: {
+        startBusinessWill: "Бізнес буде ",
+        beOnline: "онлайн",
+        continueBusiness: " бізнес ",
+        grow: "розвиватиметься",
       },
-      engagingParagraph:
-        "Співпрацюйте з нами, щоб розкрити потенціал сучасних веб-рішень для вашого цифрового бачення.",
+      about:
+        "Отримайте більше клієнтів, отримуйте більше замовлень. Автоматизуйте завдання, щоб отримати більше часу. Все, що вам потрібно, ви отримуєте з веб-сайтом.",
+
       action: {
         contact: "Зв'язатися",
         or: "або",
@@ -251,16 +249,15 @@ export const staticIndex: Transaltion<StaticIndex> = {
         "Flurium agency for building fast and scalable API with new technologies. Because business must grow - business must be online.",
     },
     introduction: {
-      header: "Business will be online – business will grow",
-      about: {
-        benefits:
-          "Get more customers, get more orders. Automate tasks, so you get more time. Everything you need you get with a website. Flurium specializes in ",
-        api: "API platform development",
-        fullstack: "full-stack dynamic websites",
-        static: "static content-based web sites",
+      header: {
+        startBusinessWill: "Business will ",
+        beOnline: "be online",
+        continueBusiness: " business will ",
+        grow: "grow",
       },
-      engagingParagraph:
-        "Partner with us to unlock the potential of modern web solutions for your digital vision.",
+      about:
+        "Get more customers, get more orders. Automate tasks, so you get more time. Everything you need you get with a website.",
+
       action: {
         contact: "Get in touch",
         or: "or",

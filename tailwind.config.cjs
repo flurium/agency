@@ -7,9 +7,16 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          300: colors.violet[300],
-          400: colors.violet[400],
-          500: colors.violet[300],
+          300: colors.indigo[300],
+          400: colors.indigo[400],
+          500: colors.indigo[500],
+          600: colors.indigo[600],
+        },
+        secondary: {
+          50: colors.gray[50],
+          100: colors.gray[100],
+          200: colors.gray[200],
+          300: colors.gray[300],
         },
       },
     },
