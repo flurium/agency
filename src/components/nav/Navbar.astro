@@ -30,7 +30,11 @@ const t = navbarTranslation[lang]
     >
       {t.team}
     </a>
-    <a class="hover:bg-secondary-100 py-2 px-4 rounded-md" href="/blog" rel="prefetch">
+    <a
+      class="hover:bg-secondary-100 py-2 px-4 rounded-md"
+      href={`/blog/${lang}`}
+      rel="prefetch"
+    >
       {t.blog}
     </a>
     <a

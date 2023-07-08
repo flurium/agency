@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content"
+import { navbarTranslation } from "../../translations"
+import { getStaticPaths, getLang } from "../../translations"
+import Layout from "../../layouts/Layout.astro"
+
+export { getStaticPaths }
+const lang = getLang(Astro.params)
+
+const blogPosts = await getCollection("blog", ({ slug }) => slug.startsWith(lang))
+---
+
+<Layout
+  lang={lang}
+  navbarTranslation={navbarTranslation[lang]}
+  title="Flurium Blog"
+  description="Flurium blog"
+>
+  <section class="bg-secondary-100 px-6 py-20 min-h-[75vh]">
+    <div
+      class="max-w-screen-xl m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+    >
+      {
+        blogPosts.map((post) => {
+          return (
+            <a href={`/blog/${post.slug}`} class="bg-white p-8 rounded-md">
+              <h3 class="font-semibold text-2xl mb-4">{post.data.title}</h3>
+              <p class="mt-2 my-4">{post.data.description}</p>
+              <span class="text-secondary-700">by {post.data.author}</span>
+            </a>
+          )
+        })
+      }
+    </div>
+  </section>
+</Layout>

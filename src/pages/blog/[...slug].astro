@@ -2,30 +2,35 @@
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import type { CollectionEntry } from "astro:content"
-import { navbarTranslation } from "../../translations"
+import { Language, navbarTranslation } from "../../translations"
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog")
 
-  return blogPosts.map((x) => ({
-    params: { slug: x.slug },
-    props: { post: x },
-  }))
+  return blogPosts.map((x) => {
+    const [lang] = x.slug.split("/") as [Language]
+
+    return {
+      params: { slug: x.slug },
+      props: { lang, post: x },
+    }
+  })
 }
 
 type Props = {
+  lang: Language
   post: CollectionEntry<"blog">
 }
 
-const { post } = Astro.props
+const { lang, post } = Astro.props
 const { Content } = await post.render()
 ---
 
 <Layout
-  lang="en"
+  lang={lang}
   title={post.data.title}
   description={`${post.data.description} by ${post.data.author}`}
-  navbarTranslation={navbarTranslation["en"]}
+  navbarTranslation={navbarTranslation[lang]}
 >
   <section class="bg-secondary-50">
     <article class="max-w-4xl m-auto px-6 py-12">
