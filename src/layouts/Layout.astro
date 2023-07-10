@@ -10,7 +10,8 @@ export interface Props {
   navbarTranslation: NavbarTranslation
 }
 
-const { lang, title, description, navbarTranslation } = Astro.props
+const url = Astro.url.href
+const { lang, title, description } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -23,7 +24,10 @@ const { lang, title, description, navbarTranslation } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+
     <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="Flurium" />
+    <meta property="og:url" content={url} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://www.flurium.com/og-image.png" />
     <meta property="og:type" content="website" />
