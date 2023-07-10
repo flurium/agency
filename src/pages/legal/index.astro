@@ -1,4 +1,5 @@
 ---
+import Link from "../../components/nav/Link.svelte"
 import Layout from "../../layouts/Layout.astro"
 import { getCollection } from "astro:content"
 
@@ -10,15 +11,15 @@ const legals = await getCollection("legal")
   title="Flurium Legal info"
   description="Legal information for Flurium agency"
 >
-  <h1>Flurium Legal information</h1>
+  <section class="pb-36 pt-12 sm:pt-28 m-auto px-6 max-w-5xl min-h-[75vh]">
+    <h1 class="text-4xl sm:text-6xl">Flurium Legal information</h1>
 
-  <section class="flex flex-col">
-    {
-      legals.map((legal) => (
-        <a href={`/legal/${legal.slug}`} rel="prefetch">
-          {legal.data.title}
-        </a>
-      ))
-    }
+    <div class="flex flex-col gap-4 mt-10 mb-10">
+      {
+        legals.map((legal) => (
+          <Link href={`/legal/${legal.slug}`}>{legal.data.title}</Link>
+        ))
+      }
+    </div>
   </section>
 </Layout>

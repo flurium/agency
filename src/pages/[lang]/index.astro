@@ -16,12 +16,7 @@ const lang = getLang(Astro.params)
 const t = staticIndex[lang]
 ---
 
-<Layout
-  lang={lang}
-  title={t.meta.title}
-  description={t.meta.description}
-  navbarTranslation={navbarTranslation[lang]}
->
+<Layout lang={lang} title={t.meta.title} description={t.meta.description}>
   <!-- Introduction section -->
   <section class="pb-36 pt-12 sm:pt-28 m-auto px-6 max-w-5xl">
     <h1 class="text-5xl sm:text-7xl">
