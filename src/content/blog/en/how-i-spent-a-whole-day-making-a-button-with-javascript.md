@@ -71,7 +71,7 @@ The next challenge was adapting the button to the project's existing design, mak
 blend naturally. To achieve this, I had to write CSS classes and define the necessary
 properties to hide and display the button at specific positions.
 
-![Button](/btn.jpg)
+![Button](/blog/btn.jpg)
 
 ## Moral?
 
