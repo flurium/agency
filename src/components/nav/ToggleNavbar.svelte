@@ -9,7 +9,7 @@
   let open: boolean = false
 </script>
 
-<nav class="sm:hidden flex gap-4">
+<nav class="md:hidden flex gap-4">
   <LanguageSwitch {lang}/>
   <button class="p-3 rounded-md text-2xl hover:bg-secondary-100" aria-label="Navbar toggle button" on:click={() => open = !open}>
     <svg
@@ -28,7 +28,7 @@
 </nav>
 
 {#if open}
-  <div class="absolute top-0 right-0 py-6 w-full bg-white sm:hidden shadow-md z-20">
+  <div class="absolute top-0 right-0 py-6 w-full bg-white md:hidden shadow-md z-20">
     <div class="flex justify-between w-full items-center px-6">
       <a class="select-none font-bold text-primary-500 text-3xl" href="/">FLURIUM</a>
 
