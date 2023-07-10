@@ -4,11 +4,14 @@ import Link from "./Link.svelte"
 const year = new Date().getFullYear()
 ---
 
-<footer class="max-w-screen-xl m-auto px-6 py-8 flex justify-between">
+<footer
+  class="max-w-screen-xl m-auto px-6 py-8 flex justify-between flex-col gap-2 sm:flex-row"
+>
   <span>© {year} Flurium. All rights reserved.</span>
   <span>
     The site is inspired by
     <Link href="https://www.thinkmill.com.au" external>Thinkmill</Link>
   </span>
+  <Link href="/legal/privacy-policy">Privacy Policy</Link>
   <span>Made with 💛 in Ukraine.</span>
 </footer>

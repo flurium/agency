@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import { getCollection } from "astro:content"
+
+const legals = await getCollection("legal")
+---
+
+<Layout
+  lang="en"
+  title="Flurium Legal info"
+  description="Legal information for Flurium agency"
+>
+  <h1>Flurium Legal information</h1>
+
+  <section class="flex flex-col">
+    {
+      legals.map((legal) => (
+        <a href={`/legal/${legal.slug}`} rel="prefetch">
+          {legal.data.title}
+        </a>
+      ))
+    }
+  </section>
+</Layout>

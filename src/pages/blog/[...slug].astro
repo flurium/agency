@@ -2,7 +2,8 @@
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import type { CollectionEntry } from "astro:content"
-import { Language, navbarTranslation } from "../../translations"
+import type { Language } from "../../translations"
+import Md from "../../components/Md.astro"
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog")
@@ -30,43 +31,10 @@ const { Content } = await post.render()
   lang={lang}
   title={post.data.title}
   description={`${post.data.description} by ${post.data.author}`}
-  navbarTranslation={navbarTranslation[lang]}
 >
   <section class="bg-secondary-50">
-    <article class="max-w-4xl m-auto px-6 py-12">
+    <Md className="max-w-4xl m-auto px-6 py-12">
       <Content />
-    </article>
+    </Md>
   </section>
 </Layout>
-
-<style is:global>
-  article h1 {
-    @apply mb-12 text-4xl font-bold !important;
-  }
-  article h2 {
-    @apply mt-8 mb-4 text-2xl font-semibold !important;
-  }
-  article h3 {
-    @apply mt-6 mb-4 text-xl font-semibold !important;
-  }
-  article p,
-  article ul,
-  article ol {
-    @apply mb-4 !important;
-  }
-  article ul {
-    @apply list-disc list-inside !important;
-  }
-  article ol {
-    @apply list-decimal list-inside !important;
-  }
-  article img {
-    @apply rounded-md !important;
-  }
-  article a {
-    @apply underline decoration-primary-400 hover:decoration-primary-500 !important;
-  }
-  article pre {
-    @apply rounded-md p-4  !important;
-  }
-</style>
