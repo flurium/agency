@@ -3,6 +3,7 @@ import Link from "./nav/Link.svelte"
 import { Image } from "@astrojs/image/components"
 
 type Props = {
+  status: string
   name: string
   banner: string
   github: string
@@ -10,7 +11,7 @@ type Props = {
   description: string
 }
 
-const { name, banner, github, website, description } = Astro.props
+const { name, banner, status, github, website, description } = Astro.props
 ---
 
 <div
@@ -25,7 +26,10 @@ const { name, banner, github, website, description } = Astro.props
     alt={`${name} banner`}
   />
   <div class="bg-white p-8 rounded-md flex flex-col gap-4">
-    <h4 class="text-3xl font-bold">{name}</h4>
+    <div class="flex justify-between items-center">
+      <h4 class="text-3xl font-bold">{name}</h4>
+      <small class="text-gray-500">{status}</small>
+    </div>
     <p class="flex-1">{description}</p>
     <div class="flex gap-4">
       <Link href={github} external>GitHub</Link>

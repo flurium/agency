@@ -4,12 +4,7 @@ import Project from "../../components/Project.astro"
 import Member from "../../components/Member.astro"
 import Link from "../../components/nav/Link.svelte"
 import ContactForm from "../../components/ContactForm.svelte"
-import {
-  getLang,
-  navbarTranslation,
-  staticIndex,
-  getStaticPaths,
-} from "../../translations"
+import { getLang, staticIndex, getStaticPaths } from "../../translations"
 
 export { getStaticPaths }
 const lang = getLang(Astro.params)
@@ -47,17 +42,7 @@ const t = staticIndex[lang]
       <h2 class="text-5xl font-bold mb-4 text-center">{t.work.header}</h2>
       <h3 class="text-2xl text-center">{t.work.subheader}</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-12 mt-12">
-        {
-          t.work.projects.map((project) => (
-            <Project
-              name={project.name}
-              banner={project.banner}
-              github={project.github}
-              website={project.website}
-              description={project.description}
-            />
-          ))
-        }
+        {t.work.projects.map((project) => <Project {...project} />)}
       </div>
     </div>
   </section>

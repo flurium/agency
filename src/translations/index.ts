@@ -81,6 +81,7 @@ type StaticIndex = {
     subheader: string
     projects: {
       name: string
+      status: string
       banner: string
       github: string
       website: string
@@ -127,7 +128,20 @@ export const staticIndex: Transaltion<StaticIndex> = {
         "Наше портфоліо є чітким доказом наших навичок і досвіду мобільної та ве б розробки.",
       projects: [
         {
+          name: "Spentoday",
+          status: "В розробці",
+          banner: "/projects/spentoday/banner.png",
+          github: "https://github.com/flurium/spentoday",
+          website: "https://spentoday.com",
+          description: `
+            Від ідеї до успіху - один день. Spentoday - швидке рішення для запуску 
+            онлайн-магазину. Створіть магазин, додайте товари, налаштуйте оплату через 
+            популярні сервіси та почніть заробляти вже сьогодні.
+          `,
+        },
+        {
           name: "BidMe",
+          status: "Закінчено",
           banner: "/projects/bidme/banner.png",
           github: "https://github.com/flurium/bidme",
           website: "https://bidme.flurium.com",
@@ -140,6 +154,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
         },
         {
           name: "Thing",
+          status: "Закінчено",
           banner: "/projects/thing/banner.png",
           github: "https://github.com/flurium/thing",
           website: "https://thing.flurium.com",
@@ -244,7 +259,20 @@ export const staticIndex: Transaltion<StaticIndex> = {
         "Our portfolio provides clear evidence of our skills and experience in mobile and web development.",
       projects: [
         {
+          name: "Spentoday",
+          status: "In development",
+          banner: "/projects/spentoday/banner.png",
+          github: "https://github.com/flurium/spentoday",
+          website: "https://spentoday.com",
+          description: `
+            From idea to success - just one day. Spentoday - a swift solution to launch 
+            an online shop. Create your shop, add products, configure payments through 
+            popular services, and start earning today.
+          `,
+        },
+        {
           name: "BidMe",
+          status: "Finished",
           banner: "/projects/bidme/banner.png",
           github: "https://github.com/flurium/bidme",
           website: "https://bidme.onrender.com",
@@ -257,6 +285,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
         },
         {
           name: "Thing",
+          status: "Finished",
           banner: "/projects/thing/banner.png",
           github: "https://github.com/flurium/thing",
           website: "https://thing-wtcg.onrender.com",
