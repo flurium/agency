@@ -140,6 +140,18 @@ export const staticIndex: Transaltion<StaticIndex> = {
           `,
         },
         {
+          name: "Road to Vostok Remake",
+          status: "В розробці",
+          banner: "/projects/roadtovostok/banner.png",
+          github: "https://github.com/roman-koshchei/roadtovostok",
+          website: "https://roadtovostok.flurium.com",
+          description: `
+            Переробка сайта Road to Vostok: roadtovostok.com на нові технології
+            для пошвидшення завантаження та продуктивністі майже в 2 рази. З
+            Wordpress на Astro + Svelte. 
+          `,
+        },
+        {
           name: "BidMe",
           status: "Закінчено",
           banner: "/projects/bidme/banner.png",
@@ -200,7 +212,8 @@ export const staticIndex: Transaltion<StaticIndex> = {
         },
         context: {
           label: "Додаткова інформація, яку ви вважаєте корисною...",
-          placeholder: "Ваша ситуація, потрібні послуги, інші способи спілкування...",
+          placeholder:
+            "Ваша ситуація, потрібні послуги, інші способи спілкування...",
         },
         submit: "Відправити контакти",
       },
@@ -271,6 +284,19 @@ export const staticIndex: Transaltion<StaticIndex> = {
           `,
         },
         {
+          name: "Road to Vostok Remake",
+          status: "In development",
+          banner: "/projects/roadtovostok/banner.png",
+          github: "https://github.com/roman-koshchei/roadtovostok",
+          website: "https://roadtovostok.flurium.com",
+          description: `
+            We have enhanced the Road to Vostok website (roadtovostok.com) by
+            implementing new technologies to significantly accelerate loading
+            times and improve performance, transitioning from WordPress
+            to Astro + Svelte.
+          `,
+        },
+        {
           name: "BidMe",
           status: "Finished",
           banner: "/projects/bidme/banner.png",
@@ -300,7 +326,8 @@ export const staticIndex: Transaltion<StaticIndex> = {
     },
     contact: {
       header: "Get in touch",
-      subheader: "Let's have a chat about your project goals and how we might help.",
+      subheader:
+        "Let's have a chat about your project goals and how we might help.",
       form: {
         notification: {
           header: "Notification, click to close",
