@@ -285,7 +285,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
         },
         {
           name: "Road to Vostok Remake",
-          status: "In development",
+          status: "Finished",
           banner: "/projects/roadtovostok/banner.png",
           github: "https://github.com/roman-koshchei/roadtovostok",
           website: "https://roadtovostok.flurium.com",
