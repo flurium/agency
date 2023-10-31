@@ -64,10 +64,9 @@ type StaticIndex = {
   }
   introduction: {
     header: {
-      startBusinessWill: string
-      beOnline: string
-      continueBusiness: string
-      grow: string
+      start: string
+      bold: string
+      end: string
     }
     about: string
     action: {
@@ -102,19 +101,18 @@ type StaticIndex = {
 export const staticIndex: Transaltion<StaticIndex> = {
   uk: {
     meta: {
-      title: "Flurium - агентство веб-розробки",
+      title: "Flurium - команда веб-розробки",
       description:
-        "Агентство Flurium зі створення швидкого та масштабованого API за допомогою нових технологій. Оскільки бізнес має розвиватися – бізнес має бути онлайн.",
+        "Команда Flurium зі створення швидкого та масштабованого API за допомогою нових технологій. Оскільки бізнес має розвиватися – бізнес має бути онлайн.",
     },
     introduction: {
       header: {
-        startBusinessWill: "Бізнес буде ",
-        beOnline: "онлайн",
-        continueBusiness: " бізнес буде ",
-        grow: "розвиватися",
+        start: "Створимо ",
+        bold: "MVP",
+        end: "  швидко",
       },
       about:
-        "Отримайте більше клієнтів, отримуйте більше замовлень. Автоматизуйте завдання, щоб отримати більше часу. Все, що вам потрібно, ви отримуєте з веб-сайтом.",
+        "Вищі позиції в пошукових системах. Автоматизуйте задачі. Зменшити витрати. Забезпечте гарну взаємодію з користувачем.",
 
       action: {
         contact: "Зв'язатися",
@@ -246,19 +244,18 @@ export const staticIndex: Transaltion<StaticIndex> = {
   },
   en: {
     meta: {
-      title: "Flurium - web development agency",
+      title: "Flurium - web development team",
       description:
-        "Flurium agency for building fast and scalable API with new technologies. Because business must grow - business must be online.",
+        "Flurium team for building fast and scalable API with new technologies. Because business must grow - business must be online.",
     },
     introduction: {
       header: {
-        startBusinessWill: "Business will ",
-        beOnline: "be online",
-        continueBusiness: " business will ",
-        grow: "grow",
+        start: "Build ",
+        bold: "MVP",
+        end: " fast",
       },
       about:
-        "Get more customers, get more orders. Automate tasks, so you get more time. Everything you need you get with a website.",
+        "Rank higher in search engines. Automate tasks. Reduce maintenance costs. Provide good user experience.",
 
       action: {
         contact: "Get in touch",

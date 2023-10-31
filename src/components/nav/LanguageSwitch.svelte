@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Language } from "../../translations"
-  import {languages} from "../../translations"
+  import { languages } from "../../translations"
 
   export let lang: Language
   let open: boolean = false
@@ -20,7 +20,10 @@
 
 <button 
   class="outline-none  flex items-baseline hover:bg-secondary-100 gap-3 py-2 px-4 rounded-md"
-  on:click={() => open = !open}
+  on:click={() => {
+    console.log("click")
+    open = !open
+  }}
 >
   <span>{t[lang].short}</span>
   <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">

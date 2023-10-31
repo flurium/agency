@@ -1,5 +1,6 @@
 import type { Params } from "astro"
-import { Language, defaultLang, languages } from "."
+import { defaultLang, languages } from "."
+import type { Language } from "."
 
 export function getStaticPaths() {
   return languages.map((lang) => ({
