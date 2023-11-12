@@ -26,7 +26,7 @@ const t = staticIndex[lang]
 
     <div class="flex gap-4 items-center justify-center">
       <a
-        href="/#contact"
+        href={`/${lang}/#contact`}
         class="py-4 px-6 font-semibold hover:bg-primary-600 hover:border-primary-600
         rounded-md bg-primary-500 text-white border-2 border-primary-500"
       >
@@ -35,7 +35,7 @@ const t = staticIndex[lang]
       <a 
         class="py-4 px-6 font-semibold rounded-md 
         border-2 text-primary-500 border-primary-500" 
-        href="/#our-work"
+        href={`/${lang}/#our-work`}
       >
         {t.introduction.action.seeWork}
       </a>
@@ -100,7 +100,7 @@ const t = staticIndex[lang]
       <p class="mb-6">
         At Flurium, we specialize in creating stunning websites that captivate your audience and drive results. Let us bring your vision to life.
       </p>
-      <a href="/#contact" class="px-6 py-3 bg-primary-500 inline-block text-white rounded">
+      <a href={`/${lang}/#contact`} class="px-6 py-3 bg-primary-500 inline-block text-white rounded">
         Contact
       
       </a>
