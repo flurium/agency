@@ -14,26 +14,25 @@ type Props = {
 const { name, banner, status, github, website, description } = Astro.props
 ---
 
-<div
-  class="rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-1 content-start"
->
-  <Image
-    width={800}
-    height={450}
-    format="png"
-    class="rounded-md"
-    src={banner}
-    alt={`${name} banner`}
-  />
-  <div class="bg-white p-8 rounded-md flex flex-col gap-4">
-    <div class="flex justify-between items-center">
-      <h4 class="text-3xl font-bold">{name}</h4>
-      <small class="text-gray-500">{status}</small>
-    </div>
-    <p class="flex-1">{description}</p>
-    <div class="flex gap-4">
-      <Link href={github} external>GitHub</Link>
-      <Link href={website} external>Website</Link>
-    </div>
+<div class="border-b border-secondary-300 col-span-full" />
+
+<Image
+  width={800}
+  height={450}
+  src={banner}
+  alt={`${name} banner`}
+/>
+
+<div class="p-8 rounded-md flex flex-col justify-center">
+  <div class="flex justify-between items-center">
+    <h4 class="text-3xl font-bold">{name}</h4>
+    <small class="text-gray-500">{status}</small>
+  </div>
+
+  <p class="mt-4 mb-6">{description}</p>
+  
+  <div class="flex gap-4">
+    <Link href={github} external>GitHub</Link>
+    <Link href={website} external>Website</Link>
   </div>
 </div>

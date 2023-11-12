@@ -12,40 +12,42 @@ const { lang } = Astro.props
 const t = navbarTranslation[lang]
 ---
 
-<header class="max-w-screen-xl p-6 flex justify-between items-center m-auto gap-4">
-  <a class="select-none font-bold text-primary-500 text-3xl" href="/">FLURIUM</a>
+<header class="flex justify-between items-center m-auto gap-4">
+  <a class="select-none font-bold text-primary-500 text-3xl" href="/">
+    Flurium
+  </a>
   <nav class="hidden md:flex gap-5 items-center">
     <LanguageSwitch lang={lang} client:load />
     <a
-      class="hover:bg-secondary-100 py-2 px-4 rounded-md"
+      class="hover:bg-secondary-100 py-2 px-4 rounded"
       href={`/${lang}/#our-work`}
       rel="prefetch"
     >
       {t.ourWork}
     </a>
     <a
-      class="hover:bg-secondary-100 py-2 px-4 rounded-md"
+      class="hover:bg-secondary-100 py-2 px-4 rounded"
       href={`/${lang}/#team`}
       rel="prefetch"
     >
       {t.team}
     </a>
     <a
-      class="hover:bg-secondary-100 py-2 px-4 rounded-md"
+      class="hover:bg-secondary-100 py-2 px-4 rounded"
       href={`/blog/${lang}`}
       rel="prefetch"
     >
       {t.blog}
     </a>
     <a
-      class="hover:bg-secondary-100 w-12 h-12 flex justify-center items-center rounded-md"
+      class="hover:bg-secondary-100 w-12 h-12 flex justify-center items-center rounded"
       href="https://twitter.com/fluriumteam"
       target="_blank"
     >
       <TwitterIcon />
     </a>
     <a
-      class="hover:bg-secondary-100 w-12 h-12 flex justify-center items-center rounded-md"
+      class="hover:bg-secondary-100 w-12 h-12 flex justify-center items-center rounded"
       href="https://github.com/flurium"
       target="_blank"
     >
@@ -53,7 +55,7 @@ const t = navbarTranslation[lang]
     </a>
     <a
       href={`/${lang}/#contact`}
-      class="py-2 px-4 rounded-md bg-primary-500 hover:bg-primary-600 text-white"
+      class="py-2 px-4 rounded bg-primary-500 hover:bg-primary-600 text-white"
     >
       {t.contact}
     </a>

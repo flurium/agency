@@ -264,7 +264,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
       },
     },
     work: {
-      header: "Our work",
+      header: "Discover Our Projects",
       subheader:
         "Our portfolio provides clear evidence of our skills and experience in mobile and web development.",
       projects: [
@@ -322,9 +322,9 @@ export const staticIndex: Transaltion<StaticIndex> = {
       ],
     },
     contact: {
-      header: "Get in touch",
+      header: "Contact Now",
       subheader:
-        "Let's have a chat about your project goals and how we might help.",
+        "Let's have a chat about your project goals and how we will help.",
       form: {
         notification: {
           header: "Notification, click to close",
@@ -360,7 +360,7 @@ export const staticIndex: Transaltion<StaticIndex> = {
       },
     },
     team: {
-      header: "Team",
+      header: "Meet Our Team",
       members: [
         {
           img: "/members/roman.png",

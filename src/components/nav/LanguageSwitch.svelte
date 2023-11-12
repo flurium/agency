@@ -19,7 +19,7 @@
 </script>
 
 <button 
-  class="outline-none  flex items-baseline hover:bg-secondary-100 gap-3 py-2 px-4 rounded-md"
+  class="outline-none  flex items-baseline hover:bg-secondary-100 gap-3 py-2 px-4 rounded"
   on:click={() => {
     console.log("click")
     open = !open
@@ -33,7 +33,7 @@
 
 {#if open}
   
-  <div class="absolute  flex flex-col shadow-lg py-2 bg-white top-20 rounded-md z-10 border-secondary-100 border">
+  <div class="absolute  flex flex-col shadow-lg py-2 bg-white top-20 rounded z-10 border-secondary-100 border">
 
     {#each languages as language}
       <a class="hover:bg-secondary-50 px-5 py-2" href={`/${language}`}>{t[language].full}</a>

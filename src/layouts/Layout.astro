@@ -35,7 +35,10 @@ const { lang, title, description } = Astro.props
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
   </head>
-  <body class="text-lg selection:bg-primary-300 selection:bg-opacity-75 overflow-y-scroll">
+  <body 
+    class="selection:bg-opacity-75 selection:bg-primary-300 
+    overflow-y-scroll max-w-screen-xl p-6 m-auto"
+  >
     <Navbar lang={lang} />
 
     <main>

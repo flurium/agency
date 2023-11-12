@@ -58,7 +58,7 @@
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div
-    class="fixed z-10 bg-violet-400 text-white end-0 top-0 max-w-sm py-2 px-4 rounded-md m-2 cursor-pointer"
+    class="fixed z-10 bg-primary-400 text-white end-0 top-0 max-w-sm py-2 px-4 rounded m-2 cursor-pointer"
     on:click={() => message = null} transition:fade
   >
     <div class="text-base mb-2 opacity-90">{t.notification.header}</div>
@@ -68,25 +68,27 @@
 
 <form class="flex flex-col gap-6" on:submit|preventDefault={submit}>
   <label>
-    <div class="font-semibold mb-1 ml-2">{t.name.label}</div>
-    <input class="py-3 px-5 block rounded-md w-full bg-secondary-50 outline-none" name="name" 
+    <div class="mb-1">{t.name.label}</div>
+    <input class="py-3 px-5 block rounded w-full bg-secondary-50 outline-none" name="name" 
       placeholder={t.name.placeholder} bind:value={name}>
   </label>
     
   <label>
-    <div class="font-semibold mb-1 ml-2">{t.email.label}</div>
+    <div class="mb-1">{t.email.label}</div>
     <input 
-      class="py-3 px-5 block rounded-md w-full bg-secondary-50 outline-none" name="email"
+      class="py-3 px-5 block rounded w-full bg-secondary-50 outline-none" name="email"
       placeholder={t.email.placeholder} bind:value={email}>
   </label>
 
   <label>
-    <div class="font-semibold mb-1 ml-2">{t.context.label}</div>
+    <div class="mb-1">{t.context.label}</div>
     <textarea name="context"
-      class="py-3 px-5 block rounded-md w-full bg-secondary-50 outline-none" 
-      placeholder={t.context.placeholder} rows="7" bind:value={context}
+      class="py-3 px-5 block rounded w-full bg-secondary-50 outline-none" 
+      placeholder={t.context.placeholder} rows="6" bind:value={context}
     ></textarea>
   </label>
 
-  <button class="py-2 px-4 font-semibold rounded-md hover:bg-primary-600 bg-primary-500 text-white">{t.submit}</button>
+  <button class="py-4 px-6 w-fit font-semibold rounded hover:bg-primary-600 bg-primary-500 text-white">
+    {t.submit}
+  </button>
 </form>

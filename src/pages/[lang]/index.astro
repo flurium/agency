@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro"
 import Project from "../../components/Project.astro"
 import Member from "../../components/Member.astro"
 import Link from "../../components/nav/Link.svelte"
+import Logo from "../../components/Logo.astro"
 import ContactForm from "../../components/ContactForm.svelte"
 import { getLang, staticIndex, getStaticPaths } from "../../translations"
 
@@ -13,58 +14,97 @@ const t = staticIndex[lang]
 
 <Layout lang={lang} title={t.meta.title} description={t.meta.description}>
   <!-- Introduction section -->
-  <section class="pb-36 pt-12 sm:pt-28 m-auto px-6 max-w-5xl">
-    <h1 class="text-5xl sm:text-7xl">
+  <section class="py-36 text-center">
+    <h1 class="text-5xl sm:text-7xl font-serif">
       {t.introduction.header.start}
       <span class="font-bold">{t.introduction.header.bold}</span>
       {t.introduction.header.end}
     </h1>
-    <p class="text-xl sm:text-3xl leading-relaxed mt-12 mb-16">
+    <h2 class="text-xl sm:text-2xl max-w-3xl m-auto leading-relaxed mt-8 mb-12">
       {t.introduction.about}
-    </p>
+    </h2>
 
-    <div class="flex gap-4 items-center">
+    <div class="flex gap-4 items-center justify-center">
       <a
-        href="#contact"
-        class="py-4 px-6 font-semibold hover:bg-primary-600 rounded-md bg-primary-500 text-white"
+        href="/#contact"
+        class="py-4 px-6 font-semibold hover:bg-primary-600 hover:border-primary-600
+        rounded-md bg-primary-500 text-white border-2 border-primary-500"
       >
         {t.introduction.action.contact}
       </a>
-      <span>{t.introduction.action.or}</span>
-      <Link href="#our-work">{t.introduction.action.seeWork}</Link>
+      <a 
+        class="py-4 px-6 font-semibold rounded-md 
+        border-2 text-primary-500 border-primary-500" 
+        href="/#our-work"
+      >
+        {t.introduction.action.seeWork}
+      </a>
     </div>
   </section>
 
   <!-- Work section -->
-  <section class="py-20 bg-secondary-100" id="our-work">
-    <div class="m-auto px-6 max-w-screen-xl">
-      <h2 class="text-5xl font-bold mb-4 text-center">{t.work.header}</h2>
-      <h3 class="text-2xl text-center">{t.work.subheader}</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-12 mt-12">
-        {t.work.projects.map((project) => <Project {...project} />)}
-      </div>
+  <section class="py-36" id="our-work">
+    <p>Portfolio</p>  
+    
+    <h3 class="text-5xl font-serif mb-6 mt-4">{t.work.header}</h3>
+    <p>{t.work.subheader}</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-12 mt-12">
+      {t.work.projects.map((project) => <Project {...project} />)}
     </div>
   </section>
 
   <!-- Contact section -->
-  <section id="contact" class="py-20 m-auto px-6 max-w-screen-lg">
-    <h2 class="text-5xl font-bold mb-4 text-center">{t.contact.header}</h2>
-    <p class="text-2xl mb-12 text-center">{t.contact.subheader}</p>
-    <ContactForm t={t.contact.form} client:visible />
+  <section id="contact" class="py-36">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+
+      <div 
+        class="bg-primary-500 grid place-content-center md:order-2
+        aspect-video md:aspect-auto rounded"
+      >
+        <Logo className='w-32 md:w-40 h-auto'/>
+      </div>
+
+      <div>
+        <p>Get Started</p>
+        
+        <h3 class="text-5xl font-serif mt-4 mb-6">{t.contact.header}</h3>
+        <p class="mb-10">{t.contact.subheader}</p>
+
+        <ContactForm t={t.contact.form} client:visible />
+      </div>
+
+    </div>
   </section>
 
   <!-- Team section -->
-  <section id="team" class="py-20 bg-secondary-100">
-    <div class="m-auto px-6 max-w-screen-xl">
-      <h2 class="text-5xl font-bold mb-8">{t.team.header}</h2>
+  <section id="team" class="py-36">
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-        {
-          t.team.members.map((member) => (
-            <Member name={member.name} img={member.img} role={member.role} />
-          ))
-        }
-      </div>
+    <h3 class="text-5xl font-serif mb-12">{t.team.header}</h3>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+      {
+        t.team.members.map((member) => (
+          <Member name={member.name} img={member.img} role={member.role} />
+        ))
+      }
     </div>
+  </section>
+
+  <section class="py-36 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <h3 class="text-5xl font-serif place-self-center">
+      Transform Your Online Presence Today
+    </h3>
+
+    <div>
+      <p class="mb-6">
+        At Flurium, we specialize in creating stunning websites that captivate your audience and drive results. Let us bring your vision to life.
+      </p>
+      <a href="/#contact" class="px-6 py-3 bg-primary-500 inline-block text-white rounded">
+        Contact
+      
+      </a>
+    </div>
+
   </section>
 </Layout>
