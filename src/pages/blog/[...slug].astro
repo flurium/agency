@@ -2,8 +2,10 @@
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import type { CollectionEntry } from "astro:content"
-import type { Language } from "../../translations"
+import  type { Language } from "../../translations"
+import  { getLang } from "../../translations"
 import Md from "../../components/Md.astro"
+
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog")
@@ -32,9 +34,7 @@ const { Content } = await post.render()
   title={post.data.title}
   description={`${post.data.description} by ${post.data.author}`}
 >
-  <section class="bg-secondary-50">
-    <Md className="max-w-4xl m-auto px-6 py-12">
-      <Content />
-    </Md>
-  </section>
+  <Md className="max-w-4xl m-auto px-6 py-12">
+    <Content />
+  </Md>
 </Layout>

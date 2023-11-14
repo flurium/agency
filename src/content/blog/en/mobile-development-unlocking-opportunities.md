@@ -2,6 +2,7 @@
 title: "Mobile Development: Unlocking Opportunities in the Digital Era."
 description: "Discover the boundless potential of mobile development in the digital era, where innovation meets global marketplaces, rich hardware capabilities, and agile deployment. Shape the future of technology today!"
 author: "Mariia Shcherbak"
+category: "Mobile development"
 ---
 
 # Mobile Development: Unlocking Opportunities in the Digital Era

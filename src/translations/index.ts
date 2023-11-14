@@ -57,48 +57,7 @@ export type MemberType = {
   name: string
 }
 
-type StaticIndex = {
-  meta: {
-    title: string
-    description: string
-  }
-  introduction: {
-    header: {
-      start: string
-      bold: string
-      end: string
-    }
-    about: string
-    action: {
-      contact: string
-      or: string
-      seeWork: string
-    }
-  }
-  work: {
-    header: string
-    subheader: string
-    projects: {
-      name: string
-      status: string
-      banner: string
-      github: string
-      website: string
-      description: string
-    }[]
-  }
-  contact: {
-    header: string
-    subheader: string
-    form: ContactFormTranslation
-  }
-  team: {
-    header: string
-    members: MemberType[]
-  }
-}
-
-export const staticIndex: Transaltion<StaticIndex> = {
+export const staticIndex = {
   uk: {
     meta: {
       title: "Flurium - команда веб-розробки",
@@ -240,6 +199,12 @@ export const staticIndex: Transaltion<StaticIndex> = {
           name: "Флюд Дмитро",
         },
       ],
+    },
+    cta: {
+      header: "Трансформуйте свою онлайн-присутність сьогодні",
+      content:
+        "У компанії Flurium ми спеціалізуємося на створенні захоплюючих веб-сайтів, які привертають увагу вашої аудиторії та призводять до результатів. Дозвольте нам втілити вашу візію в життя.",
+      button: "Зв'язатися",
     },
   },
   en: {
@@ -384,5 +349,11 @@ export const staticIndex: Transaltion<StaticIndex> = {
         },
       ],
     },
+    cta: {
+      header: "Transform Your Online Presence Today",
+      content:
+        "At Flurium, we specialize in creating stunning websites that captivate your audience and drive results. Let us bring your vision to life. ",
+      button: "Contact",
+    },
   },
-}
+} as const

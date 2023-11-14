@@ -1,0 +1,71 @@
+---
+import { getCollection } from "astro:content"
+import { getStaticPaths, getLang } from "../../../translations"
+import Layout from "../../../layouts/Layout.astro"
+import { blogTranslation } from '../../../translations/blog'
+import Logo from '../../../components/Logo.astro'
+
+export { getStaticPaths }
+const lang = getLang(Astro.params)
+const t = blogTranslation[lang]
+
+const blogPosts = await getCollection("blog", ({ slug }) => slug.startsWith(lang))
+---
+
+<Layout lang={lang} title={t.header} description={t.subheader}>
+  <div class="text-center max-w-3xl m-auto">
+    <p class="mt-20 md:mt-28 font-semibold">{t.category}</p>
+    <h1 class="text-5xl sm:text-7xl font-bold mt-4">{t.header}</h1>
+    <h2 class="mt-6">{t.subheader}</h2>
+  </div>
+
+  <section class="py-20 md:py-28 grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-20">
+    {
+      blogPosts.map((post) => {
+        return (
+          <a href={`/blog/${post.slug}`}>
+            <div class="flex justify-between items-center">
+              <p class="py-1 px-3 text-sm bg-secondary-100 rounded">{post.data.category}</p>
+              <p class="text-secondary-700">{post.data.author}</p>
+            </div>
+            <h3 class="font-semibold text-2xl mt-4 mb-2">{post.data.title}</h3>
+            <p class="mt-2 my-4">{post.data.description}</p>
+          </a>
+        )
+      })
+    }
+  </section>
+
+  <div class="border-b border-secondary-300"/>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 py-20 md:py-28 gap-12 lg:gap-20">
+    <div 
+      class="bg-primary-500 grid place-content-center md:order-2
+      aspect-video md:aspect-auto rounded-xl"
+    >
+      <Logo className='w-32 md:w-40 h-auto'/>
+    </div>
+    <div class="py-14">
+      <h3 class="text-5xl font-bold">{t.cta.header}</h3>
+      <p class="mt-6 mb-10">{t.cta.subheader}</p>
+      
+      <div class="flex flex-wrap gap-4">
+        <a
+          href={`/${lang}/#contact`}
+          class="py-3 px-6 font-semibold hover:bg-primary-600 
+          inline-block hover:border-primary-600
+          rounded-md bg-primary-500 text-white border-2 border-primary-500"
+        >
+          {t.cta.contact}
+        </a>
+          <a 
+          class="py-3 px-6 font-semibold rounded-md inline-block 
+          border-2 text-primary-500 border-primary-500" 
+          href={`/${lang}/#our-work`}
+        >
+          {t.cta.portfolio}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
