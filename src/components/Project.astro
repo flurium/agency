@@ -2,10 +2,17 @@
 import Link from "./nav/Link.svelte"
 import { Image } from "astro:assets"
 
+import bidme from "../assets/bidme.png"
+import roadtovostok from "../assets/roadtovostok.png"
+import spentoday from "../assets/spentoday.png"
+import thing from "../assets/thing.png"
+
+const banners = { bidme, roadtovostok, spentoday, thing } as const
+
 type Props = {
   status: string
   name: string
-  banner: string
+  banner: keyof typeof banners
   github: string
   website: string
   description: string
@@ -19,7 +26,7 @@ const { name, banner, status, github, website, description } = Astro.props
 <Image
   width={800}
   height={450}
-  src={banner}
+  src={banners[banner]}
   alt={`${name} banner`}
 />
 

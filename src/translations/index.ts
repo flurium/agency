@@ -1,14 +1,3 @@
-/*
-
-Language translation:
-- uk = urkainian
-- en = english
-
-If translation is inside of interactive component
-It must be separate chunk
-
-*/
-
 export * from "./helpers"
 export * from "./nav"
 
@@ -87,7 +76,7 @@ export const staticIndex = {
         {
           name: "Spentoday",
           status: "В розробці",
-          banner: "/projects/spentoday/banner.png",
+          banner: "spentoday",
           github: "https://github.com/flurium/spentoday",
           website: "https://spentoday.com",
           description: `
@@ -99,7 +88,7 @@ export const staticIndex = {
         {
           name: "Road to Vostok Remake",
           status: "Закінчено",
-          banner: "/projects/roadtovostok/banner.png",
+          banner: "roadtovostok",
           github: "https://github.com/roman-koshchei/roadtovostok",
           website: "https://roadtovostok.flurium.com",
           description: `
@@ -111,7 +100,7 @@ export const staticIndex = {
         {
           name: "BidMe",
           status: "Закінчено",
-          banner: "/projects/bidme/banner.png",
+          banner: "bidme",
           github: "https://github.com/flurium/bidme",
           website: "https://bidme.flurium.com",
           description: `
@@ -124,7 +113,7 @@ export const staticIndex = {
         {
           name: "Thing",
           status: "Закінчено",
-          banner: "/projects/thing/banner.png",
+          banner: "thing",
           github: "https://github.com/flurium/thing",
           website: "https://thing.flurium.com",
           description: `
@@ -236,7 +225,7 @@ export const staticIndex = {
         {
           name: "Spentoday",
           status: "In development",
-          banner: "/projects/spentoday/banner.png",
+          banner: "spentoday",
           github: "https://github.com/flurium/spentoday",
           website: "https://spentoday.com",
           description: `
@@ -248,7 +237,7 @@ export const staticIndex = {
         {
           name: "Road to Vostok Remake",
           status: "Finished",
-          banner: "/projects/roadtovostok/banner.png",
+          banner: "roadtovostok",
           github: "https://github.com/roman-koshchei/roadtovostok",
           website: "https://roadtovostok.flurium.com",
           description: `
@@ -261,7 +250,7 @@ export const staticIndex = {
         {
           name: "BidMe",
           status: "Finished",
-          banner: "/projects/bidme/banner.png",
+          banner: "bidme",
           github: "https://github.com/flurium/bidme",
           website: "https://bidme.onrender.com",
           description: `
@@ -274,7 +263,7 @@ export const staticIndex = {
         {
           name: "Thing",
           status: "Finished",
-          banner: "/projects/thing/banner.png",
+          banner: "thing",
           github: "https://github.com/flurium/thing",
           website: "https://thing-wtcg.onrender.com",
           description: `
