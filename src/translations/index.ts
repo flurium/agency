@@ -168,22 +168,22 @@ export const staticIndex = {
       header: "Команда",
       members: [
         {
-          img: "/members/roman.png",
+          img: "roman",
           role: "Засновник & керівник команди",
           name: "Кощей Роман",
         },
         {
-          img: "/members/vitalii.png",
+          img: "vitalii",
           role: "Основний full stack розробник",
           name: "Литвиненко Віталій",
         },
         {
-          img: "/members/mariia.png",
+          img: "mariia",
           role: "Full stack розробник",
           name: "Щербак Марія",
         },
         {
-          img: "/members/dmytro.png",
+          img: "dmytro",
           role: "Кодер",
           name: "Флюд Дмитро",
         },
@@ -317,22 +317,22 @@ export const staticIndex = {
       header: "Meet Our Team",
       members: [
         {
-          img: "/members/roman.png",
+          img: "roman",
           role: "Founder & Team Lead",
           name: "Roman Koshchei",
         },
         {
-          img: "/members/vitalii.png",
+          img: "vitalii",
           role: "Core full stack developer",
           name: "Vitalii Lytvynenko",
         },
         {
-          img: "/members/mariia.png",
+          img: "mariia",
           role: "Full stack developer",
           name: "Mariia Shcherbak",
         },
         {
-          img: "/members/dmytro.png",
+          img: "dmytro",
           role: "Coder",
           name: "Dmytro Fliud",
         },

@@ -1,8 +1,15 @@
 ---
 import { Image } from "astro:assets"
 
+import dmytro from "../assets/dmytro.png"
+import mariia from "../assets/mariia.png"
+import roman from "../assets/roman.png"
+import vitalii from "../assets/vitalii.png"
+
+const members = { dmytro, mariia, roman, vitalii }
+
 export type Props = {
-  img: string
+  img: keyof typeof members
   role: string
   name: string
 }
@@ -14,7 +21,7 @@ const { img, role, name } = Astro.props
   <Image
     width={256}
     height={256}
-    src={img}
+    src={members[img]}
     alt={`${name}'s photo`}
     class="w-full rounded-md"
     quality={100}
