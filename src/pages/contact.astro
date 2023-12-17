@@ -1,0 +1,42 @@
+---
+import ContactSection from "../components/ContactSection.astro"
+import Layout from "../layouts/Layout.astro"
+import {
+  validateContactFormData,
+  sendMessage,
+  type ContactFormData
+} from "../features/contact"
+
+export const prerender = false
+
+let data: ContactFormData | undefined = undefined
+
+if (Astro.request.method === "POST") {
+  const form = await Astro.request.formData()
+  data = validateContactFormData(form)
+
+  if (data.name.value != null && data.email.value != null) {
+    const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nCommunication: ${data.communication}\nContext: ${data.context}`
+    const sent = await sendMessage(text)
+    if (sent) return Astro.redirect("/")
+  }
+}
+---
+
+<Layout
+  title="Contact | Flurium"
+  description="Contact Flurium team to implement your ideas fast and excellent"
+>
+  {
+    data != null && data.name.value != null && data.email.value != null ? (
+      <div class=" rounded-xl mt-10 p-10 bg-indigo-100">
+        We can't send your message right now. Send an email to{" "}
+        <a href="mailto:roman@flurium.com">roman@flurium.com</a> instead. Thanks!
+      </div>
+    ) : (
+      <></>
+    )
+  }
+
+  <ContactSection {data} />
+</Layout>

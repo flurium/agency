@@ -1,11 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro"
 import { Image } from "astro:assets"
+
+import Layout from "../layouts/Layout.astro"
+import RightArrow from "../components/icons/RightArrow.astro"
+import ContactSection from "../components/ContactSection.astro"
 
 import heroImg from "../assets/hero.png"
 import spentodayImg from "../assets/spentoday.png"
 import bidmeImg from "../assets/bidme.png"
-import contactImg from "../assets/contact.png"
 import ctaImg from "../assets/cta.png"
 
 import maria from "../assets/team/maria.png"
@@ -72,6 +74,45 @@ const techStack = [
     items: ["Relume", "Fooocus"]
   }
 ]
+
+const solutions = [
+  {
+    name: "Content websites",
+    description:
+      "Escape the chaos of website builders. Our content websites promise a clutter-free, lightning-fast experience to enhance your online presence."
+  },
+  {
+    name: "Web Apps",
+    description:
+      "It's not just about functionality; it's about an unforgettable user journey. Let us transform your ideas into dynamic, user-friendly web applications that set you apart."
+  },
+  {
+    name: "API",
+    description:
+      "Avoid system disarray with our robust API solutions. We specialize in creating connections that make your digital infrastructure cohesive and efficient."
+  },
+  {
+    name: "SEO",
+    description:
+      "Move beyond keywords. Our SEO services employ a nuanced strategy, optimizing technically and strategically to boost your brand's visibility and drive organic traffic."
+  }
+]
+
+const projects = [
+  {
+    img: spentodayImg,
+    name: "Spentoday",
+    description:
+      "Ukrainian e-commerce platform. Create an online shop fast and simple. No complexity, no hiring designers, no ton of services.",
+    slug: "spentoday"
+  },
+  {
+    img: bidmeImg,
+    name: "BidMe",
+    description: "Auction platform made with MVC in 2 weeks.",
+    slug: "bidme"
+  }
+]
 ---
 
 <Layout title="Flurium" description="Web development team">
@@ -101,55 +142,39 @@ const techStack = [
 
   <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
     <div>
-      <p>Solutions</p>
       <h3 class="text-5xl font-bold mt-4 mb-12 leading-tight">
         What we build for you. Always performant. Always better than your competitors.
       </h3>
       <div class="flex gap-4">
         <a href="/#contact" class="py-3 px-6 border-black border rounded">GET A WEBSITE</a
         >
-        <a href="/portfolio" class="py-3 px-6">SEE WORK {">"}</a>
+        <a href="/portfolio" class="py-3 px-6 flex gap-2 items-center">
+          SEE WORK
+          <RightArrow />
+        </a>
       </div>
     </div>
     <ul class="flex flex-col gap-4">
-      <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
-        <div class="rounded-full h-10 w-10 bg-indigo-500"></div>
-        <h4 class="font-semibold text-xl self-center">Content websites</h4>
-        <div class="w-[2px] h-full bg-gray-200 place-self-center"></div>
-        <p class="pb-14">
-          Escape the chaos of website builders. Our content websites promise a
-          clutter-free, lightning-fast experience to enhance your online presence.
-        </p>
-      </li>
-      <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
-        <div class="rounded-full h-10 w-10 bg-indigo-500"></div>
-        <h4 class="font-semibold text-xl self-center">Web Apps</h4>
-        <div class="w-[2px] h-full bg-gray-200 place-self-center"></div>
-        <p class="pb-14">
-          It's not just about functionality; it's about an unforgettable user journey. Let
-          us transform your ideas into dynamic, user-friendly web applications that set
-          you apart.
-        </p>
-      </li>
-      <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
-        <div class="rounded-full h-10 w-10 bg-indigo-500"></div>
-        <h4 class="font-semibold text-xl self-center">API</h4>
-        <div class="w-[2px] h-full bg-gray-200 place-self-center"></div>
-        <p class="pb-14">
-          Avoid system disarray with our robust API solutions. We specialize in creating
-          connections that make your digital infrastructure cohesive and efficient.
-        </p>
-      </li>
-      <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
-        <div class="rounded-full h-10 w-10 bg-indigo-500"></div>
-        <h4 class="font-semibold text-xl self-center">SEO</h4>
-        <div></div>
-        <p>
-          Move beyond keywords. Our SEO services employ a nuanced strategy, optimizing
-          technically and strategically to boost your brand's visibility and drive organic
-          traffic.
-        </p>
-      </li>
+      {
+        solutions.map((x, i) => (
+          <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
+            <div class="rounded-full h-10 w-10 bg-indigo-500" />
+            <h4 class="font-semibold text-xl self-center">{x.name}</h4>
+
+            {i == solutions.length - 1 ? (
+              <>
+                <div />
+                <p>{x.description}</p>
+              </>
+            ) : (
+              <>
+                <div class="w-[2px] h-full bg-gray-200 place-self-center" />
+                <p class="pb-14">{x.description}</p>
+              </>
+            )}
+          </li>
+        ))
+      }
     </ul>
   </section>
 
@@ -163,90 +188,25 @@ const techStack = [
       </p>
     </div>
 
-    <div class="mt-20">
-      <Image src={spentodayImg} alt="Spentoday" class="rounded-xl col-span-2" />
+    {
+      projects.map((x) => (
+        <div class="mt-20">
+          <Image src={x.img} alt={x.name} class="rounded-xl col-span-2" />
 
-      <div class="flex justify-between items-baseline mt-6">
-        <h4 class="text-2xl font-bold">Spentoday</h4>
-        <a href="/portfolio/spentoday">VIEW PROJECT</a>
-      </div>
-
-      <p class="mt-2">
-        Ukrainian e-commerce platform. Create an online shop fast and simple. No
-        complexity, no hiring designers, no ton of services.
-      </p>
-    </div>
-
-    <div class="mt-20 grid grid-cols-[1fr_auto] gap-x-20 gap-y-6">
-      <Image src={bidmeImg} alt="BidMe" class="rounded-xl col-span-2" quality={100} />
-
-      <div>
-        <h4 class="text-2xl font-bold">BidMe</h4>
-        <p class="mt-2">Auction platform made with MVC in 2 weeks.</p>
-      </div>
-
-      <a href="/portfolio/bidme">VIEW PROJECT</a>
-    </div>
-
-    <div class="text-center mt-16">
-      <a class="py-3 px-6 border border-black rounded inline-block" href="/portfolio">
-        VIEW ALL
-      </a>
-    </div>
+          <div class="flex justify-between items-baseline mt-6">
+            <h4 class="text-2xl font-bold">{x.name}</h4>
+            <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
+              VIEW PROJECT
+              <RightArrow />
+            </a>
+          </div>
+          <p class="mt-2">{x.description}</p>
+        </div>
+      ))
+    }
   </section>
 
-  <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
-    <Image
-      src={contactImg}
-      alt={"Road to top of mountain showing success"}
-      class="rounded-xl w-full h-full aspect-square md:aspect-auto object-cover"
-      quality={100}
-    />
-
-    <form>
-      <h3 class="font-bold text-6xl">Contact us</h3>
-      <p class="mt-6 mb-8">Ready to discuss your project and get a website? Go</p>
-
-      <label for="name">Your name</label>
-      <input
-        type="text"
-        id="name"
-        required
-        class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
-      />
-
-      <label for="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
-      />
-
-      <label for="communication">Communication preferences</label>
-      <input
-        type="text"
-        placeholder="Telegram @yournickname, phone +..."
-        id="communication"
-        class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
-      />
-
-      <label for="context">Context</label>
-      <textarea
-        id="context"
-        placeholder="Tell us about your case..."
-        class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
-        rows="7"></textarea>
-
-      <a
-        href="/#contact"
-        class="py-3 px-6 border border-black bg-black text-white rounded inline-block"
-      >
-        SEND
-      </a>
-    </form>
-  </section>
+  <ContactSection />
 
   <section class="py-20 md:py-28">
     <h3 class="font-bold text-5xl">Our Team</h3>
@@ -288,7 +248,7 @@ const techStack = [
         techStack.map((x) => (
           <tr class="border-y border-gray-200">
             <td class="p-7 font-semibold">{x.group}</td>
-            <td class="p-7 flex flex-wrap gap-8">
+            <td class="p-7 flex flex-col md:flex-row gap-8">
               {x.items.map((item) => (
                 <span>{item}</span>
               ))}
