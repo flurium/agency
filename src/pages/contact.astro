@@ -40,9 +40,15 @@ if (Astro.request.method === "POST") {
         for you and your clients.
       </h2>
 
-      <a class="inline-block py-3 px-6 rounded bg-black text-white" href="/team">
-        SEE TEAM
-      </a>
+      <div>
+        <a
+          class="inline-block py-3 px-6 rounded border border-black bg-black text-white"
+          href="/team"
+        >
+          SEE TEAM
+        </a>
+        <a class="inline-block py-3 px-6 rounded border border-black" href="/"> HOME</a>
+      </div>
       <Image src={teamImg} alt="Team" class="w-full rounded-xl mt-10" quality={100} />
     </section>
 
