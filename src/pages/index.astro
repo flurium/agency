@@ -75,16 +75,10 @@ const techStack = [
 ---
 
 <Layout title="Flurium" description="Web development team">
-  <section class="py-20 md:py-28 grid grid-cols-2 gap-20">
-    <Image
-      src={heroImg}
-      alt={"Sun shining on top of mountain showing success"}
-      class="rounded-xl w-full"
-    />
-
+  <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
     <div class="place-self-center">
       <h1 class="font-bold text-6xl">Ideas into Digital Solutions</h1>
-      <h2 class="mt-6 mb-10">
+      <h2 class="mt-6 mb-10 text-gray-800">
         Flurium is a web development agency dedicated to creating exceptional user
         experiences through the use of modern technologies. Our team of experts combines
         creativity and technical expertise to deliver high-performing websites, web apps,
@@ -97,6 +91,12 @@ const techStack = [
         </a>
       </div>
     </div>
+    <Image
+      src={heroImg}
+      alt={"Sun shining on top of mountain showing success"}
+      class="rounded-xl w-full md:order-1"
+      quality={100}
+    />
   </section>
 
   <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -163,22 +163,22 @@ const techStack = [
       </p>
     </div>
 
-    <div class="mt-20 grid grid-cols-[1fr_auto] gap-x-20 gap-y-6">
+    <div class="mt-20">
       <Image src={spentodayImg} alt="Spentoday" class="rounded-xl col-span-2" />
 
-      <div>
+      <div class="flex justify-between items-baseline mt-6">
         <h4 class="text-2xl font-bold">Spentoday</h4>
-        <p class="mt-2">
-          Ukrainian e-commerce platform. Create an online shop fast and simple. No
-          complexity, no hiring designers, no ton of services.
-        </p>
+        <a href="/portfolio/spentoday">VIEW PROJECT</a>
       </div>
 
-      <a href="/portfolio/spentoday">VIEW PROJECT</a>
+      <p class="mt-2">
+        Ukrainian e-commerce platform. Create an online shop fast and simple. No
+        complexity, no hiring designers, no ton of services.
+      </p>
     </div>
 
     <div class="mt-20 grid grid-cols-[1fr_auto] gap-x-20 gap-y-6">
-      <Image src={bidmeImg} alt="BidMe" class="rounded-xl col-span-2" />
+      <Image src={bidmeImg} alt="BidMe" class="rounded-xl col-span-2" quality={100} />
 
       <div>
         <h4 class="text-2xl font-bold">BidMe</h4>
@@ -200,6 +200,7 @@ const techStack = [
       src={contactImg}
       alt={"Road to top of mountain showing success"}
       class="rounded-xl w-full h-full aspect-square md:aspect-auto object-cover"
+      quality={100}
     />
 
     <form>
@@ -263,6 +264,7 @@ const techStack = [
               height={80}
               alt={x.name}
               class="rounded-full h-20 w-20"
+              quality={100}
             />
             <p class="font-semibold text-xl mt-6">{x.name}</p>
             <p class="text-lg mt-1">{x.position}</p>
@@ -286,7 +288,7 @@ const techStack = [
         techStack.map((x) => (
           <tr class="border-y border-gray-200">
             <td class="p-7 font-semibold">{x.group}</td>
-            <td class="p-7 flex gap-8">
+            <td class="p-7 flex flex-wrap gap-8">
               {x.items.map((item) => (
                 <span>{item}</span>
               ))}
@@ -306,6 +308,6 @@ const techStack = [
       </p>
       <a href="/#contact" class="py-3 px-6 bg-black text-white rounded">HIRE</a>
     </div>
-    <Image src={ctaImg} alt="Path to the top" class="rounded-xl w-full" />
+    <Image src={ctaImg} alt="Path to the top" class="rounded-xl w-full" quality={100} />
   </section>
 </Layout>

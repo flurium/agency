@@ -1,22 +1,51 @@
----
-type Props = {
-
-}
-
----
-
-<header class="flex justify-between py-5 items-center">
+<!-- 
+  TODO: Make a drowdown without JS. It's challenge! 
+-->
+<header class="grid grid-cols-[auto_1fr] py-5">
   <a href="/" class="flex items-center gap-4 font-semibold">
-    <div class="rounded-full h-12 w-12 bg-indigo-500" />
-    FLURIUM
+    <div class="rounded-full h-10 w-10 md:h-12 md:w-12 bg-indigo-500"></div>
+     FLURIUM
   </a>
 
-  <nav class="flex gap-8 items-center">
-    <a href="/portfolio">PORTFOLIO</a>
-    <a href="/team">TEAM</a>
-    <a href="/solutions">SOLUTIONS</a>
-    <a class="py-3 px-6 rounded bg-black text-white font-semibold" href="/#contact">
+  <label
+    for="show-navbar"
+    class="block md:hidden justify-self-end self-center py-1 cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-8 h-8"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+    </svg>
+  </label>
+
+  <input type="checkbox" id="show-navbar" class="hidden" />
+
+  <nav
+    id="navbar-links"
+    class="hidden col-span-2 py-10 w-full md:w-fit md:py-0 md:col-span-1 md:flex flex-col md:flex-row md:gap-8 md:items-center justify-self-end"
+  >
+    <a href="/portfolio" class="py-3">PORTFOLIO</a>
+    <a href="/team" class="py-3">TEAM</a>
+    <a href="/solutions" class="py-3">SOLUTIONS</a>
+    <a
+      class="py-3 px-6 w-full md:w-fit mt-4 md:mt-0 text-center rounded bg-black text-white font-semibold"
+      href="/#contact"
+    >
       HIRE US
     </a>
   </nav>
 </header>
+
+<style>
+  #show-navbar:checked ~ #navbar-links {
+    display: flex;
+  }
+</style>
