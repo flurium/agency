@@ -50,16 +50,16 @@ if (Astro.request.method === "POST") {
       </div>
       <Image src={teamImg} alt="Team" class="w-full rounded-xl mt-10" quality={100} />
     </section>
+  </If>
 
-    <Fragment slot="else">
-      <If condition={data != null && data.name.value != null && data.email.value != null}>
-        <div class="rounded-xl mt-10 p-10 bg-indigo-100">
-          We can't send your message right now. Send an email to{" "}
-          <a href="mailto:roman@flurium.com">roman@flurium.com</a> instead. Thanks!
-        </div>
-      </If>
+  <If condition={!sent}>
+    <If condition={data != null && data.name.value != null && data.email.value != null}>
+      <div class="rounded-xl mt-10 p-10 bg-indigo-100">
+        We can't send your message right now. Send an email to{" "}
+        <a href="mailto:roman@flurium.com">roman@flurium.com</a> instead. Thanks!
+      </div>
+    </If>
 
-      <ContactSection {data} />
-    </Fragment>
+    <ContactSection {data} />
   </If>
 </Layout>
