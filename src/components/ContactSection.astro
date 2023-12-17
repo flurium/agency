@@ -10,7 +10,7 @@ type Props = {
 const { data } = Astro.props
 ---
 
-<section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
+<section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20" id="contact">
   <form action="/contact" method="post">
     <h3 class="font-bold text-6xl">Contact us</h3>
     <p class="mt-6 mb-8">Ready to discuss your project and get a website? Go</p>
@@ -28,7 +28,7 @@ const { data } = Astro.props
 
     <label for="email">Email</label>
     <input
-      value={data?.email.error}
+      value={data?.email.value}
       type="email"
       id="email"
       name="email"

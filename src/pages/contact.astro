@@ -1,15 +1,21 @@
 ---
 import ContactSection from "../components/ContactSection.astro"
 import Layout from "../layouts/Layout.astro"
+import If from "../components/If.astro"
 import {
   validateContactFormData,
   sendMessage,
   type ContactFormData
 } from "../features/contact"
+import Else from "../components/Else.astro"
+import { Image } from "astro:assets"
+
+import teamImg from "../assets/team.png"
 
 export const prerender = false
 
 let data: ContactFormData | undefined = undefined
+let sent: boolean = false
 
 if (Astro.request.method === "POST") {
   const form = await Astro.request.formData()
@@ -17,8 +23,7 @@ if (Astro.request.method === "POST") {
 
   if (data.name.value != null && data.email.value != null) {
     const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nCommunication: ${data.communication}\nContext: ${data.context}`
-    const sent = await sendMessage(text)
-    if (sent) return Astro.redirect("/")
+    sent = await sendMessage(text)
   }
 }
 ---
@@ -27,16 +32,29 @@ if (Astro.request.method === "POST") {
   title="Contact | Flurium"
   description="Contact Flurium team to implement your ideas fast and excellent"
 >
-  {
-    data != null && data.name.value != null && data.email.value != null ? (
-      <div class=" rounded-xl mt-10 p-10 bg-indigo-100">
-        We can't send your message right now. Send an email to{" "}
-        <a href="mailto:roman@flurium.com">roman@flurium.com</a> instead. Thanks!
-      </div>
-    ) : (
-      <></>
-    )
-  }
+  <If condition={sent}>
+    <section class="py-20 md:py-28 text-center">
+      <h1 class="text-6xl font-bold">Thanks for trusting us!</h1>
+      <h2 class="mt-6 mb-10">
+        We will respond to you as soon as possible. Waiting to provide great experience
+        for you and your clients.
+      </h2>
 
-  <ContactSection {data} />
+      <a class="inline-block py-3 px-6 rounded bg-black text-white" href="/team">
+        SEE TEAM
+      </a>
+      <Image src={teamImg} alt="Team" class="w-full rounded-xl mt-10" quality={100} />
+    </section>
+
+    <Fragment slot="else">
+      <If condition={data != null && data.name.value != null && data.email.value != null}>
+        <div class="rounded-xl mt-10 p-10 bg-indigo-100">
+          We can't send your message right now. Send an email to{" "}
+          <a href="mailto:roman@flurium.com">roman@flurium.com</a> instead. Thanks!
+        </div>
+      </If>
+
+      <ContactSection {data} />
+    </Fragment>
+  </If>
 </Layout>
