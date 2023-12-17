@@ -1,24 +1,9 @@
-# Flurium agency website
+# Agency
 
-To start:
+Framework: `Astro`
 
-```bash
-git clone https://github.com/flurium/agency.git
-```
+Integrations:
 
-Iside of folder:
-
-```bash
-npm i
-```
-
-Start:
-
-```bash
-npm run dev
-```
-
-Stack:
-
-- Astro js
-- Svelte js
+- [x] sitemap
+- [x] tailwind
+- [ ] partytown

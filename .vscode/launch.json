@@ -8,4 +8,11 @@
       "type": "node-terminal"
     }
   ]
+  // "emeraldwalk.runonsave": {
+  //   "commands": [
+  //     {
+  //       "cmd": "npm run format"
+  //     }
+  //   ]
+  // }
 }

@@ -1,10 +1,311 @@
 ---
-export const prerender = false
+import Layout from "../layouts/Layout.astro"
+import { Image } from "astro:assets"
 
-const acceptLanguage = Astro.request.headers.get("accept-language") ?? ""
+import heroImg from "../assets/hero.png"
+import spentodayImg from "../assets/spentoday.png"
+import bidmeImg from "../assets/bidme.png"
+import contactImg from "../assets/contact.png"
+import ctaImg from "../assets/cta.png"
 
-// supper simple no need for more at the current moment
-const lang = acceptLanguage.includes("uk") ? "uk" : "en"
+import maria from "../assets/team/maria.png"
+import roman from "../assets/team/roman.png"
+import vitalii from "../assets/team/vitalii.png"
+import dima from "../assets/team/dima.png"
 
-return Astro.redirect(lang)
+const team = [
+  {
+    slug: "koshchei",
+    img: roman,
+    name: "Roman Koshchei",
+    position: "Founder - Team Lead",
+    about:
+      "Make important decisions, manage team. Speak with clients to deliver best results."
+  },
+  {
+    slug: "lytvynenko",
+    img: vitalii,
+    name: "Vitalii Lytvynenko",
+    position: "Core full stack developer",
+    about: "Implements client-server interaction and performs bug inspections."
+  },
+  {
+    slug: "shcherbak",
+    img: maria,
+    name: "Mariia Shcherbak",
+    position: "Full stack developer",
+    about: "Focusing on frontend interactions, animations and responsive layouts."
+  },
+  {
+    slug: "fluid",
+    img: dima,
+    name: "Dmytro Fliud",
+    position: "Coder",
+    about:
+      "Write a lot of boilerplate code. Searching for tasks, need a bit of supervision."
+  }
+]
+
+const techStack = [
+  {
+    group: "Languages",
+    items: ["C#", "TypeScript", "JavaScript"]
+  },
+  {
+    group: "Frontend",
+    items: ["Svelte", "Astro", "Tailwind"]
+  },
+  {
+    group: "Backend",
+    items: ["ASP NET Core"]
+  },
+  {
+    group: "Deployments",
+    items: ["Fly.io", "Vercel", "CockroachDB"]
+  },
+  {
+    group: "Design & Collaboration",
+    items: ["GitHub", "Figma"]
+  },
+  {
+    group: "AI",
+    items: ["Relume", "Fooocus"]
+  }
+]
 ---
+
+<Layout title="Flurium" description="Web development team">
+  <section class="py-20 md:py-28 grid grid-cols-2 gap-20">
+    <Image
+      src={heroImg}
+      alt={"Sun shining on top of mountain showing success"}
+      class="rounded-xl w-full"
+    />
+
+    <div class="place-self-center">
+      <h1 class="font-bold text-6xl">Ideas into Digital Solutions</h1>
+      <h2 class="mt-6 mb-10">
+        Flurium is a web development agency dedicated to creating exceptional user
+        experiences through the use of modern technologies. Our team of experts combines
+        creativity and technical expertise to deliver high-performing websites, web apps,
+        and APIs that drive results.
+      </h2>
+      <div class="flex gap-4">
+        <a href="/#contact" class="py-3 px-6 bg-black text-white rounded">CONTACT</a>
+        <a href="/portfolio" class="py-3 px-6 border-black border rounded">
+          SEE PORTFOLIO
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div>
+      <p>Solutions</p>
+      <h3 class="text-5xl font-bold mt-4 mb-12 leading-tight">
+        What we build for you. Always performant. Always better than your competitors.
+      </h3>
+      <div class="flex gap-4">
+        <a href="/#contact" class="py-3 px-6 border-black border rounded">GET A WEBSITE</a
+        >
+        <a href="/portfolio" class="py-3 px-6">SEE WORK {">"}</a>
+      </div>
+    </div>
+    <ul class="flex flex-col gap-4">
+      <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
+        <div class="rounded-full h-10 w-10 bg-indigo-500"></div>
+        <h4 class="font-semibold text-xl self-center">Content websites</h4>
+        <div class="w-[2px] h-full bg-gray-200 place-self-center"></div>
+        <p class="pb-14">
+          Escape the chaos of website builders. Our content websites promise a
+          clutter-free, lightning-fast experience to enhance your online presence.
+        </p>
+      </li>
+      <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
+        <div class="rounded-full h-10 w-10 bg-indigo-500"></div>
+        <h4 class="font-semibold text-xl self-center">Web Apps</h4>
+        <div class="w-[2px] h-full bg-gray-200 place-self-center"></div>
+        <p class="pb-14">
+          It's not just about functionality; it's about an unforgettable user journey. Let
+          us transform your ideas into dynamic, user-friendly web applications that set
+          you apart.
+        </p>
+      </li>
+      <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
+        <div class="rounded-full h-10 w-10 bg-indigo-500"></div>
+        <h4 class="font-semibold text-xl self-center">API</h4>
+        <div class="w-[2px] h-full bg-gray-200 place-self-center"></div>
+        <p class="pb-14">
+          Avoid system disarray with our robust API solutions. We specialize in creating
+          connections that make your digital infrastructure cohesive and efficient.
+        </p>
+      </li>
+      <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
+        <div class="rounded-full h-10 w-10 bg-indigo-500"></div>
+        <h4 class="font-semibold text-xl self-center">SEO</h4>
+        <div></div>
+        <p>
+          Move beyond keywords. Our SEO services employ a nuanced strategy, optimizing
+          technically and strategically to boost your brand's visibility and drive organic
+          traffic.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="py-20 md:py-28">
+    <div class="text-center">
+      <p>Portfolio</p>
+      <h3 class="text-5xl font-bold mt-4 mb-6">Discover Our Projects</h3>
+      <p>
+        Our portfolio provides clear evidence of our skills and experience in web
+        development.
+      </p>
+    </div>
+
+    <div class="mt-20 grid grid-cols-[1fr_auto] gap-x-20 gap-y-6">
+      <Image src={spentodayImg} alt="Spentoday" class="rounded-xl col-span-2" />
+
+      <div>
+        <h4 class="text-2xl font-bold">Spentoday</h4>
+        <p class="mt-2">
+          Ukrainian e-commerce platform. Create an online shop fast and simple. No
+          complexity, no hiring designers, no ton of services.
+        </p>
+      </div>
+
+      <a href="/portfolio/spentoday">VIEW PROJECT</a>
+    </div>
+
+    <div class="mt-20 grid grid-cols-[1fr_auto] gap-x-20 gap-y-6">
+      <Image src={bidmeImg} alt="BidMe" class="rounded-xl col-span-2" />
+
+      <div>
+        <h4 class="text-2xl font-bold">BidMe</h4>
+        <p class="mt-2">Auction platform made with MVC in 2 weeks.</p>
+      </div>
+
+      <a href="/portfolio/bidme">VIEW PROJECT</a>
+    </div>
+
+    <div class="text-center mt-16">
+      <a class="py-3 px-6 border border-black rounded inline-block" href="/portfolio">
+        VIEW ALL
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
+    <Image
+      src={contactImg}
+      alt={"Road to top of mountain showing success"}
+      class="rounded-xl w-full h-full aspect-square md:aspect-auto object-cover"
+    />
+
+    <form>
+      <h3 class="font-bold text-6xl">Contact us</h3>
+      <p class="mt-6 mb-8">Ready to discuss your project and get a website? Go</p>
+
+      <label for="name">Your name</label>
+      <input
+        type="text"
+        id="name"
+        required
+        class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
+      />
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
+      />
+
+      <label for="communication">Communication preferences</label>
+      <input
+        type="text"
+        placeholder="Telegram @yournickname, phone +..."
+        id="communication"
+        class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
+      />
+
+      <label for="context">Context</label>
+      <textarea
+        id="context"
+        placeholder="Tell us about your case..."
+        class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
+        rows="7"></textarea>
+
+      <a
+        href="/#contact"
+        class="py-3 px-6 border border-black bg-black text-white rounded inline-block"
+      >
+        SEND
+      </a>
+    </form>
+  </section>
+
+  <section class="py-20 md:py-28">
+    <h3 class="font-bold text-5xl">Our Team</h3>
+    <p class="mt-6 mb-20">
+      Work with people, not layers of management. Be in reliable and fast interactions.
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      {
+        team.map((x) => (
+          <div>
+            <Image
+              src={x.img}
+              width={80}
+              height={80}
+              alt={x.name}
+              class="rounded-full h-20 w-20"
+            />
+            <p class="font-semibold text-xl mt-6">{x.name}</p>
+            <p class="text-lg mt-1">{x.position}</p>
+            <p class="mt-4 mb-6">{x.about}</p>
+            <a href={`/team/${x.slug}`}>LEARN MORE {">"}</a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28">
+    <h3 class="text-5xl font-bold">Tech Stack</h3>
+    <p class="mt-4">
+      Primary technologies we use and push in development. Always expanded over time and
+      projects.
+    </p>
+
+    <table class="table-auto w-full border-collapse mt-6 text-left">
+      {
+        techStack.map((x) => (
+          <tr class="border-y border-gray-200">
+            <td class="p-7 font-semibold">{x.group}</td>
+            <td class="p-7 flex gap-8">
+              {x.items.map((item) => (
+                <span>{item}</span>
+              ))}
+            </td>
+          </tr>
+        ))
+      }
+    </table>
+  </section>
+
+  <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
+    <div class="place-self-center">
+      <h3 class="font-bold text-5xl">Transform your Digital Presence Today!</h3>
+      <p class="mt-6 mb-10">
+        Our team of experts can help transform your digital presence and improve your
+        online reach.
+      </p>
+      <a href="/#contact" class="py-3 px-6 bg-black text-white rounded">HIRE</a>
+    </div>
+    <Image src={ctaImg} alt="Path to the top" class="rounded-xl w-full" />
+  </section>
+</Layout>
