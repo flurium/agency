@@ -8,6 +8,9 @@ import vercel from "@astrojs/vercel/serverless"
 export default defineConfig({
   output: "hybrid",
   site: "https://flurium.com",
+  prefetch: {
+    prefetchAll: true
+  },
   integrations: [tailwind(), sitemap()],
   adapter: vercel({})
 })
