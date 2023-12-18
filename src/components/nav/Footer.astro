@@ -1,13 +1,17 @@
----
-import Link from "./Link.svelte"
+<footer class="py-20 flex flex-col md:flex-row gap-8 justify-between items-center">
+  <a href="/" class="flex items-center gap-4 font-semibold">
+    <div class="rounded-full h-12 w-12 bg-indigo-500"></div>
+     FLURIUM
+  </a>
 
-const year = new Date().getFullYear()
----
+  <nav class="flex flex-col md:flex-row gap-4 md:gap-8 text-center">
+    <a href="/portfolio">PORTFOLIO</a>
+    <a href="/team">TEAM</a>
+    <a href="/solutions">SOLUTIONS</a>
+    <a href="/#contact"> CONTACT</a>
+  </nav>
 
-<footer
-  class="py-8 flex justify-between flex-col gap-2 sm:flex-row border-t border-secondary-300"
->
-  <span>© {year} Flurium. All rights reserved.</span>
-  <Link href="/legal/privacy-policy">Privacy Policy</Link>
-  <span>Made with 💛 in Ukraine.</span>
+  <nav>
+    <a href="https://twitter.com/roman_koshchei">X</a>
+  </nav>
 </footer>

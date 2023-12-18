@@ -1,24 +1,30 @@
-# Flurium agency website
+# Agency
 
-To start:
+Website for Flurium agency. Make it fast with clear and responsive design.
 
-```bash
-git clone https://github.com/flurium/agency.git
-```
+Framework: `Astro`
 
-Iside of folder:
+Integrations:
 
-```bash
-npm i
-```
+- [x] Sitemap
+- [x] Tailwind
+- [ ] Partytown
 
-Start:
+## Special Fetures
 
-```bash
-npm run dev
-```
+- [ ] Analytics: [Umami](https://umami.is)
+- [ ] GitHub oriented CMS: [Keystatic](https://docs.astro.build/en/guides/cms/keystatic)
 
-Stack:
+## Pages
 
-- Astro js
-- Svelte js
+- Landing / Marketing / Home
+- Portfolio
+- Each project
+- Each team member personal page
+- Contact
+
+## Rules / Recommendations
+
+- Try HTML first before using JS
+- No text over images
+- Rounded images should be rounded in css not image itself

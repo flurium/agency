@@ -1,0 +1,65 @@
+---
+import ContactSection from "../features/contact/ContactSection.astro"
+import Layout from "../layouts/Layout.astro"
+import If from "../components/If.astro"
+import {
+  validateContactFormData,
+  sendMessage,
+  type ContactFormData
+} from "../features/contact"
+import { Image } from "astro:assets"
+
+import teamImg from "../assets/team.png"
+
+export const prerender = false
+
+let data: ContactFormData | undefined = undefined
+let sent: boolean = false
+
+if (Astro.request.method === "POST") {
+  const form = await Astro.request.formData()
+  data = validateContactFormData(form)
+
+  if (data.name.value != null && data.email.value != null) {
+    const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nCommunication: ${data.communication}\nContext: ${data.context}`
+    sent = await sendMessage(text)
+  }
+}
+---
+
+<Layout
+  title="Contact | Flurium"
+  description="Contact Flurium team to implement your ideas fast and excellent"
+>
+  <If condition={sent}>
+    <section class="py-20 md:py-28 text-center">
+      <h1 class="text-6xl font-bold">Thanks for trusting us!</h1>
+      <h2 class="mt-6 mb-10">
+        We will respond to you as soon as possible. Waiting to provide great experience
+        for you and your clients.
+      </h2>
+
+      <div>
+        <a
+          class="inline-block py-3 px-6 rounded border border-black bg-black text-white"
+          href="/team"
+        >
+          SEE TEAM
+        </a>
+        <a class="inline-block py-3 px-6 rounded border border-black" href="/"> HOME</a>
+      </div>
+      <Image src={teamImg} alt="Team" class="w-full rounded-xl mt-10" quality={100} />
+    </section>
+  </If>
+
+  <If condition={!sent}>
+    <If condition={data != null && data.name.value != null && data.email.value != null}>
+      <div class="rounded-xl mt-10 p-10 bg-indigo-100">
+        We can't send your message right now. Send an email to{" "}
+        <a href="mailto:roman@flurium.com">roman@flurium.com</a> instead. Thanks!
+      </div>
+    </If>
+
+    <ContactSection {data} />
+  </If>
+</Layout>

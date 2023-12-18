@@ -1,64 +1,52 @@
----
-import { navbarTranslation, type Language } from "../../translations"
-import { TwitterIcon, GitHubIcon } from "../icons"
-import LanguageSwitch from "./LanguageSwitch.svelte"
-import ToggleNavbar from "./ToggleNavbar.svelte"
-
-type Props = {
-  lang: Language
-}
-
-const { lang } = Astro.props
-const t = navbarTranslation[lang]
----
-
-<header class="flex justify-between items-center m-auto gap-4">
-  <a class="select-none font-bold text-primary-500 text-3xl" href="/">
-    Flurium
+<!-- 
+  TODO: Make a drowdown without JS. It's challenge! 
+-->
+<header class="grid grid-cols-[auto_1fr] py-5">
+  <a href="/" class="flex items-center gap-4 font-semibold">
+    <div class="rounded-full h-10 w-10 md:h-12 md:w-12 bg-indigo-500"></div>
+     FLURIUM
   </a>
-  <nav class="hidden md:flex gap-5 items-center">
-    <LanguageSwitch lang={lang} client:load />
-    <a
-      class="hover:bg-secondary-100 py-2 px-4 rounded"
-      href={`/${lang}/#our-work`}
-      rel="prefetch"
+
+  <label
+    for="show-navbar"
+    class="block md:hidden justify-self-end self-center py-1 cursor-pointer"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-8 h-8"
     >
-      {t.ourWork}
-    </a>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+    </svg>
+  </label>
+
+  <input type="checkbox" id="show-navbar" class="hidden" />
+
+  <nav
+    id="navbar-links"
+    class="hidden col-span-2 py-10 w-full md:w-fit md:py-0 md:col-span-1 md:flex flex-col md:flex-row md:gap-8 md:items-center justify-self-end"
+  >
+    <a href="/portfolio" class="py-3">PORTFOLIO</a>
+    <a href="/team" class="py-3">TEAM</a>
+    <a href="/#solutions" class="py-3">SOLUTIONS</a>
     <a
-      class="hover:bg-secondary-100 py-2 px-4 rounded"
-      href={`/${lang}/#team`}
-      rel="prefetch"
+      class="py-3 px-6 w-full md:w-fit mt-4 md:mt-0 text-center rounded bg-black text-white font-semibold"
+      href="/#contact"
+      data-umami-event="Navbar Hire button"
     >
-      {t.team}
-    </a>
-    <a
-      class="hover:bg-secondary-100 py-2 px-4 rounded"
-      href={`/${lang}/blog`}
-      rel="prefetch"
-    >
-      {t.blog}
-    </a>
-    <a
-      class="hover:bg-secondary-100 w-12 h-12 flex justify-center items-center rounded"
-      href="https://twitter.com/fluriumteam"
-      target="_blank"
-    >
-      <TwitterIcon />
-    </a>
-    <a
-      class="hover:bg-secondary-100 w-12 h-12 flex justify-center items-center rounded"
-      href="https://github.com/flurium"
-      target="_blank"
-    >
-      <GitHubIcon />
-    </a>
-    <a
-      href={`/${lang}/#contact`}
-      class="py-2 px-4 rounded bg-primary-500 hover:bg-primary-600 text-white"
-    >
-      {t.contact}
+      HIRE US
     </a>
   </nav>
-  <ToggleNavbar lang={lang} t={t} client:visible />
 </header>
+
+<style>
+  #show-navbar:checked ~ #navbar-links {
+    display: flex;
+  }
+</style>
