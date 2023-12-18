@@ -27,3 +27,4 @@ Integrations:
 
 - Try HTML first before using JS
 - No text over images
+- Rounded images should be rounded in css not image itself
