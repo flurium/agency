@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets"
+import RightArrow from "../../components/icons/RightArrow.astro"
+
+import { projects } from "."
+
+import bidmeImg from "../../assets/projects/bidme.png"
+import roadtovostokImg from "../../assets/projects/roadtovostok.png"
+import spentodayImg from "../../assets/projects/spentoday.png"
+import thingImg from "../../assets/projects/thing.png"
+
+export const projectImages = {
+  bidme: bidmeImg,
+  roadtovostok: roadtovostokImg,
+  spentoday: spentodayImg,
+  thing: thingImg,
+}
+
+type Props = { latest?: boolean }
+const { latest } = Astro.props
+---
+
+{
+  (latest === true ? projects.slice(0, 2) : projects).map((x) => (
+    <div class="mt-20">
+      <Image src={projectImages[x.slug]} alt={x.name} class="rounded-xl col-span-2" />
+
+      <div class="flex justify-between items-baseline mt-6">
+        <h4 class="text-2xl font-bold">{x.name}</h4>
+        <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
+          VIEW PROJECT
+          <RightArrow />
+        </a>
+      </div>
+      <p class="mt-2">{x.description}</p>
+    </div>
+  ))
+}

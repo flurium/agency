@@ -2,13 +2,10 @@
 import { Image } from "astro:assets"
 
 import Layout from "../layouts/Layout.astro"
-import RightArrow from "../components/icons/RightArrow.astro"
 import ContactSection from "../features/contact/ContactSection.astro"
 import Solutions from "../components/landing/Solutions.astro"
 
 import heroImg from "../assets/hero.png"
-import spentodayImg from "../assets/spentoday.png"
-import bidmeImg from "../assets/bidme.png"
 import ctaImg from "../assets/cta.png"
 
 import maria from "../assets/team/maria.png"
@@ -16,6 +13,7 @@ import roman from "../assets/team/roman.png"
 import vitalii from "../assets/team/vitalii.png"
 import dima from "../assets/team/dima.png"
 import TeamBenefits from "../components/landing/TeamBenefits.astro"
+import Projects from "../features/projects/Projects.astro"
 
 const team = [
   {
@@ -76,22 +74,6 @@ const techStack = [
     items: ["Relume", "Fooocus"],
   },
 ]
-
-const projects = [
-  {
-    img: spentodayImg,
-    name: "Spentoday",
-    description:
-      "Ukrainian e-commerce platform. Create an online shop fast and simple. No complexity, no hiring designers, no ton of services.",
-    slug: "spentoday",
-  },
-  {
-    img: bidmeImg,
-    name: "BidMe",
-    description: "Auction platform made with MVC in 2 weeks.",
-    slug: "bidme",
-  },
-]
 ---
 
 <Layout title="Flurium" description="Web development team">
@@ -132,22 +114,7 @@ const projects = [
       </p>
     </div>
 
-    {
-      projects.map((x) => (
-        <div class="mt-20">
-          <Image src={x.img} alt={x.name} class="rounded-xl col-span-2" />
-
-          <div class="flex justify-between items-baseline mt-6">
-            <h4 class="text-2xl font-bold">{x.name}</h4>
-            <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
-              VIEW PROJECT
-              <RightArrow />
-            </a>
-          </div>
-          <p class="mt-2">{x.description}</p>
-        </div>
-      ))
-    }
+    <Projects latest />
   </section>
 
   <ContactSection />
