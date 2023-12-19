@@ -4,7 +4,7 @@ export default {
   plugins: ["prettier-plugin-astro"],
   overrides: [
     {
-      files: "*.astro",
+      files: ["*.astro", "**/*.astro"],
       options: {
         parser: "astro",
       },
@@ -13,6 +13,6 @@ export default {
   semi: false,
   singleQuote: false,
   useTabs: false,
-  trailingComma: "none",
+  trailingComma: "all",
   printWidth: 90,
-};
+}

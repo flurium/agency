@@ -5,7 +5,7 @@ import If from "../components/If.astro"
 import {
   validateContactFormData,
   sendMessage,
-  type ContactFormData
+  type ContactFormData,
 } from "../features/contact"
 import { Image } from "astro:assets"
 
@@ -13,12 +13,14 @@ import teamImg from "../assets/team.png"
 
 export const prerender = false
 
-let data: ContactFormData | undefined = undefined
+let data: ContactFormData | null = null
 let sent: boolean = false
 
 if (Astro.request.method === "POST") {
   const form = await Astro.request.formData()
   data = validateContactFormData(form)
+
+  if (data == null) return Astro.redirect("/")
 
   if (data.name.value != null && data.email.value != null) {
     const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nCommunication: ${data.communication}\nContext: ${data.context}`

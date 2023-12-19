@@ -7,14 +7,17 @@ export type ContactFormData = {
   context: string
 }
 
-export function validateContactFormData(form: FormData): ContactFormData {
+export function validateContactFormData(form: FormData): ContactFormData | null {
+  const address = form.get("address")
+  if (address != "") return null
+
   const name = form.get("name")
   const nameValidation = v.safeParse(v.string("Name is required", [v.minLength(1)]), name)
 
   const email = form.get("email")
   const emailValidation = v.safeParse(
     v.string("Email is incorrect", [v.minLength(1), v.email()]),
-    email
+    email,
   )
   const communication = form.get("communication")
   const context = form.get("context")
@@ -27,7 +30,7 @@ export function validateContactFormData(form: FormData): ContactFormData {
       ? { value: emailValidation.output, error: null }
       : { value: null, error: emailValidation.issues[0].message },
     communication: (communication ?? "") as string,
-    context: (context ?? "") as string
+    context: (context ?? "") as string,
   }
 }
 
@@ -39,13 +42,13 @@ export async function sendMessage(message: string): Promise<boolean> {
         method: "POST",
         headers: {
           "content-type": "application/json",
-          accept: "application/json"
+          accept: "application/json",
         },
         body: JSON.stringify({
           chat_id: `${import.meta.env.TELEGRAM_CHAT_ID}`,
-          text: message
-        })
-      }
+          text: message,
+        }),
+      },
     )
 
     return res.ok

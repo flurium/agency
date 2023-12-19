@@ -1,0 +1,18 @@
+---
+import type { GetStaticPaths } from "astro"
+import { projects } from "../../features/projects"
+import { projectImages } from "../../features/projects/Projects.astro"
+import { Image } from "astro:assets"
+import Layout from "../../layouts/Layout.astro"
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return projects.map((x) => ({ params: { slug: x.slug }, props: x }))
+}
+
+const { slug } = Astro.params
+const project = Astro.props as (typeof projects)[number]
+---
+
+<Layout title={`${project.name} | Flurium`} description={project.description}>
+  <Image src={projectImages[project.slug]} alt={project.name} />
+</Layout>
