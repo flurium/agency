@@ -8,11 +8,10 @@ Integrations:
 
 - [x] Sitemap
 - [x] Tailwind
-- [ ] Partytown
 
 ## Special Fetures
 
-- [ ] Analytics: [Umami](https://umami.is)
+- [x] Analytics: [Umami](https://umami.is)
 - [ ] GitHub oriented CMS: [Keystatic](https://docs.astro.build/en/guides/cms/keystatic)
 
 ## Pages
