@@ -6,13 +6,13 @@ import ContactSection from "../features/contact/ContactSection.astro"
 import Solutions from "../components/landing/Solutions.astro"
 
 import heroImg from "../assets/hero.png"
-import ctaImg from "../assets/cta.png"
 
 import maria from "../assets/team/maria.png"
 import roman from "../assets/team/roman.png"
 import vitalii from "../assets/team/vitalii.png"
 import dima from "../assets/team/dima.png"
 import Projects from "../features/projects/Projects.astro"
+import ImageCta from "../components/ImageCta.astro"
 
 const team = [
   {
@@ -169,15 +169,5 @@ const techStack = [
     </table>
   </section>
 
-  <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20">
-    <div class="place-self-center">
-      <h3 class="font-bold text-5xl">Transform your Digital Presence Today!</h3>
-      <p class="mt-6 mb-10">
-        Our team of experts can help transform your digital presence and improve your
-        online reach.
-      </p>
-      <a href="/#contact" class="py-3 px-6 bg-black text-white rounded">HIRE</a>
-    </div>
-    <Image src={ctaImg} alt="Path to the top" class="rounded-xl w-full" quality={100} />
-  </section>
+  <ImageCta />
 </Layout>
