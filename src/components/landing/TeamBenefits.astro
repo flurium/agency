@@ -6,14 +6,14 @@ import benefitsImg from "../../assets/benefits.png"
 ---
 
 <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20" id="benefits">
-    <div>
+    <div class="order-last md:order-first mb-8 md:mb-0">
         <Image src={benefitsImg} 
         alt="benefits" 
         class="rounded-xl w-full md:order-first"
         quality={100} />
     </div>
     <div class="place-self-center">
-        <div class="pl-8 hover:border-l-4 border-indigo-500 transition-border duration-300 ease-in-out">
+        <div class="pl-8 border-l-4 border-indigo-500 md:border-transparent hover:border-indigo-500 transition-border duration-300 ease-in-out">
             <h1 class="font-bold text-4xl">People</h1>
             <h2 class="mt-6 mb-10 text-gray-800">
                 You will communicate directly to people, not layers of management. 
@@ -23,7 +23,7 @@ import benefitsImg from "../../assets/benefits.png"
             </h2>
         </div>
 
-        <div class="pl-8 hover:border-l-4 border-indigo-500 transition-border duration-300 ease-in-out">
+        <div class="pl-8 border-l-4 border-transparent hover:border-indigo-500 transition-border duration-300 ease-in-out">
             <h1 class="font-bold text-4xl">Speed</h1>
             <h2 class="mt-6 mb-10 text-gray-800">
                 We believe in fast iterations and fixes. 
@@ -32,7 +32,7 @@ import benefitsImg from "../../assets/benefits.png"
             </h2>
         </div>
 
-        <div class="pl-8 hover:border-l-4 border-indigo-500 transition-border duration-300 ease-in-out">
+        <div class="pl-8 border-l-4 border-transparent hover:border-indigo-500 transition-border duration-300 ease-in-out">
             <h1 class="font-bold text-4xl">AI</h1>
             <h2 class="mt-6 mb-10 text-gray-800">
                 We use AI to speed up development and design processes. 
