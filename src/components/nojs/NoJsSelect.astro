@@ -52,6 +52,7 @@ const button =
 
 <style>
   .check:focus,
+  .check:focus-within,
   .uncheck {
     position: fixed;
     top: -100%;
@@ -69,33 +70,14 @@ const button =
     pointer-events: all;
   }
 
-  .check:focus ~ .uncheck {
+  .check:focus ~ .uncheck,
+  .check:focus-within ~ .uncheck {
     position: static;
   }
 
-  .check:focus ~ #options {
+  .check:focus ~ #options,
+  .check:focus-within ~ #options {
     opacity: 1;
     pointer-events: all;
-
-    /* top: -10%; */
   }
-  /* 
-  input[type="radio"]:checked ~ #placeholderCheck,
-  input[type="radio"]:checked ~ #placeholderUncheck {
-    display: none !important;
-  } */
 </style>
-
-<!-- 
-  <section class="py-20 grid place-content-center">
-    <button id="focusCheck" class="-top-[100%] py-3 px-6 rounded border select-none">
-      Focus</button
-    >
-    <button
-      id="focusUncheck"
-      class="fixed -top-[100%] py-3 px-6 rounded border select-none"
-    >
-      Focus
-    </button>
-    <div id="focusOptions" class="fixed -top-[100%]">options</div>
-  </section> -->
