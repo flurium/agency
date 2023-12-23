@@ -1,0 +1,101 @@
+---
+const name = "fruit"
+
+const options = [
+  { id: "apple", name: "Apple" },
+  { id: "banana", name: "Banana" },
+  { id: "blueberry", name: "Blueberry" },
+]
+
+const button =
+  "hidden rounded py-3 px-6 border border-gray-200 cursor-pointer min-w-[14rem] select-none"
+---
+
+<div class="relative">
+  {options.map((option) => <input type="radio" id={option.id} {name} class="hidden" />)}
+
+  <button
+    id="placeholderCheck"
+    class="check rounded py-3 px-6 border border-gray-200 cursor-pointer min-w-[14rem] select-none"
+  >
+    Select a fruit
+  </button>
+  <button
+    id="placeholderUncheck"
+    class="uncheck rounded py-3 px-6 border border-gray-200 cursor-pointer min-w-[14rem] select-none"
+  >
+    Select a fruit
+  </button>
+
+  <label for="showSelect" id="selectApple" class={button}>Apple</label>
+
+  <!-- <label for="showSelect" id="selectApple" class={button}>Apple</label>
+<label for="showSelect" id="selectBanana" class={button}>Banana</label>
+<label for="showSelect" id="selectBlueberry" class={button}>Blueberry</label> -->
+
+  <div
+    class="rounded p-3 border border-gray-200 transition-opacity bg-white min-w-[14rem]"
+    id="options"
+  >
+    {
+      options.map((option) => (
+        <label
+          for={option.id}
+          class="block hover:bg-gray-100 px-3 pb-2 pt-1 rounded cursor-pointer"
+        >
+          {option.name}
+        </label>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .check:focus,
+  .uncheck {
+    position: fixed;
+    top: -100%;
+  }
+
+  #options {
+    position: absolute;
+    top: 3.5rem;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #options:active {
+    pointer-events: all;
+  }
+
+  .check:focus ~ .uncheck {
+    position: static;
+  }
+
+  .check:focus ~ #options {
+    opacity: 1;
+    pointer-events: all;
+
+    /* top: -10%; */
+  }
+  /* 
+  input[type="radio"]:checked ~ #placeholderCheck,
+  input[type="radio"]:checked ~ #placeholderUncheck {
+    display: none !important;
+  } */
+</style>
+
+<!-- 
+  <section class="py-20 grid place-content-center">
+    <button id="focusCheck" class="-top-[100%] py-3 px-6 rounded border select-none">
+      Focus</button
+    >
+    <button
+      id="focusUncheck"
+      class="fixed -top-[100%] py-3 px-6 rounded border select-none"
+    >
+      Focus
+    </button>
+    <div id="focusOptions" class="fixed -top-[100%]">options</div>
+  </section> -->
