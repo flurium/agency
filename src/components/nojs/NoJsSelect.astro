@@ -1,51 +1,54 @@
 ---
-const name = "fruit"
+type Props = {
+  class?: string
+  name: string
+  placeholder: string
+  options: { value: string; label: string }[]
+}
 
-const options = [
-  { id: "apple", name: "Apple" },
-  { id: "banana", name: "Banana" },
-  { id: "blueberry", name: "Blueberry" },
-]
+const { class: className, name, placeholder, options } = Astro.props
 
-const button =
-  "hidden rounded py-3 px-6 border border-gray-200 cursor-pointer min-w-[14rem] select-none"
+const triggerStyle =
+  "text-left rounded py-3 px-6 border border-gray-200 cursor-pointer min-w-[14rem] select-none bg-white"
 ---
 
-<div class="relative">
-  {options.map((option) => <input type="radio" id={option.id} {name} class="hidden" />)}
-
-  <button
-    id="placeholderCheck"
-    class="check rounded py-3 px-6 border border-gray-200 cursor-pointer min-w-[14rem] select-none"
-    tabindex="0"
-  >
-    Select a fruit
+<div class:list={["relative", className]}>
+  {
+    options.map((option) => (
+      <Fragment>
+        <input
+          type="radio"
+          id={`${option.value}-${name}`}
+          name={name}
+          value={option.value}
+          class="hidden"
+        />
+        <button class:list={["check", triggerStyle]} tabindex="0">
+          {option.label}
+        </button>
+        <button class:list={["uncheck", triggerStyle]} tabindex="0">
+          {option.label}
+        </button>
+      </Fragment>
+    ))
+  }
+  <button class:list={["placeholder check", triggerStyle]} tabindex="0">
+    {placeholder}
   </button>
-  <button
-    tabindex="0"
-    id="placeholderUncheck"
-    class="uncheck rounded py-3 px-6 border border-gray-200 cursor-pointer min-w-[14rem] select-none"
-  >
-    Select a fruit
+  <button tabindex="0" class:list={["placeholder uncheck", triggerStyle]}>
+    {placeholder}
   </button>
-
-  <!-- <label for="showSelect" id="selectApple" class={button}>Apple</label> -->
-
-  <!-- <label for="showSelect" id="selectApple" class={button}>Apple</label>
-<label for="showSelect" id="selectBanana" class={button}>Banana</label>
-<label for="showSelect" id="selectBlueberry" class={button}>Blueberry</label> -->
 
   <div
-    class="rounded p-3 border border-gray-200 transition-opacity bg-white min-w-[14rem]"
-    id="options"
+    class="options rounded p-3 border border-gray-200 z-50 transition-opacity bg-white min-w-[14rem]"
   >
     {
       options.map((option) => (
         <label
-          for={option.id}
+          for={`${option.value}-${name}`}
           class="block hover:bg-gray-100 px-3 pb-2 pt-1 rounded cursor-pointer"
         >
-          {option.name}
+          {option.label}
         </label>
       ))
     }
@@ -53,33 +56,45 @@ const button =
 </div>
 
 <style>
-  .check:focus,
-  .check:focus-within,
+  .options {
+    position: absolute;
+    top: 3.5rem;
+    width: 100%;
+    opacity: 0;
+    z-index: 50;
+    pointer-events: none;
+  }
+
+  .options:active,
+  .check:focus ~ .options,
+  .check:focus-within ~ .options {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* 
+    When position is static top doesn't matter and element will be displayed as usual.
+    When position is fixed then top will make them appear outside of screen.
+  */
+  .check,
   .uncheck {
     position: fixed;
     top: -100%;
   }
 
-  #options {
-    position: absolute;
-    top: 3.5rem;
-    width: 100%;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  #options:active {
-    pointer-events: all;
-  }
-
-  .check:focus ~ .uncheck,
-  .check:focus-within ~ .uncheck {
+  .placeholder.check,
+  .placeholder.check:focus + .placeholder.uncheck,
+  input[type="radio"]:checked + .check,
+  input[type="radio"]:checked + .check:focus + .uncheck {
     position: static;
   }
 
-  .check:focus ~ #options,
-  .check:focus-within ~ #options {
-    opacity: 1;
-    pointer-events: all;
+  .check:focus {
+    position: fixed !important;
+  }
+
+  input[type="radio"]:checked ~ .placeholder.check,
+  input[type="radio"]:checked ~ .placeholder.uncheck {
+    position: fixed !important;
   }
 </style>
