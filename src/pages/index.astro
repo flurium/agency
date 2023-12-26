@@ -117,6 +117,12 @@ const techStack = [
     </div>
 
     <Projects latest />
+
+    <div class="text-center pt-16">
+      <a href="/portfolio" class="rounded py-3 px-6 border border-black inline-block">
+        VIEW ALL
+      </a>
+    </div>
   </section>
 
   <section class="py-20 md:py-28 max-w-4xl m-auto">
@@ -190,7 +196,7 @@ const techStack = [
             <p class="font-semibold text-xl mt-6">{x.name}</p>
             <p class="text-lg mt-1">{x.position}</p>
             <p class="mt-4 mb-6">{x.about}</p>
-            <a href={`/team/${x.slug}`}>LEARN MORE {">"}</a>
+            {/* <a href={`/team/${x.slug}`}>LEARN MORE {">"}</a> */}
           </div>
         ))
       }
