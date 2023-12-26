@@ -59,8 +59,8 @@ const { data } = Astro.props
     <input
       type="text"
       name="address"
+      id="address"
       value=""
-      class="hidden"
       tabindex="-1"
       autocomplete="off"
     />
@@ -79,3 +79,9 @@ const { data } = Astro.props
     quality={100}
   />
 </section>
+
+<style>
+  #address {
+    display: none;
+  }
+</style>

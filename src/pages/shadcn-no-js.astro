@@ -17,6 +17,25 @@ import NoJsSelect from "../components/nojs/NoJsSelect.astro"
   </hgroup>
 
   <section class="py-20 grid place-content-center">
-    <NoJsSelect />
+    <NoJsSelect
+      class="mb-10"
+      name="fruit"
+      placeholder="Select a fruit"
+      options={[
+        { value: "apple", label: "Apple" },
+        { value: "banana", label: "Banana" },
+        { value: "blueberry", label: "Blueberry" },
+      ]}
+    />
+
+    <NoJsSelect
+      name="fruit-2"
+      placeholder="Select second a fruit"
+      options={[
+        { value: "apple", label: "Apple" },
+        { value: "banana", label: "Banana" },
+        { value: "blueberry", label: "Blueberry" },
+      ]}
+    />
   </section>
 </Layout>
