@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro"
+import NoJsSelect from "../components/nojs/NoJsSelect.astro"
+import NoJsTabs from "../components/nojs/NoJsTabs.astro"
+---
+
+<Layout
+  title="Zero js UI | Flurium"
+  description="Implementing shadcn ui select component using only HMTL and CSS. No JS is allowed."
+>
+  <hgroup class="text-center py-20 md:py-28 max-w-3xl mx-auto">
+    <h1 class="text-6xl font-bold mb-6 leading-[1.2]">
+      No more Javascript dependencies!
+    </h1>
+    <h2 class="text-gray-700 text-lg">
+      HTML-first components, that you can copy and paste into your apps. Zero Javascript
+      is required for interactions. Inspired by
+      <a
+        href="https://ui.shadcn.com"
+        class="border-b-2 border-indigo-300 hover:border-indigo-400 text-black"
+        target="_blank"
+      >
+        Shadch UI
+      </a>
+       and
+      <a
+        href="https://library.relume.io/figma-kit"
+        target="_blank"
+        class="border-b-2 border-indigo-300 hover:border-indigo-400 text-black"
+      >
+        Relume Library
+      </a> .
+    </h2>
+  </hgroup>
+
+  <section class="py-20 md:py-28">
+    <div class="p-16 text-center bg-indigo-50 rounded-xl flex flex-col gap-4">
+      <p>
+        All components are early stage and may change over times. But it's not a library,
+        so you can sleep calm.
+      </p>
+      <p>
+        Certain components require repetitive elements, so we will provide code examples
+        with minimal templating provided by Astro js.
+      </p>
+      <p>
+        The price is a testimonial and sharement online. Make a post about Flurium UI, tag
+        @roman_koshchei or @fluriumteam.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28">
+    <h3 class="text-4xl font-bold mb-4">Select</h3>
+    <p class="text-gray-700 mb-8">
+      Custom select dropdown where you can customize look of dropdown menu.
+    </p>
+
+    <div class="grid place-content-center gap-8 w-full">
+      <NoJsSelect
+        name="fruit"
+        placeholder="Select a fruit"
+        options={[
+          { value: "apple", label: "Apple" },
+          { value: "banana", label: "Banana" },
+          { value: "blueberry", label: "Blueberry" },
+        ]}
+      />
+
+      <NoJsSelect
+        name="fruit-2"
+        placeholder="Select second a fruit"
+        options={[
+          { value: "apple", label: "Apple" },
+          { value: "banana", label: "Banana" },
+          { value: "blueberry", label: "Blueberry" },
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28">
+    <h3 class="text-4xl font-bold mb-4">Select</h3>
+    <p class="text-gray-700 mb-8">
+      Custom select dropdown where you can customize look of dropdown menu.
+    </p>
+
+    <NoJsTabs />
+  </section>
+</Layout>

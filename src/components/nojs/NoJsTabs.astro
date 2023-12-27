@@ -1,0 +1,38 @@
+---
+import TabsSwitch from "./tabs/TabsSwitch.astro"
+
+/*
+
+  Important structure:
+
+  input type="radio" must be on top of:
+  - labels if want to highlight 
+  - content required
+
+*/
+---
+
+<div>
+  <TabsSwitch key="tab" tabs={["preview", "code"]} />
+
+  <div class="flex gap-4 mb-4">
+    <label for="preview" class="p-3 border-indigo-300 cursor-pointer">Preview</label>
+    <label for="code" class="p-3 border-green-300 cursor-pointer">Code</label>
+  </div>
+
+  <!-- can use data- instead of id, choose by preference -->
+  <div data-tab="preview" class="hidden rounded p-10 bg-indigo-50">Preview content</div>
+  <div data-tab="code" class="hidden rounded p-10 bg-green-50">Code content</div>
+</div>
+
+<style>
+  #preview:checked ~ * label[for="preview"],
+  #code:checked ~ * label[for="code"] {
+    border-bottom-width: 2px;
+  }
+
+  #code:checked ~ div[data-tab="code"],
+  #preview:checked ~ [data-tab="preview"] {
+    display: block;
+  }
+</style>
