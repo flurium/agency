@@ -8,8 +8,9 @@ import Layout from "../layouts/Layout.astro"
   <a href="#three">Three</a>
 
   <div
+    id="slider"
     class="flex overflow-x-scroll scroll-smooth"
-    style="scroll-snap-type: x mandatory;"
+    style="scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: transparent transparent; "
   >
     <div
       id="one"
@@ -36,7 +37,11 @@ import Layout from "../layouts/Layout.astro"
 </Layout>
 
 <style>
-  /* #scrollContainer {
-    scroll-snap-type: x mandatory;
-  } */
+  #slider::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  #slider::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
 </style>
