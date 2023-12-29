@@ -1,20 +1,15 @@
 ---
 import { Image } from "astro:assets"
-import RightArrow from "../../components/icons/RightArrow.astro"
 
 import { projects } from "."
 
-import bidmeImg from "../../assets/projects/bidme.png"
-import roadtovostokImg from "../../assets/projects/roadtovostok.png"
-import spentodayImg from "../../assets/projects/spentoday.png"
-import thingImg from "../../assets/projects/thing.png"
+import bidme from "../../assets/projects/bidme.png"
+import roadtovostok from "../../assets/projects/roadtovostok.png"
+import spentoday from "../../assets/projects/spentoday.png"
+import thing from "../../assets/projects/thing.png"
+import onest from "../../assets/projects/onest.png"
 
-export const projectImages = {
-  bidme: bidmeImg,
-  roadtovostok: roadtovostokImg,
-  spentoday: spentodayImg,
-  thing: thingImg,
-}
+export const projectImages = { bidme, roadtovostok, spentoday, thing, onest }
 
 type Props = { latest?: boolean }
 const { latest } = Astro.props

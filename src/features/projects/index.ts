@@ -6,6 +6,12 @@ export const projects = [
     slug: "spentoday",
   },
   {
+    name: "Onest Remake",
+    description:
+      "Onest Font website remake for performance improvements as well as reducing javascript dependencies.",
+    slug: "onest",
+  },
+  {
     name: "BidMe",
     description: "Auction platform made with MVC in 2 weeks.",
     slug: "bidme",
