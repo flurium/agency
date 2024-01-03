@@ -1,0 +1,47 @@
+<input type="radio" class="hidden" name="slide" id="red" />
+<input type="radio" class="hidden" name="slide" id="blue" />
+<input type="radio" class="hidden" name="slide" id="green" />
+
+<div id="wrapper" class="overflow-hidden rounded-lg">
+  <div id="slides" class="flex transition-transform duration-300 rounded-lg">
+    <div class="w-full flex-none bg-red-500 h-40"></div>
+    <div class="w-full flex-none bg-blue-500 h-40"></div>
+    <div class="w-full flex-none bg-green-500 h-40"></div>
+  </div>
+</div>
+
+<div id="labels" class="m-auto w-fit flex gap-2 mt-8">
+  <label
+    for="red"
+    class="rounded-l-lg rounded-r py-3 px-6 border cursor-pointer transition-colors select-none"
+  >
+    Red
+  </label>
+  <label
+    for="blue"
+    class="rounded py-3 px-6 border cursor-pointer transition-colors select-none"
+  >
+    Blue
+  </label>
+  <label
+    for="green"
+    class="rounded-r-lg rounded-l py-3 px-6 border cursor-pointer transition-colors select-none"
+  >
+    Green
+  </label>
+</div>
+
+<style>
+  #blue:checked ~ #wrapper > #slides {
+    transform: translateX(-100%);
+  }
+  #green:checked ~ #wrapper > #slides {
+    transform: translateX(-200%);
+  }
+
+  #red:checked ~ #labels > label[for="red"],
+  #blue:checked ~ #labels > label[for="blue"],
+  #green:checked ~ #labels > label[for="green"] {
+    @apply bg-gray-800 text-white border-gray-800;
+  }
+</style>
