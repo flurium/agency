@@ -2,7 +2,7 @@ export const projects = [
   {
     name: "Spentoday",
     description:
-      "Ukrainian e-commerce platform. Create an online shop fast and simple. No complexity, no hiring designers, no ton of services.",
+      "Ukrainian e-commerce platform. Create your online shop fast and simple. No complexity, no hiring designers, no ton of services.",
     slug: "spentoday",
   },
   {
