@@ -1,0 +1,156 @@
+---
+import Layout from "../../../layouts/Layout.astro"
+import ImageCta from "../../../components/ImageCta.astro"
+import Logo from "./Logo.astro"
+import main_img from "../../../assets/projects/spentoday.png"
+import img_1 from "../../../assets/projects/screenshots/screen1.jpg"
+import img_2 from "../../../assets/projects/screenshots/screen2.jpg"
+import img_3 from "../../../assets/projects/screenshots/screen3.jpg"
+import img_4 from "../../../assets/projects/screenshots/screen4.jpg"
+import { Image } from "astro:assets"
+
+let hidden = true
+---
+
+<Layout
+  title="Our work | Spentoday"
+  description="Ukrainian e-commerce platform. Create your online shop fast and simple. No complexity, no hiring designers, no ton of services."
+>
+<section class="py-20 md:py-28 gap-20" id="title">
+<div class="flex items-center justify-center">
+    <Logo class="w-9 h-[38px] mr-3"/>
+    <h1 class="font-bold text-4xl text-center">
+    SPENTODAY</h1>
+</div>
+ 
+<p class="my-6 text-center">
+      Ukrainian e-commerce platform. Create your online shop fast and simple. No complexity, no hiring designers, no ton of services.
+</p>
+
+<div class="flex items-center justify-center mb-4">
+  <div class="rounded-md text-xs bg-gray-100 p-1 mx-1">
+    Web
+  </div>
+  <div
+    class="rounded-md text-xs bg-gray-100 p-1 mx-1"
+  >
+    E-commerce
+  </div>
+  <div
+    class="rounded-md text-xs bg-gray-100 p-1 mx-1"
+  >
+    Brand
+  </div>
+</div>
+
+    <div class="order-last md:order-first mb-8 md:mb-0">
+        <Image src={main_img} 
+        alt="benefits" 
+        class="rounded-xl w-full md:order-first"
+        quality={100} />
+    </div>
+</section>
+
+
+    <section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20" id="description">
+    <div class="md:order-first mb-8 md:mb-0">
+        <h1 class="font-bold text-4xl">About the project</h1>
+    </div>
+    <div class="place-self-center">
+        <div>
+            <p class="mb-10 text-gray-800">
+                Access an easy-to-use tool designed for the Ukrainian market, making it simple to create personalized online stores effortlessly.
+            </p>
+            <p class="mb-10 text-gray-800">
+                Benefit from the advantage of a fast and easy start to your online business. 
+                Spentoday streamlines the process, keeping it straightforward and clear.
+            </p>
+            <p class="mb-10 text-gray-800">
+                Enjoy the advantage of a pleasant and efficient user interface. 
+                It's tailored to meet the needs of entrepreneurs and creative individuals in e-commerce, ensuring an enjoyable and productive interaction with the service.
+            </p>
+        </div>
+
+        <div class="flex border-t-2 border-gray-400 justify-between mt-2">
+            <span class="my-5 font-bold">Date</span> <span class="my-5">Q3-Q4 2023</span>
+        </div>
+        <div class="flex border-t-2 border-gray-400 justify-between mt-2">
+            <span class="my-5 font-bold">GitHub</span> <span class="my-5"><a class="hover:underline cursor-pointer" href="https://github.com/flurium/spentoday">github.com/flurium/spentoday</a></span>
+        </div>
+        <div class="flex border-y-2 border-gray-400 justify-between mt-2 pb-3">
+            <span class="my-5 font-bold">Website</span> <span class="my-5"><a class="hover:underline cursor-pointer" href="https://www.spentoday.com/">spentoday.com</a></span>
+        </div>
+        
+      </div>
+</section>
+<section id="video">
+  <div class="mt-[15px] md:mt-[30px] flex justify-center items-center relative">
+      
+      <iframe
+        class="w-full aspect-video
+        lg:hover:rounded-bl-xl rounded-xl transition-all"
+        src="https://www.youtube.com/embed/5OAzOoMlUQM?si=GOnjbiEOblz_XtgT"
+        title="Spentoday промо"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+        gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      />
+  </div>
+</section>
+
+<section class="py-20 md:py-28 gap-20" id="description_extended">
+
+  <p class="mb-10 text-gray-800">
+      Spentoday emerges as a singular gem in the landscape of the Ukrainian market, offering a revolutionary approach to online entrepreneurship. 
+      This distinctive platform encapsulates the essence of simplicity, seamlessly guiding individuals through the process of creating and personalizing their online stores.
+      At its core, Spentoday is an embodiment of user-friendliness. Its intuitive interface stands as a testament to the platform's commitment to accessibility. Even those with limited technical prowess find themselves empowered to navigate the complexities of online business with ease, concentrating on their products rather than grappling with intricate technicalities.
+  </p>
+
+  <p class="mb-10 text-gray-800">
+      What sets Spentoday apart is its rapid deployment capabilities. Entrepreneurs can swiftly transform their visions into reality with a streamlined setup process. 
+      This efficiency not only saves invaluable time but also lowers barriers to entry, opening doors for a diverse array of individuals to partake in the burgeoning world of e-commerce.
+      A notable feature is Spentoday's keen understanding of the Ukrainian market. 
+      Tailoring its functionalities to align with local preferences, the platform ensures that businesses seamlessly integrate into the cultural tapestry of Ukraine. This localized approach enhances Spentoday's relevance and resonance, solidifying its position as a uniquely Ukrainian solution.
+  </p>
+  <p class="mb-10 text-gray-800">
+      Affordability is a key facet of Spentoday's appeal. 
+      Recognizing the financial constraints often associated with entrepreneurial endeavors, the platform provides cost-effective solutions without compromising quality. 
+      This commitment democratizes access to robust e-commerce tools, making Spentoday an inclusive catalyst for business innovation.
+      In essence, Spentoday transcends the conventional, emerging as a beacon of innovation and accessibility in the Ukrainian market. 
+      Its user-centric design, swift deployment capabilities, localization, and cost-effectiveness collectively position Spentoday as a transformative force, paving the way for a new era of online entrepreneurship in Ukraine.
+  </p>
+
+
+
+
+
+</section>
+
+<section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20" id="screenshots">
+  <div>
+     <Image src={img_3} 
+        alt="benefits" 
+        class="rounded-xl w-full"
+        quality={100} />
+  </div>
+  <div>
+ <Image src={img_4} 
+        alt="benefits" 
+        class="rounded-xl w-full"
+        quality={100} />
+  </div>
+  <div class="md:col-span-2">
+    <Image src={img_1} 
+        alt="benefits" 
+        class="rounded-xl w-full"
+        quality={100} />
+  </div>
+  <div class="md:col-span-2">
+ <Image src={img_2} 
+        alt="benefits" 
+        class="rounded-xl w-full"
+        quality={100} />
+  </div>
+</section>
+<ImageCta />
+</Layout>

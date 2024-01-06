@@ -8,6 +8,7 @@ import roadtovostok from "../../assets/projects/roadtovostok.png"
 import spentoday from "../../assets/projects/spentoday.png"
 import thing from "../../assets/projects/thing.png"
 import onest from "../../assets/projects/onest.png"
+import RightArrow from "../../components/icons/RightArrow.astro"
 
 export const projectImages = { bidme, roadtovostok, spentoday, thing, onest }
 
@@ -23,12 +24,12 @@ const { latest } = Astro.props
       <div class="flex justify-between items-baseline mt-6">
         <h4 class="text-2xl font-bold">{x.name}</h4>
 
-        {/* 
+        { 
         <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
           VIEW PROJECT
           <RightArrow />
         </a>
-        */}
+        }
       </div>
       <p class="mt-2">{x.description}</p>
     </div>
