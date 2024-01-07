@@ -1,65 +1,47 @@
-<div
-  id="carousel"
-  class="flex overflow-x-scroll overflow-y-hidden scroll-smooth rounded-lg"
->
-  <div
-    id="carousel-red"
-    class="w-full flex-none pt-32 mt-[-8rem]"
-    style="scroll-snap-align: center;"
-  >
-    <div class="h-40 bg-red-500"></div>
-  </div>
-  <div
-    id="carousel-blue"
-    class="w-full flex-none pt-32 mt-[-8rem]"
-    style="scroll-snap-align: center;"
-  >
-    <div class="h-40 bg-blue-500"></div>
-  </div>
-  <div
-    id="carousel-green"
-    class="w-full flex-none pt-32 mt-[-8rem]"
-    style="scroll-snap-align: center;"
-  >
-    <div class="h-40 bg-green-500"></div>
+<input type="radio" class="hidden" name="carousel-slide" id="carousel-red" checked />
+<input type="radio" class="hidden" name="carousel-slide" id="carousel-blue" />
+<input type="radio" class="hidden" name="carousel-slide" id="carousel-green" />
+
+<div id="carousel-wrapper" class="overflow-hidden rounded-lg">
+  <div id="carousel-slides" class="flex transition-transform duration-300 rounded-lg">
+    <div class="w-full flex-none bg-red-500 h-40"></div>
+    <div class="w-full flex-none bg-blue-500 h-40"></div>
+    <div class="w-full flex-none bg-green-500 h-40"></div>
   </div>
 </div>
 
-<div class="m-auto w-fit flex gap-2 mt-8">
-  <a
-    class="rounded-l-lg rounded-r py-3 px-6 border cursor-pointer transition-colors select-none hover:bg-gray-800 hover:text-white hover:border-gray-800"
-    href="#carousel-red"
+<div id="carousel-labels" class="m-auto w-fit flex gap-2 mt-8">
+  <label
+    for="carousel-red"
+    class="rounded-l-lg rounded-r py-3 px-6 border cursor-pointer transition-colors select-none"
   >
     Red
-  </a>
-  <a
-    class="rounded py-3 px-6 border cursor-pointer transition-colors select-none hover:bg-gray-800 hover:text-white hover:border-gray-800"
-    href="#carousel-blue"
+  </label>
+  <label
+    for="carousel-blue"
+    class="rounded py-3 px-6 border cursor-pointer transition-colors select-none"
   >
     Blue
-  </a>
-  <a
-    class="rounded-r-lg rounded-l py-3 px-6 border cursor-pointer transition-colors select-none hover:bg-gray-800 hover:text-white hover:border-gray-800"
-    href="#carousel-green"
+  </label>
+  <label
+    for="carousel-green"
+    class="rounded-r-lg rounded-l py-3 px-6 border cursor-pointer transition-colors select-none"
   >
     Green
-  </a>
+  </label>
 </div>
 
 <style>
-  #carousel {
-    scroll-snap-type: x mandatory;
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    scrollbar-color: transparent transparent;
+  #carousel-blue:checked ~ #carousel-wrapper > #carousel-slides {
+    transform: translateX(-100%);
+  }
+  #carousel-green:checked ~ #carousel-wrapper > #carousel-slides {
+    transform: translateX(-200%);
   }
 
-  #carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  #carousel::-webkit-scrollbar-thumb {
-    background-color: transparent;
+  #carousel-red:checked ~ #carousel-labels > label[for="carousel-red"],
+  #carousel-blue:checked ~ #carousel-labels > label[for="carousel-blue"],
+  #carousel-green:checked ~ #carousel-labels > label[for="carousel-green"] {
+    @apply bg-gray-800 text-white border-gray-800;
   }
 </style>

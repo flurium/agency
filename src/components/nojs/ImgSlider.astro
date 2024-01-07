@@ -1,27 +1,34 @@
+---
+import { Image } from "astro:assets"
+import slide1 from "../../assets/ui/slide1.png"
+import slide2 from "../../assets/ui/slide2.png"
+import slide3 from "../../assets/ui/slide3.png"
+---
+
 <div
-  id="slider"
-  class="flex overflow-x-scroll overflow-y-hidden scroll-smooth rounded-lg"
+  id="img-slider"
+  class="flex overflow-x-scroll overflow-y-hidden scroll-smooth rounded-lg max-w-2xl m-auto"
 >
   <div
-    id="slider-red"
-    class="w-full flex-none pt-40 mt-[-10rem]"
+    id="img-slider-1"
+    class="w-full flex-none pt-16 mt-[-4rem]"
     style="scroll-snap-align: center;"
   >
-    <div class="h-40 bg-red-500"></div>
+    <Image src={slide1} alt={"Image Slide 1"} />
   </div>
   <div
-    id="slider-blue"
-    class="w-full flex-none pt-40 mt-[-10rem]"
+    id="img-slider-2"
+    class="w-full flex-none pt-16 mt-[-4rem]"
     style="scroll-snap-align: center;"
   >
-    <div class="h-40 bg-blue-500"></div>
+    <Image src={slide2} alt={"Image Slide 2"} />
   </div>
   <div
-    id="slider-green"
-    class="w-full flex-none pt-40 mt-[-10rem]"
+    id="img-slider-3"
+    class="w-full flex-none pt-16 mt-[-4rem]"
     style="scroll-snap-align: center;"
   >
-    <div class="h-40 bg-green-500"></div>
+    <Image src={slide3} alt={"Image Slide 3"} />
   </div>
 </div>
 
@@ -29,28 +36,28 @@
   <a
     class="rounded-l-lg rounded-r py-3 px-6 border cursor-pointer transition-colors
     select-none active:bg-gray-800 active:text-white active:border-gray-800"
-    href="#slider-red"
+    href="#img-slider-1"
   >
-    Red
+    1
   </a>
   <a
     class="rounded py-3 px-6 border cursor-pointer transition-colors
     select-none active:bg-gray-800 active:text-white active:border-gray-800"
-    href="#slider-blue"
+    href="#img-slider-2"
   >
-    Blue
+    2
   </a>
   <a
     class="rounded-r-lg rounded-l py-3 px-6 border cursor-pointer transition-colors
     select-none active:bg-gray-800 active:text-white active:border-gray-800"
-    href="#slider-green"
+    href="#img-slider-3"
   >
-    Green
+    3
   </a>
 </div>
 
 <style>
-  #slider {
+  #img-slider {
     scroll-snap-type: x mandatory;
 
     -ms-overflow-style: none;
@@ -58,11 +65,11 @@
     scrollbar-color: transparent transparent;
   }
 
-  #slider::-webkit-scrollbar {
+  #img-slider::-webkit-scrollbar {
     display: none;
   }
 
-  #slider::-webkit-scrollbar-thumb {
+  #img-slider::-webkit-scrollbar-thumb {
     background-color: transparent;
   }
 </style>

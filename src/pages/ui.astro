@@ -2,8 +2,9 @@
 import Layout from "../layouts/Layout.astro"
 import NoJsSelect from "../components/nojs/NoJsSelect.astro"
 import NoJsTabs from "../components/nojs/NoJsTabs.astro"
-import Slider from "../components/nojs/Slider.astro"
 import Carousel from "../components/nojs/Carousel.astro"
+import Slider from "../components/nojs/Slider.astro"
+import ImgSlider from "../components/nojs/ImgSlider.astro"
 ---
 
 <Layout
@@ -88,13 +89,19 @@ import Carousel from "../components/nojs/Carousel.astro"
     <NoJsTabs />
   </section>
 
-  <section class="py-20 md:py-28" id="slider">
+  <section class="py-20 md:py-28">
     <h3 class="text-4xl font-bold mb-4">Slider</h3>
     <p class="text-gray-700 mb-8">Slider content based on selected option.</p>
     <Slider />
   </section>
 
-  <section class="py-20 md:py-28" id="slider">
+  <section class="py-20 md:py-28">
+    <h3 class="text-4xl font-bold mb-4">Image Slider</h3>
+    <p class="text-gray-700 mb-8">Slider with images for example.</p>
+    <ImgSlider />
+  </section>
+
+  <section class="py-20 md:py-28">
     <h3 class="text-4xl font-bold mb-4">Carousel</h3>
     <p class="text-gray-700 mb-8">
       Carousel is a slider with swipes based on browser scroll behavior. Unlike slider you
