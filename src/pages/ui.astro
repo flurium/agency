@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro"
 import NoJsSelect from "../components/nojs/NoJsSelect.astro"
 import NoJsTabs from "../components/nojs/NoJsTabs.astro"
 import Slider from "../components/nojs/Slider.astro"
+import Carousel from "../components/nojs/Carousel.astro"
 ---
 
 <Layout
@@ -10,7 +11,7 @@ import Slider from "../components/nojs/Slider.astro"
   description="Implementing shadcn ui select component using only HMTL and CSS. No JS is allowed."
 >
   <hgroup class="text-center py-20 md:py-28 max-w-3xl mx-auto">
-    <h1 class="text-6xl font-bold mb-6 leading-[1.2]">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-[1.2]">
       No more Javascript dependencies!
     </h1>
     <h2 class="text-gray-700 text-lg">
@@ -91,5 +92,14 @@ import Slider from "../components/nojs/Slider.astro"
     <h3 class="text-4xl font-bold mb-4">Slider</h3>
     <p class="text-gray-700 mb-8">Slider content based on selected option.</p>
     <Slider />
+  </section>
+
+  <section class="py-20 md:py-28" id="slider">
+    <h3 class="text-4xl font-bold mb-4">Carousel</h3>
+    <p class="text-gray-700 mb-8">
+      Carousel is a slider with swipes based on browser scroll behavior. If you don't need
+      swiping then reach out to slider first.
+    </p>
+    <Carousel />
   </section>
 </Layout>

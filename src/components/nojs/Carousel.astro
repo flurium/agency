@@ -1,0 +1,59 @@
+<div id="carousel" class="flex overflow-x-scroll scroll-smooth rounded-lg">
+  <div
+    id="carousel-red"
+    class="w-full flex-none h-40 bg-red-500"
+    style="scroll-snap-align: center;"
+  >
+  </div>
+  <div
+    id="carousel-blue"
+    class="w-full flex-none h-40 bg-blue-500"
+    style="scroll-snap-align: center;"
+  >
+  </div>
+  <div
+    id="carousel-green"
+    class="w-full flex-none h-40 bg-green-500"
+    style="scroll-snap-align: center;"
+  >
+  </div>
+</div>
+
+<div class="m-auto w-fit flex gap-2 mt-8">
+  <a
+    class="rounded-l-lg rounded-r py-3 px-6 border cursor-pointer transition-colors select-none"
+    href="#carousel-red"
+  >
+    Red
+  </a>
+  <a
+    class="rounded py-3 px-6 border cursor-pointer transition-colors select-none"
+    href="#carousel-blue"
+  >
+    Blue
+  </a>
+  <a
+    class="rounded-r-lg rounded-l py-3 px-6 border cursor-pointer transition-colors select-none"
+    href="#carousel-green"
+  >
+    Green
+  </a>
+</div>
+
+<style>
+  #carousel {
+    scroll-snap-type: x mandatory;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+  }
+
+  #carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  #carousel::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+</style>
