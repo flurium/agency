@@ -90,25 +90,27 @@ import ImgSlider from "../components/nojs/ImgSlider.astro"
   </section>
 
   <section class="py-20 md:py-28">
+    <h3 class="text-4xl font-bold mb-4">Carousel</h3>
+    <p class="text-gray-700 mb-8">
+      Carousel shows content based on selected option with slide animation.
+    </p>
+    <Carousel />
+  </section>
+
+  <section class="py-20 md:py-28">
     <h3 class="text-4xl font-bold mb-4">Slider</h3>
-    <p class="text-gray-700 mb-8">Slider content based on selected option.</p>
+    <p class="text-gray-700 mb-8">
+      Slider is a carousel but based on swipes and url fragment (like #...). Recommended
+      to reach out to Carousel first if don't super need swiping.
+    </p>
     <Slider />
   </section>
 
   <section class="py-20 md:py-28">
     <h3 class="text-4xl font-bold mb-4">Image Slider</h3>
     <p class="text-gray-700 mb-8">
-      Slider with images without controls. Swipe right and left to change.
+      Slider with images for more examples. Swipe right and left to change.
     </p>
     <ImgSlider />
-  </section>
-
-  <section class="py-20 md:py-28">
-    <h3 class="text-4xl font-bold mb-4">Carousel</h3>
-    <p class="text-gray-700 mb-8">
-      Carousel is a slider with swipes based on browser scroll behavior. Unlike slider you
-      can't highlight button for active section.
-    </p>
-    <Carousel />
   </section>
 </Layout>
