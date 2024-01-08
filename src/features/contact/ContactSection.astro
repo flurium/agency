@@ -28,6 +28,7 @@ const { data } = Astro.props
 
     <label for="email">Email</label>
     <input
+      onclick="if(this.value === '') { umami.track('Email input click') }"
       value={data?.email.value}
       type="email"
       id="email"

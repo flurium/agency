@@ -89,8 +89,18 @@ const techStack = [
         and APIs that drive results.
       </h2>
       <div class="flex gap-4">
-        <a href="/#contact" class="py-3 px-6 bg-black text-white rounded">CONTACT</a>
-        <a href="/portfolio" class="py-3 px-6 border-black border rounded">
+        <a
+          href="/#contact"
+          class="py-3 px-6 bg-black text-white rounded"
+          data-umami-event="Hero Contact"
+        >
+          CONTACT
+        </a>
+        <a
+          data-umami-event="Hero Portfolio"
+          href="/portfolio"
+          class="py-3 px-6 border-black border rounded"
+        >
           SEE PORTFOLIO
         </a>
       </div>
@@ -129,7 +139,11 @@ const techStack = [
     <Projects latest />
 
     <div class="text-center pt-16">
-      <a href="/portfolio" class="rounded py-3 px-6 border border-black inline-block">
+      <a
+        href="/portfolio"
+        class="rounded py-3 px-6 border border-black inline-block"
+        data-umami-event="Portfolio View All"
+      >
         VIEW ALL
       </a>
     </div>
