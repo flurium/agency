@@ -1,0 +1,53 @@
+---
+const testimonials = [
+  {
+    content: `"I want to thank you for your creative and professional approach to the Spentoday
+    project. Your team demonstrated not only a high level of technical skills, but also
+    the ability to bring something unique to the project. Your improvements and innovative
+    elements gave the project freshness and originality. Your presentation was a
+    convincing demonstration of your dedication and professionalism."`,
+  },
+  {
+    content: `"A diligent team that works at a professional level! They took into account all wishes
+    in work, performed all tasks on time and without comments! Very pleased with the
+    cooperation with this team!"`,
+  },
+]
+---
+
+<input type="radio" class="hidden" name="testimonial" id="testimonial-vlad" checked />
+<input type="radio" class="hidden" name="testimonial" id="testimonial-nazar" />
+
+<div id="testimonial-wrapper" class="overflow-hidden rounded-lg">
+  <div id="testimonial-slides" class="flex transition-transform duration-300 rounded-lg">
+    {testimonials.map((x) => <div class="w-full flex-none">{x.content}</div>)}
+  </div>
+</div>
+
+<div id="labels" class="m-auto w-fit flex gap-2 mt-8">
+  <label
+    for="testimonial-vlad"
+    class="rounded-l-lg rounded-r py-3 px-6 border cursor-pointer transition-colors select-none"
+  >
+    Vlad
+  </label>
+  <label
+    for="testimonial-nazar"
+    class="rounded-l rounded-r-lg py-3 px-6 border cursor-pointer transition-colors select-none"
+  >
+    Nazar
+  </label>
+</div>
+
+<style>
+  #testimonial-nazar:checked ~ #testimonial-wrapper > #testimonial-slides {
+    transform: translateX(-100%);
+  }
+
+  /*
+  #carousel-red:checked ~ #carousel-labels > label[for="carousel-red"],
+  #carousel-blue:checked ~ #carousel-labels > label[for="carousel-blue"],
+  #carousel-green:checked ~ #carousel-labels > label[for="carousel-green"] {
+    @apply bg-gray-800 text-white border-gray-800;
+  } */
+</style>
