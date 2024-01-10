@@ -9,7 +9,6 @@ export const getStaticPaths: GetStaticPaths = () => {
   return projects.map((x) => ({ params: { slug: x.slug }, props: x }))
 }
 
-const { slug } = Astro.params
 const project = Astro.props as (typeof projects)[number]
 ---
 
