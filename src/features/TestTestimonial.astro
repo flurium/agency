@@ -1,0 +1,91 @@
+---
+const testimonials = [
+  {
+    id: "vlad",
+    content: `"I want to thank you for your creative and professional approach to the Spentoday
+    project. Your team demonstrated not only a high level of technical skills, but also
+    the ability to bring something unique to the project. Your improvements and innovative
+    elements gave the project freshness and originality. Your presentation was a
+    convincing demonstration of your dedication and professionalism."`,
+  },
+  {
+    id: "nazar",
+    content: `"A diligent team that works at a professional level! They took into account all wishes
+    in work, performed all tasks on time and without comments! Very pleased with the
+    cooperation with this team!"`,
+  },
+  {
+    id: "anna",
+    content: `"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`,
+  },
+]
+
+const label = "absolute top-0 bottom-0 z-10 grid place-content-center select-none"
+const btn =
+  "rounded-full w-12 h-12 border bg-white cursor-pointer grid place-content-center"
+---
+
+<div id="testimonial-wrapper" class="overflow-hidden relative py-20 md:py-28">
+  {
+    testimonials.map((x, i) => (
+      <input
+        type="radio"
+        name="testimonial"
+        class="hidden"
+        id={`testimonial-${x.id}`}
+        checked={i === 0}
+      />
+    ))
+  }
+
+  <div
+    id="testimonial-slides"
+    class="flex w-full items-center transition-transform duration-500"
+  >
+    {
+      testimonials.map((x) => (
+        <p class="w-full flex-none text-center px-20 break-words">{x.content}</p>
+      ))
+    }
+  </div>
+
+  {
+    testimonials.map((x) => (
+      <label for={`testimonial-${x.id}`} class={label}>
+        <div class={btn}>{">"}</div>
+      </label>
+    ))
+  }
+</div>
+
+<style>
+  /* 
+    All styles can be constructed dynamically, 
+    but Astro doesn't have built in addition to the head 
+  */
+
+  #testimonial-nazar:checked ~ #testimonial-slides {
+    transform: translateX(-100%);
+  }
+  #testimonial-anna:checked ~ #testimonial-slides {
+    transform: translateX(-200%);
+  }
+
+  #testimonial-vlad:checked ~ label[for="testimonial-vlad"],
+  #testimonial-nazar:checked ~ label[for="testimonial-nazar"],
+  #testimonial-anna:checked ~ label[for="testimonial-anna"] {
+    @apply hidden;
+  }
+
+  #testimonial-vlad:checked ~ label[for="testimonial-anna"],
+  #testimonial-nazar:checked ~ label[for="testimonial-vlad"],
+  #testimonial-anna:checked ~ label[for="testimonial-nazar"] {
+    @apply left-0;
+  }
+
+  #testimonial-vlad:checked ~ label[for="testimonial-nazar"],
+  #testimonial-nazar:checked ~ label[for="testimonial-anna"],
+  #testimonial-anna:checked ~ label[for="testimonial-vlad"] {
+    @apply right-0;
+  }
+</style>

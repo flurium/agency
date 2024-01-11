@@ -12,36 +12,76 @@ const testimonials = [
     in work, performed all tasks on time and without comments! Very pleased with the
     cooperation with this team!"`,
   },
+  {
+    content: `"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`,
+  },
 ]
 ---
 
-<input type="radio" class="hidden" name="testimonial" id="testimonial-vlad" checked />
-<input type="radio" class="hidden" name="testimonial" id="testimonial-nazar" />
+<div id="testimonial-wrapper" class="overflow-hidden relative py-20 md:py-28">
+  <input type="radio" name="testimonial" class="hidden" id="testimonial-vlad" checked />
+  <input type="radio" name="testimonial" class="hidden" id="testimonial-nazar" />
+  <input type="radio" name="testimonial" class="hidden" id="testimonial-anna" />
 
-<div id="testimonial-wrapper" class="overflow-hidden rounded-lg">
-  <div id="testimonial-slides" class="flex transition-transform duration-300 rounded-lg">
-    {testimonials.map((x) => <div class="w-full flex-none">{x.content}</div>)}
+  <div
+    id="testimonial-slides"
+    class="flex w-full items-center transition-transform duration-500"
+  >
+    {
+      testimonials.map((x) => (
+        <div class="w-full flex-none text-center px-20">{x.content}</div>
+      ))
+    }
   </div>
-</div>
 
-<div id="labels" class="m-auto w-fit flex gap-2 mt-8">
   <label
     for="testimonial-vlad"
-    class="rounded-l-lg rounded-r py-3 px-6 border cursor-pointer transition-colors select-none"
+    class="absolute left-0 top-0 bottom-0 z-10 grid place-content-center"
   >
-    Vlad
+    <div class="rounded-full w-12 h-12 border cursor-pointer grid place-content-center">
+      V
+    </div>
   </label>
+
   <label
     for="testimonial-nazar"
-    class="rounded-l rounded-r-lg py-3 px-6 border cursor-pointer transition-colors select-none"
+    class="absolute right-0 top-0 bottom-0 z-10 grid place-content-center"
   >
-    Nazar
+    <div class="rounded-full w-12 h-12 border cursor-pointer grid place-content-center">
+      N
+    </div>
+  </label>
+
+  <label
+    for="testimonial-anna"
+    class="absolute right-0 top-0 bottom-0 z-10 grid place-content-center"
+  >
+    <div class="rounded-full w-12 h-12 border bg-white cursor-pointer grid place-content-center">
+      A
+    </div>
   </label>
 </div>
 
 <style>
-  #testimonial-nazar:checked ~ #testimonial-wrapper > #testimonial-slides {
+  #testimonial-nazar:checked ~ #testimonial-slides {
     transform: translateX(-100%);
+  }
+  #testimonial-anna:checked ~ #testimonial-slides {
+    transform: translateX(-200%);
+  }
+
+  #testimonial-vlad:checked ~ label[for="testimonial-vlad"] {
+    @apply hidden;
+  }
+  #testimonial-vlad:checked ~ label[for="testimonial-anna"] {
+    @apply left-0 right-auto;
+  }
+
+  #testimonial-nazar:checked ~ label[for="testimonial-nazar"] {
+    @apply hidden;
+  }
+  #testimonial-nazar:checked ~ label[for="testimonial-vlad"] {
+    @apply left-0 right-auto;
   }
 
   /*
