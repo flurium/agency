@@ -1,4 +1,8 @@
 ---
+import FiveStars from "../components/icons/FiveStars.astro"
+import RightArrow from "../components/icons/RightArrow.astro"
+import { Image } from "astro:assets"
+
 import nazar from "../assets/testimonials/nazar.png"
 import vlad from "../assets/testimonials/vlad.png"
 import anna from "../assets/testimonials/anna.jpg"
@@ -7,6 +11,8 @@ const testimonials = [
   {
     id: "vlad",
     img: vlad,
+    name: "Vlad Syvorka",
+    position: "Mentor, STEP IT Academy",
     content: `"I want to thank you for your creative and professional approach to the Spentoday
     project. Your team demonstrated not only a high level of technical skills, but also
     the ability to bring something unique to the project. Your improvements and innovative
@@ -16,6 +22,8 @@ const testimonials = [
   {
     id: "nazar",
     img: nazar,
+    name: "Nazar Balaban",
+    position: "Mentor, STEP IT Academy",
     content: `"A diligent team that works at a professional level! They took into account all wishes
     in work, performed all tasks on time and without comments! Very pleased with the
     cooperation with this team!"`,
@@ -23,11 +31,17 @@ const testimonials = [
   {
     id: "anna",
     img: anna,
-    content: `"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA`,
+    name: "Anna Zakharova",
+    position: "Education Manager, STEP IT Academy",
+    content: `"I believe that the team's project serves as an excellent example of teamwork 
+    and the high level of student preparation. The project has the potential to be implemented 
+    and meet market demand due to its relevance and modernity. I consider this product to be an 
+    excellent example of how students can showcase their knowledge and skills within the framework of a team project."`,
   },
 ]
 
-const label = "absolute top-0 bottom-0 z-10 grid place-content-center select-none"
+const label =
+  "absolute top-0 z-10 hidden pointer-events-none content-end md:place-content-center select-none"
 const btn =
   "rounded-full w-12 h-12 border bg-white cursor-pointer grid place-content-center"
 ---
@@ -38,7 +52,8 @@ const btn =
       <input
         type="radio"
         name="testimonial"
-        class="hidden"
+        class=" absolute "
+        style={`left: ${i}rem;`}
         id={`testimonial-${x.id}`}
         checked={i === 0}
       />
@@ -51,7 +66,27 @@ const btn =
   >
     {
       testimonials.map((x) => (
-        <p class="w-full flex-none text-center px-20 break-words">{x.content}</p>
+        <div class="w-full flex-none m-auto px-6 md:px-40 break-words">
+          <FiveStars class="mx-auto" />
+
+          <p class="font-bold text-xl md:text-2xl my-8 text-center">{x.content}</p>
+
+          <div class="mx-auto flex justify-center items-center gap-5">
+            <Image
+              src={x.img}
+              class="rounded-full h-14 w-14"
+              alt={x.name}
+              densities={[1, 1.5, 2]}
+              quality="max"
+              width={56}
+              height={56}
+            />
+            <div>
+              <p class="font-semibold">{x.name}</p>
+              <p>{x.position}</p>
+            </div>
+          </div>
+        </div>
       ))
     }
   </div>
@@ -59,7 +94,9 @@ const btn =
   {
     testimonials.map((x) => (
       <label for={`testimonial-${x.id}`} class={label}>
-        <div class={btn}>{">"}</div>
+        <div class={btn}>
+          <RightArrow />
+        </div>
       </label>
     ))
   }
@@ -78,21 +115,38 @@ const btn =
     transform: translateX(-200%);
   }
 
-  #testimonial-vlad:checked ~ label[for="testimonial-vlad"],
+  :focus {
+    padding: 100px;
+    /* pointer-events: none; */
+  }
+
+  /* #testimonial-vlad:checked ~ label[for="testimonial-vlad"],
   #testimonial-nazar:checked ~ label[for="testimonial-nazar"],
   #testimonial-anna:checked ~ label[for="testimonial-anna"] {
-    @apply hidden;
-  }
+    display: none;
+  } */
 
   #testimonial-vlad:checked ~ label[for="testimonial-anna"],
   #testimonial-nazar:checked ~ label[for="testimonial-vlad"],
   #testimonial-anna:checked ~ label[for="testimonial-nazar"] {
-    @apply left-0;
+    left: 1.5rem;
+    bottom: 0;
+    display: grid;
+    pointer-events: all;
+  }
+
+  #testimonial-vlad:checked ~ label[for="testimonial-anna"] > div,
+  #testimonial-nazar:checked ~ label[for="testimonial-vlad"] > div,
+  #testimonial-anna:checked ~ label[for="testimonial-nazar"] > div {
+    @apply rotate-180;
   }
 
   #testimonial-vlad:checked ~ label[for="testimonial-nazar"],
   #testimonial-nazar:checked ~ label[for="testimonial-anna"],
   #testimonial-anna:checked ~ label[for="testimonial-vlad"] {
-    @apply right-0;
+    right: 1.5rem;
+    bottom: 0;
+    display: grid;
+    pointer-events: all;
   }
 </style>
