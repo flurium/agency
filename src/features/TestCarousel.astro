@@ -6,8 +6,8 @@ import Testimonial from "./Testimonial.astro"
 
 ---
 
-<div class="carousel relative shadow-lg mt-[26px]">
-    <div class="carousel-inner relative overflow-hidden w-full">
+<div class="carousel relative mt-[26px] ">
+    <div class="carousel-inner relative overflow-hidden w-full md:h-[500px] h-[700px]">
         <input class="carousel-open hidden" type="radio" id="carousel-1" name="carousel" checked>
         <div class="carousel-item block h-auto max-h-full">
             <Testimonial img={vlad} person="Vlad Syvorka" position="Mentor, STEP IT Academy">
@@ -33,7 +33,7 @@ import Testimonial from "./Testimonial.astro"
               I consider this product to be an excellent example of how students can showcase their knowledge and skills within the framework of a team project."
             </Testimonial>
         </div>
-        <label for="carousel-3" class="carousel-control prev control-1 mb-4">‹</label>
+        <label for="carousel-3" class="carousel-control prev control-1">‹</label>
         <label for="carousel-2" class="carousel-control next control-1">›</label>
         <label for="carousel-1" class="carousel-control prev control-2">‹</label>
         <label for="carousel-3" class="carousel-control next control-2">›</label>
@@ -78,8 +78,8 @@ import Testimonial from "./Testimonial.astro"
 .carousel-item {
     position: absolute;
     opacity: 0;
-    -webkit-transition: opacity 0.6s ease-out;
-    transition: opacity 0.6s ease-out;
+    -webkit-transition: opacity 3s revert;
+    transition: opacity 0.3s revert;
 }
 
 /* .carousel-item  {
@@ -89,13 +89,12 @@ import Testimonial from "./Testimonial.astro"
 } */
 
 .carousel-control {
-    background: rgba(0, 0, 0, 0.28);
-    border-radius: 50%;
-    color: #fff;
+    border-radius: 20%;
+    color: rgba(0, 0, 0, 0.28);
     cursor: pointer;
     display: none;
-    font-size: 40px;
-    height: 40px;
+    font-size: 50px;
+    height: 50px;
     line-height: 35px;
     position: absolute;
     top: 50%;
@@ -104,7 +103,8 @@ import Testimonial from "./Testimonial.astro"
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
     text-align: center;
-    width: 40px;
+    align-items: center;
+    width: 50px;
     z-index: 10;
 }
 
