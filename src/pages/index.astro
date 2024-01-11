@@ -13,11 +13,9 @@ import maria from "../assets/team/maria.png"
 import roman from "../assets/team/roman.png"
 import vitalii from "../assets/team/vitalii.png"
 import dima from "../assets/team/dima.png"
-import nazar from "../assets/testimonials/nazar.png"
-import vlad from "../assets/testimonials/vlad.png"
-import Testimonial from "../features/Testimonial.astro"
 import TestimonialCarousel from "../features/TestimonialCarousel.astro"
 import BestPerformance from "../components/landing/BestPerformance.astro"
+import TestCarousel from "../features/TestCarousel.astro"
 
 const team = [
   {
@@ -124,13 +122,15 @@ const techStack = [
 
   <!-- <TestimonialCarousel /> -->
 
+  <TestCarousel />
+<!-- 
   <Testimonial img={vlad} person="Vlad Syvorka" position="Mentor, STEP IT Academy">
     "I want to thank you for your creative and professional approach to the Spentoday
     project. Your team demonstrated not only a high level of technical skills, but also
     the ability to bring something unique to the project. Your improvements and innovative
     elements gave the project freshness and originality. Your presentation was a
     convincing demonstration of your dedication and professionalism."
-  </Testimonial>
+  </Testimonial> -->
 
   <section class="py-20 md:py-28">
     <div class="text-center">
@@ -155,11 +155,11 @@ const techStack = [
     </div>
   </section>
 
-  <Testimonial img={nazar} person="Nazar Balaban" position="Mentor, STEP IT Academy">
+  <!-- <Testimonial img={nazar} person="Nazar Balaban" position="Mentor, STEP IT Academy">
     "A diligent team that works at a professional level! They took into account all wishes
     in work, performed all tasks on time and without comments! Very pleased with the
     cooperation with this team!"
-  </Testimonial>
+  </Testimonial> -->
 
   <ContactSection />
 
