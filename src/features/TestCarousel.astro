@@ -3,125 +3,123 @@ import nazar from "../assets/testimonials/nazar.png"
 import vlad from "../assets/testimonials/vlad.png"
 import anna from "../assets/testimonials/anna.jpg"
 import Testimonial from "./Testimonial.astro"
+import RightArrow from "../components/icons/RightArrow.astro"
+import LeftArrow from "../components/icons/LeftArrow.astro"
 ---
 
-<div class="carousel relative mt-[26px]">
-  <div class="carousel-inner relative overflow-hidden w-full md:h-[500px] h-[700px]">
-    <input
-      class="carousel-open hidden"
-      type="radio"
-      id="carousel-1"
-      name="carousel"
-      checked
-    />
-    <div class="carousel-item block h-auto max-h-full">
-      <Testimonial img={vlad} person="Vlad Syvorka" position="Mentor, STEP IT Academy">
-        "I want to thank you for your creative and professional approach to the Spentoday
-        project. Your team demonstrated not only a high level of technical skills, but
-        also the ability to bring something unique to the project. Your improvements and
-        innovative elements gave the project freshness and originality. Your presentation
-        was a convincing demonstration of your dedication and professionalism."
-      </Testimonial>
+<div class="carousel relative mt-[26px] ">
+    <div class="carousel-inner relative overflow-hidden w-full md:h-[500px] h-[700px]">
+        <input class="carousel-open hidden" type="radio" id="carousel-1" name="carousel" checked>
+        <div class="carousel-item block h-auto max-h-full">
+            <Testimonial img={vlad} person="Vlad Syvorka" position="Mentor, STEP IT Academy">
+              "I want to thank you for your creative and professional approach to the Spentoday
+              project. Your team demonstrated not only a high level of technical skills, but also
+              the ability to bring something unique to the project. Your improvements and innovative
+              elements gave the project freshness and originality. Your presentation was a
+              convincing demonstration of your dedication and professionalism."
+          </Testimonial>
+        </div>
+        <input class="carousel-open hidden" type="radio" id="carousel-2" name="carousel">
+        <div class="carousel-item block h-auto max-h-full">
+            <Testimonial img={nazar} person="Nazar Balaban" position="Mentor, STEP IT Academy">
+              "A diligent team that works at a professional level! They took into account all wishes
+              in work, performed all tasks on time and without comments! Very pleased with the
+              cooperation with this team!"
+            </Testimonial>
+        </div>
+        <input class="carousel-open hidden" type="radio" id="carousel-3" name="carousel">
+        <div class="carousel-item block h-auto max-h-full">
+            <Testimonial img={anna} person="Anna Zakharova" position="Education Manager, STEP IT Academy">
+              "I believe that the team's project serves as an excellent example of teamwork and the high level of student preparation. The project has the potential to be implemented and meet market demand due to its relevance and modernity.
+              I consider this product to be an excellent example of how students can showcase their knowledge and skills within the framework of a team project."
+            </Testimonial>
+        </div>
+        <label for="carousel-3" class="carousel-control prev control-1"><LeftArrow/></label>
+        <label for="carousel-2" class="carousel-control next control-1"><RightArrow/></label>
+        <label for="carousel-1" class="carousel-control prev control-2"><LeftArrow/></label>
+        <label for="carousel-3" class="carousel-control next control-2"><RightArrow/></label>
+        <label for="carousel-2" class="carousel-control prev control-3"><LeftArrow/></label>
+        <label for="carousel-1" class="carousel-control next control-3"><RightArrow/></label>
+        <ol class="carousel-indicators">
+            <li>
+                <label for="carousel-1" class="carousel-bullet">•</label>
+            </li>
+            <li>
+                <label for="carousel-2" class="carousel-bullet">•</label>
+            </li>
+            <li>
+                <label for="carousel-3" class="carousel-bullet">•</label>
+            </li>
+        </ol>
     </div>
-
-    <input class="carousel-open hidden" type="radio" id="carousel-2" name="carousel" />
-    <div class="carousel-item block h-auto max-h-full">
-      <Testimonial img={nazar} person="Nazar Balaban" position="Mentor, STEP IT Academy">
-        "A diligent team that works at a professional level! They took into account all
-        wishes in work, performed all tasks on time and without comments! Very pleased
-        with the cooperation with this team!"
-      </Testimonial>
-    </div>
-
-    <input class="carousel-open hidden" type="radio" id="carousel-3" name="carousel" />
-    <div class="carousel-item block h-auto max-h-full">
-      <Testimonial
-        img={anna}
-        person="Anna Zakharova"
-        position="Education Manager, STEP IT Academy"
-      >
-        "I believe that the team's project serves as an excellent example of teamwork and
-        the high level of student preparation. The project has the potential to be
-        implemented and meet market demand due to its relevance and modernity. I consider
-        this product to be an excellent example of how students can showcase their
-        knowledge and skills within the framework of a team project."
-      </Testimonial>
-    </div>
-
-    <label for="carousel-3" class="carousel-control prev control-1">‹</label>
-    <label for="carousel-2" class="carousel-control next control-1">›</label>
-    <label for="carousel-1" class="carousel-control prev control-2">‹</label>
-    <label for="carousel-3" class="carousel-control next control-2">›</label>
-    <label for="carousel-2" class="carousel-control prev control-3">‹</label>
-    <label for="carousel-1" class="carousel-control next control-3">›</label>
-  
-    <ol class="carousel-indicators">
-      <li>
-        <label for="carousel-1" class="carousel-bullet">•</label>
-      </li>
-      <li>
-        <label for="carousel-2" class="carousel-bullet">•</label>
-      </li>
-      <li>
-        <label for="carousel-3" class="carousel-bullet">•</label>
-      </li>
-    </ol>
-  </div>
 </div>
 
 <style>
-  .carousel-open:checked + .carousel-item {
+  /* html, body {
+    margin: 0px;
+    padding: 0px;
+} */
+
+/* .carousel {
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 26px;
+} */
+
+/* .carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+} */
+
+.carousel-open:checked + .carousel-item {
     position: static;
     opacity: 100;
-  }
+}
 
-  .carousel-item {
+.carousel-item {
     position: absolute;
     opacity: 0;
-    -webkit-transition: opacity 3s revert;
-    transition: opacity 0.3s revert;
-  }
+    -webkit-transition: opacity 3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
 
-  .carousel-control {
-    border-radius: 20%;
-    color: rgba(0, 0, 0, 0.28);
+/* .carousel-item  {
+    display: block;
+    height: auto;
+    max-width: 100%;
+} */
+
+.carousel-control {
     cursor: pointer;
     display: none;
-    font-size: 50px;
-    height: 50px;
-    line-height: 35px;
     position: absolute;
     top: 50%;
     -webkit-transform: translate(0, -50%);
     cursor: pointer;
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-    text-align: center;
-    align-items: center;
-    width: 50px;
     z-index: 10;
-  }
+}
 
-  .carousel-control.prev {
+.carousel-control.prev {
     left: 2%;
-  }
+}
 
-  .carousel-control.next {
+.carousel-control.next {
     right: 2%;
-  }
+}
 
-  .carousel-control:hover {
-    background: rgba(0, 0, 0, 0.8);
+.carousel-control:hover {
     color: #aaaaaa;
-  }
+}
 
-  #carousel-1:checked ~ .control-1,
-  #carousel-2:checked ~ .control-2,
-  #carousel-3:checked ~ .control-3 {
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
     display: block;
-  }
+}
 
-  .carousel-indicators {
+.carousel-indicators {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -131,39 +129,28 @@ import Testimonial from "./Testimonial.astro"
     right: 0;
     text-align: center;
     z-index: 10;
-  }
+}
 
-  .carousel-indicators li {
+.carousel-indicators li {
     display: inline-block;
     margin: 0 5px;
-  }
+}
 
-  .carousel-bullet {
+.carousel-bullet {
     color: #aaaaaa;
     cursor: pointer;
     display: block;
     font-size: 35px;
-  }
+}
 
-  .carousel-bullet:hover {
+.carousel-bullet:hover {
     color: rgba(0, 0, 0, 0.8);
-  }
+}
 
-  #carousel-1:checked
-    ~ .control-1
-    ~ .carousel-indicators
-    li:nth-child(1)
-    .carousel-bullet,
-  #carousel-2:checked
-    ~ .control-2
-    ~ .carousel-indicators
-    li:nth-child(2)
-    .carousel-bullet,
-  #carousel-3:checked
-    ~ .control-3
-    ~ .carousel-indicators
-    li:nth-child(3)
-    .carousel-bullet {
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
     color: #428bca;
-  }
+}
+
 </style>
