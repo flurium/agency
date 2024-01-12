@@ -32,7 +32,11 @@ import MetricCircle from "./MetricCircle.astro"
   <div class="flex flex-col justify-center gap-12">
     <div class="grid grid-cols-[1fr_auto] gap-4">
       <div class="p-4 border border-gray-500 text-gray-700 rounded text-lg">
-        https://flurium.com
+        <div class="w-min">
+          <p class="typewriter-text overflow-hidden border-r border-r-gray-700 font-mono">
+            https://flurium.com/
+          </p>
+        </div>
       </div>
       <a
         href="https://pagespeed.web.dev/analysis/https-www-flurium-com/vahq6aukda?form_factor=mobile"
@@ -50,3 +54,18 @@ import MetricCircle from "./MetricCircle.astro"
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .typewriter-text {
+    animation: typing 4s steps(20) infinite alternate;
+  }
+</style>
