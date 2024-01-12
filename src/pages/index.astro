@@ -1,24 +1,21 @@
 ---
 import { Image } from "astro:assets"
-
 import Layout from "../layouts/Layout.astro"
 import ContactSection from "../features/contact/ContactSection.astro"
 import Solutions from "../components/landing/Solutions.astro"
 import TeamBenefits from "../components/landing/TeamBenefits.astro"
 import Projects from "../features/projects/Projects.astro"
 import ImageCta from "../components/ImageCta.astro"
-
 import heroImg from "../assets/hero.png"
 import maria from "../assets/team/maria.png"
 import roman from "../assets/team/roman.png"
 import vitalii from "../assets/team/vitalii.png"
 import dima from "../assets/team/dima.png"
 import BestPerformance from "../components/landing/BestPerformance.astro"
-import TestTestimonial from "../features/TestTestimonial.astro"
-import TestCarousel from "../features/TestCarousel.astro"
 import Testimonial from "../features/Testimonial.astro"
 import vlad from "../assets/testimonials/vlad.png"
 import nazar from "../assets/testimonials/nazar.png"
+import TestimonialCarousel from "../features/TestimonialCarousel.astro"
 
 const team = [
   {
@@ -123,17 +120,7 @@ const techStack = [
 
   <BestPerformance />
 
-  <!-- <TestCarousel /> -->
-
-  <!-- <TestTestimonial /> -->
-
-  <Testimonial img={vlad} person="Vlad Syvorka" position="Mentor, STEP IT Academy">
-    "I want to thank you for your creative and professional approach to the Spentoday
-    project. Your team demonstrated not only a high level of technical skills, but also
-    the ability to bring something unique to the project. Your improvements and innovative
-    elements gave the project freshness and originality. Your presentation was a
-    convincing demonstration of your dedication and professionalism."
-  </Testimonial>
+  <TestimonialCarousel />
 
   <section class="py-20 md:py-28 px-6">
     <div class="text-center">
@@ -157,12 +144,6 @@ const techStack = [
       </a>
     </div>
   </section>
-
-  <Testimonial img={nazar} person="Nazar Balaban" position="Mentor, STEP IT Academy">
-    "A diligent team that works at a professional level! They took into account all wishes
-    in work, performed all tasks on time and without comments! Very pleased with the
-    cooperation with this team!"
-  </Testimonial>
 
   <ContactSection />
 

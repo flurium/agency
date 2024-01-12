@@ -63,7 +63,9 @@ const testimonials = [
         <div class="w-full flex-none m-auto px-6 md:px-40 break-words">
           <FiveStars class="mx-auto" />
 
-          <p class="font-bold text-xl md:text-2xl my-8 text-center">{x.content}</p>
+          <p class="font-bold text-lg sm:text-xl md:text-2xl my-8 text-center">
+            {x.content}
+          </p>
 
           <div class="mx-auto flex justify-center items-center gap-5">
             <Image
@@ -85,23 +87,34 @@ const testimonials = [
     }
   </div>
 
+  <div id="testimonial-indicators" class="flex justify-center gap-4 z-10 mt-12">
+    {
+      testimonials.map((x) => (
+        <label
+          for={`testimonial-${x.id}`}
+          class="rounded-full h-3 w-3 bg-gray-200 cursor-pointer"
+        />
+      ))
+    }
+  </div>
+
   {
     testimonials.map((x) => (
       <Fragment>
         <label
           for={`testimonial-${x.id}`}
-          class="prev absolute top-0 bottom-0 left-6 z-10 hidden content-end md:place-content-center select-none"
+          class="prev absolute top-0 bottom-0 left-6 z-10 hidden content-end py-16 md:place-content-center select-none"
         >
-          <div class="rounded-full w-12 h-12 border bg-white cursor-pointer grid place-content-center">
+          <div class="rounded-full w-12 h-12 border border-gray-200 bg-white cursor-pointer grid place-content-center">
             <LeftArrow />
           </div>
         </label>
 
         <label
           for={`testimonial-${x.id}`}
-          class="next absolute top-0 bottom-0 right-6 z-10 hidden content-end md:place-content-center select-none"
+          class="next absolute top-0 bottom-0 right-6 z-10 hidden content-end  py-16 md:place-content-center select-none"
         >
-          <div class="rounded-full w-12 h-12 border bg-white cursor-pointer grid place-content-center">
+          <div class="rounded-full w-12 h-12 border border-gray-200 bg-white cursor-pointer grid place-content-center">
             <RightArrow />
           </div>
         </label>
@@ -130,5 +143,11 @@ const testimonials = [
   #testimonial-nazar:checked ~ label[for="testimonial-anna"].next,
   #testimonial-anna:checked ~ label[for="testimonial-vlad"].next {
     display: grid;
+  }
+
+  #testimonial-vlad:checked ~ #testimonial-indicators > [for="testimonial-vlad"],
+  #testimonial-nazar:checked ~ #testimonial-indicators > [for="testimonial-nazar"],
+  #testimonial-anna:checked ~ #testimonial-indicators > [for="testimonial-anna"] {
+    @apply bg-indigo-500;
   }
 </style>
