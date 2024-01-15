@@ -79,40 +79,42 @@ const techStack = [
 ---
 
 <Layout title="Flurium" description="Web development team">
-  <section class="py-20 md:py-28 px-6 grid grid-cols-1 md:grid-cols-2 gap-20">
-    <div class="place-self-center">
-      <h1 class="font-bold text-6xl">Ideas into Digital Solutions</h1>
-      <h2 class="mt-6 mb-10 text-gray-800">
-        Flurium is a web development agency dedicated to creating exceptional user
-        experiences through the use of modern technologies. Our team of experts combines
-        creativity and technical expertise to deliver high-performing websites, web apps,
-        and APIs that drive results.
-      </h2>
-      <div class="flex gap-4">
-        <a
-          href="/#contact"
-          class="py-3 px-6 bg-black text-white rounded"
-          data-umami-event="Hero Contact"
-        >
-          CONTACT
-        </a>
-        <a
-          data-umami-event="Hero Portfolio"
-          href="/portfolio"
-          class="py-3 px-6 border-black border rounded"
-        >
-          SEE PORTFOLIO
-        </a>
-      </div>
+  <section class="py-20 md:py-28 px-6">
+    <h1
+      class="font-bold text-5xl md:text-6xl lg:text-7xl
+      max-w-screen-lg m-auto text-center text-secondary-800"
+      style="line-height: 1.2;"
+    >
+      Turing people into clients. Fast. Performant.
+    </h1>
+    <h2
+      class="mt-14 mb-12 max-w-screen-md mx-auto text-center text-xl text-secondary-600 leading-normal"
+    >
+      Flurium delivers high-performing web solutions with
+      <span class="font-semibold text-secondary-800">great user-experience</span>. Which
+      leads to <span class="font-semibold text-secondary-800"
+        >rising amount of clients</span
+      >.
+    </h2>.
+    <div class="flex justify-center gap-4">
+      <a
+        href="/#contact"
+        class="py-4 px-6 bg-primary-500 text-white rounded"
+        data-umami-event="Hero Contact"
+      >
+        CONTACT
+      </a>
+      <a
+        data-umami-event="Hero Portfolio"
+        href="/portfolio"
+        class="py-4 px-6 bg-secondary-100 rounded"
+      >
+        SEE PORTFOLIO
+      </a>
     </div>
-    <Image
-      src={heroImg}
-      loading="eager"
-      alt={"Sun shining on top of mountain showing success"}
-      class="rounded-xl w-full md:order-first"
-      quality={100}
-    />
   </section>
+
+  <!-- <iframe src="/contact" class="w-full h-screen overflow-hidden"></iframe> -->
 
   <Solutions />
 
