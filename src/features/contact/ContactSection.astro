@@ -10,76 +10,70 @@ type Props = {
 const { data } = Astro.props
 ---
 
-<section class="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-20" id="contact">
-  <form action="/contact" method="post">
-    <h3 class="font-bold text-6xl">Contact us</h3>
-    <p class="mt-6 mb-8">Ready to discuss your project and get a website? Go</p>
+<form
+  class="py-20 md:py-28 px-6 m-auto max-w-screen-md"
+  id="contact"
+  action="/contact"
+  method="post"
+>
+  <h3 class="font-bold text-6xl">Reach out</h3>
+  <p class="mt-6 mb-8 text-secondary-600">Don't miss competition. Contact right now.</p>
 
-    <label for="name">Your name</label>
-    <input
-      value={data?.name.value}
-      type="text"
-      id="name"
-      name="name"
-      required
-      class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
-    />
-    {data?.name.error ? <p>{data.name.error}</p> : <Fragment />}
-
-    <label for="email">Email</label>
-    <input
-      onclick="if(this.value === '') { umami.track('Email input click') }"
-      value={data?.email.value}
-      type="email"
-      id="email"
-      name="email"
-      required
-      class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
-    />
-    {data?.email.error ? <p>{data.email.error}</p> : <Fragment />}
-
-    <label for="communication">Communication preferences</label>
-    <input
-      value={data?.communication}
-      type="text"
-      placeholder="Telegram @yournickname, phone +..."
-      id="communication"
-      name="communication"
-      class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
-    />
-
-    <label for="context">Context</label>
-    <textarea
-      id="context"
-      name="context"
-      placeholder="Tell us about your case..."
-      class="py-3 px-4 rounded border border-gray-200 w-full mt-2 mb-6"
-      rows="7">{data?.context}</textarea
-    >
-
-    <input
-      type="text"
-      name="address"
-      id="address"
-      value=""
-      tabindex="-1"
-      autocomplete="off"
-    />
-
-    <button
-      class="py-3 px-6 border border-black bg-black text-white rounded inline-block"
-    >
-      SEND
-    </button>
-  </form>
-
-  <Image
-    src={contactImg}
-    alt={"Road to top of mountain showing success"}
-    class="rounded-xl w-full h-full aspect-square md:aspect-auto object-cover md:order-first"
-    quality={100}
+  <label for="name">Your name</label>
+  <input
+    value={data?.name.value}
+    type="text"
+    id="name"
+    name="name"
+    required
+    class="py-3 px-4 rounded border border-secondary-200 w-full mt-2 mb-6"
   />
-</section>
+  {data?.name.error ? <p>{data.name.error}</p> : <Fragment />}
+
+  <label for="email">Email</label>
+  <input
+    onclick="if(this.value === '') { umami.track('Email input click') }"
+    value={data?.email.value}
+    type="email"
+    id="email"
+    name="email"
+    required
+    class="py-3 px-4 rounded border border-secondary-200 w-full mt-2 mb-6"
+  />
+  {data?.email.error ? <p>{data.email.error}</p> : <Fragment />}
+
+  <label for="communication">Communication preferences</label>
+  <input
+    value={data?.communication}
+    type="text"
+    placeholder="Telegram @yournickname, phone +..."
+    id="communication"
+    name="communication"
+    class="py-3 px-4 rounded border border-secondary-200 w-full mt-2 mb-6"
+  />
+
+  <label for="context">Context</label>
+  <textarea
+    id="context"
+    name="context"
+    placeholder="Tell us about your case..."
+    class="py-3 px-4 rounded border border-secondary-200 w-full mt-2 mb-6"
+    rows="7"
+  >
+    {data?.context}
+  </textarea>
+
+  <input
+    type="text"
+    name="address"
+    id="address"
+    value=""
+    tabindex="-1"
+    autocomplete="off"
+  />
+
+  <button class="py-4 px-6 bg-primary-500 text-white rounded">SEND</button>
+</form>
 
 <style>
   #address {
