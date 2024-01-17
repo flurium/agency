@@ -30,24 +30,27 @@ const solutions = [
   id="solutions"
 >
   <div>
-    <h3 class="text-5xl font-bold mt-4 mb-12 leading-tight">
-      What we build for you. Always performant. Always better than your competitors.
-    </h3>
-    <div class="flex gap-4">
-      <a
-        href="/#contact"
-        class="py-4 px-6 bg-secondary-100 rounded hover:bg-secondary-200">GET A WEBSITE</a
-      >
-      <a href="/portfolio" class="py-4 px-6 flex gap-2 items-center">
-        SEE WORK
-        <RightArrow />
-      </a>
+    <div class="md:sticky md:top-10">
+      <h3 class="text-5xl font-bold mt-4 mb-12 leading-tight">
+        What we build for you. Always performant. Always better than your competitors.
+      </h3>
+      <div class="flex gap-4">
+        <a
+          href="/#contact"
+          class="py-4 px-6 bg-secondary-100 rounded hover:bg-secondary-200"
+          >GET A WEBSITE</a
+        >
+        <a href="/portfolio" class="py-4 px-6 flex gap-2 items-center">
+          SEE WORK
+          <RightArrow />
+        </a>
+      </div>
     </div>
   </div>
   <ul class="flex flex-col gap-4">
     {
       solutions.map((x, i) => (
-        <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4">
+        <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4 ">
           <div class="rounded-full h-10 w-10 bg-indigo-500" />
           <h4 class="font-semibold text-xl self-center">{x.name}</h4>
 
