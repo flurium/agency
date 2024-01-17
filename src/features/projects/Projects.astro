@@ -9,6 +9,7 @@ import spentoday from "../../assets/projects/spentoday.png"
 import thing from "../../assets/projects/thing.png"
 import onest from "../../assets/projects/onest.png"
 import RightArrow from "../../components/icons/RightArrow.astro"
+import GitHubLogo from "./GitHubLogo.astro"
 
 export const projectImages = { bidme, roadtovostok, spentoday, thing, onest }
 
@@ -23,13 +24,23 @@ const { latest } = Astro.props
 
       <div class="flex justify-between items-baseline mt-6">
         <h4 class="text-2xl font-bold">{x.name}</h4>
-
-        {
-          <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
-            VIEW PROJECT
-            <RightArrow />
+        <div class="flex gap-2 items-center">
+          <a href={`${x.github}`}>
+            <GitHubLogo class="h-5 w-5"/>
           </a>
-        }
+          |
+          {
+            x.hasPage ? (
+            <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
+              VIEW PROJECT
+              <RightArrow />
+            </a>
+            ) : 
+            (
+              <span>Project details coming soon</span>
+            )
+          }
+        </div>
       </div>
       <p class="mt-2">{x.description}</p>
     </div>
