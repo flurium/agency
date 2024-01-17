@@ -71,10 +71,6 @@ const techStack = [
     group: "Design & Collaboration",
     items: ["GitHub", "Figma"],
   },
-  {
-    group: "AI",
-    items: ["Relume", "Fooocus"],
-  },
 ]
 ---
 
@@ -141,7 +137,7 @@ const techStack = [
     <div class="text-center pt-16">
       <a
         href="/portfolio"
-        class="rounded py-3 px-6 border border-black inline-block"
+        class="rounded py-4 px-6 bg-secondary-100 hover:bg-secondary-200 inline-block"
         data-umami-event="Portfolio View All"
       >
         VIEW ALL
@@ -179,12 +175,12 @@ const techStack = [
 
   <section class="py-20 md:py-28 px-6">
     <h3 class="text-5xl font-bold">Tech Stack</h3>
-    <p class="mt-4">
+    <p class="mt-4 text-secondary-600">
       Primary technologies we use and push in development. Always expanded over time and
       projects.
     </p>
 
-    <table class="table-auto w-full border-collapse mt-6 text-left">
+    <table class="table-auto w-full border-collapse mt-8 text-left">
       {
         techStack.map((x) => (
           <tr class="border-y border-gray-200">
