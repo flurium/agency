@@ -15,12 +15,12 @@ import TabsSwitch from "./TabsSwitch.astro"
 <TabsSwitch key="tab" tabs={["preview", "code"]} />
 
 <div class="flex gap-4 mb-4">
-  <label for="preview" class="p-3 border-indigo-300 cursor-pointer">Preview</label>
+  <label for="preview" class="p-3 border-primary-300 cursor-pointer">Preview</label>
   <label for="code" class="p-3 border-green-300 cursor-pointer">Code</label>
 </div>
 
 <!-- can use data- instead of id, choose by preference -->
-<div data-tab="preview" class="hidden rounded p-10 bg-indigo-50">Preview content</div>
+<div data-tab="preview" class="hidden rounded p-10 bg-primary-50">Preview content</div>
 <div data-tab="code" class="hidden rounded p-10 bg-green-50">Code content</div>
 
 <style is:global>

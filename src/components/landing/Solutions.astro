@@ -51,7 +51,7 @@ const solutions = [
     {
       solutions.map((x, i) => (
         <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4 ">
-          <div class="rounded-full h-10 w-10 bg-indigo-500" />
+          <div class="rounded-full h-10 w-10 bg-primary-500" />
           <h4 class="font-semibold text-xl self-center">{x.name}</h4>
 
           {i == solutions.length - 1 ? (
@@ -61,7 +61,7 @@ const solutions = [
             </>
           ) : (
             <>
-              <div class="w-[2px] h-full bg-gray-200 place-self-center" />
+              <div class="w-[2px] h-full bg-secondary-200 place-self-center" />
               <p class="pb-14">{x.description}</p>
             </>
           )}
