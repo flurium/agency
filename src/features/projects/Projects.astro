@@ -17,21 +17,31 @@ const { latest } = Astro.props
 ---
 
 {
-  (latest === true ? projects.slice(0, 2) : projects).map((x) => (
-    <div class="mt-20">
-      <Image src={projectImages[x.slug]} alt={x.name} class="rounded-xl col-span-2" />
+  (latest === true ? projects.slice(0, 2) : projects).map((x) => {
+    const img = projectImages[x.slug]
 
-      <div class="flex justify-between items-baseline mt-6">
-        <h4 class="text-2xl font-bold">{x.name}</h4>
+    return (
+      <div class="mt-20">
+        <Image
+          src={img}
+          height={img.height * 2}
+          width={img.width * 2}
+          alt={x.name}
+          class="rounded-xl col-span-2"
+        />
 
-        {
-          <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
-            VIEW PROJECT
-            <RightArrow />
-          </a>
-        }
+        <div class="flex justify-between items-baseline mt-6">
+          <h4 class="text-2xl font-bold">{x.name}</h4>
+
+          {
+            <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
+              VIEW PROJECT
+              <RightArrow />
+            </a>
+          }
+        </div>
+        <p class="mt-2">{x.description}</p>
       </div>
-      <p class="mt-2">{x.description}</p>
-    </div>
-  ))
+    )
+  })
 }
