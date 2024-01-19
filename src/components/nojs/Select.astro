@@ -9,7 +9,7 @@ type Props = {
 const { class: className, name, placeholder, options } = Astro.props
 
 const triggerStyle =
-  "text-left rounded py-3 px-6 border border-gray-200 cursor-pointer min-w-[14rem] select-none bg-white"
+  "text-left rounded py-3 px-6 border border-secondary-200 cursor-pointer min-w-[14rem] select-none bg-white"
 ---
 
 <div class:list={["relative", className]}>
@@ -40,13 +40,13 @@ const triggerStyle =
   </button>
 
   <div
-    class="options rounded p-3 border border-gray-200 z-50 transition-opacity bg-white min-w-[14rem]"
+    class="options rounded p-3 border border-secondary-200 z-50 transition-opacity bg-white min-w-[14rem]"
   >
     {
       options.map((option) => (
         <label
           for={`${option.value}-${name}`}
-          class="block hover:bg-gray-100 px-3 pb-2 pt-1 rounded cursor-pointer"
+          class="block hover:bg-secondary-100 px-3 pb-2 pt-1 rounded cursor-pointer"
         >
           {option.label}
         </label>

@@ -6,16 +6,13 @@ import Solutions from "../components/landing/Solutions.astro"
 import TeamBenefits from "../components/landing/TeamBenefits.astro"
 import Projects from "../features/projects/Projects.astro"
 import ImageCta from "../components/ImageCta.astro"
-import heroImg from "../assets/hero.png"
 import maria from "../assets/team/maria.png"
 import roman from "../assets/team/roman.png"
 import vitalii from "../assets/team/vitalii.png"
 import dima from "../assets/team/dima.png"
 import BestPerformance from "../components/landing/BestPerformance.astro"
-import Testimonial from "../features/Testimonial.astro"
-import vlad from "../assets/testimonials/vlad.png"
-import nazar from "../assets/testimonials/nazar.png"
 import TestimonialCarousel from "../features/TestimonialCarousel.astro"
+import Companies from "../components/landing/Companies.astro"
 
 const team = [
   {
@@ -71,10 +68,6 @@ const techStack = [
     group: "Design & Collaboration",
     items: ["GitHub", "Figma"],
   },
-  {
-    group: "AI",
-    items: ["Relume", "Fooocus"],
-  },
 ]
 ---
 
@@ -85,7 +78,7 @@ const techStack = [
       max-w-screen-lg m-auto text-center text-secondary-800"
       style="line-height: 1.2;"
     >
-      Turing people into clients. Fast. Performant.
+      Pushing user experience. <br /> Fast. Performant.
     </h1>
     <h2
       class="mt-14 mb-12 max-w-screen-md mx-auto text-center text-xl text-secondary-600 leading-normal"
@@ -114,17 +107,19 @@ const techStack = [
     </div>
   </section>
 
-  <!-- <iframe src="/contact" class="w-full h-screen overflow-hidden"></iframe> -->
+  <!-- <iframe src="/contact" class="w-full h-[80rem] overflow-hidden"></iframe> -->
 
   <Solutions />
-
-  <TeamBenefits />
 
   <BestPerformance />
 
   <TestimonialCarousel />
 
   <ContactSection />
+
+  <TeamBenefits />
+
+  <Companies />
 
   <section class="py-20 md:py-28 px-6">
     <div class="text-center">
@@ -141,7 +136,7 @@ const techStack = [
     <div class="text-center pt-16">
       <a
         href="/portfolio"
-        class="rounded py-3 px-6 border border-black inline-block"
+        class="rounded py-4 px-6 bg-secondary-100 hover:bg-secondary-200 inline-block"
         data-umami-event="Portfolio View All"
       >
         VIEW ALL
@@ -161,8 +156,8 @@ const techStack = [
           <div>
             <Image
               src={x.img}
-              width={80}
-              height={80}
+              width={160}
+              height={160}
               alt={x.name}
               class="rounded-full h-20 w-20"
               quality={100}
@@ -179,15 +174,15 @@ const techStack = [
 
   <section class="py-20 md:py-28 px-6">
     <h3 class="text-5xl font-bold">Tech Stack</h3>
-    <p class="mt-4">
+    <p class="mt-4 text-secondary-600">
       Primary technologies we use and push in development. Always expanded over time and
       projects.
     </p>
 
-    <table class="table-auto w-full border-collapse mt-6 text-left">
+    <table class="table-auto w-full border-collapse mt-8 text-left">
       {
         techStack.map((x) => (
-          <tr class="border-y border-gray-200">
+          <tr class="border-y border-secondary-200">
             <td class="p-7 font-semibold">{x.group}</td>
             <td class="p-7 flex flex-col md:flex-row gap-8">
               {x.items.map((item) => (

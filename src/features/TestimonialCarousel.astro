@@ -92,7 +92,7 @@ const testimonials = [
       testimonials.map((x) => (
         <label
           for={`testimonial-${x.id}`}
-          class="rounded-full h-3 w-3 bg-gray-200 cursor-pointer"
+          class="rounded-full h-3 w-3 bg-secondary-200 cursor-pointer"
         />
       ))
     }
@@ -105,7 +105,7 @@ const testimonials = [
           for={`testimonial-${x.id}`}
           class="prev absolute top-0 bottom-0 left-6 z-10 hidden content-end py-16 md:place-content-center select-none"
         >
-          <div class="rounded-full w-12 h-12 border border-gray-200 bg-white cursor-pointer grid place-content-center">
+          <div class="rounded-full w-12 h-12 border border-secondary-200 bg-white cursor-pointer grid place-content-center">
             <LeftArrow />
           </div>
         </label>
@@ -114,7 +114,7 @@ const testimonials = [
           for={`testimonial-${x.id}`}
           class="next absolute top-0 bottom-0 right-6 z-10 hidden content-end  py-16 md:place-content-center select-none"
         >
-          <div class="rounded-full w-12 h-12 border border-gray-200 bg-white cursor-pointer grid place-content-center">
+          <div class="rounded-full w-12 h-12 border border-secondary-200 bg-white cursor-pointer grid place-content-center">
             <RightArrow />
           </div>
         </label>
@@ -148,6 +148,6 @@ const testimonials = [
   #testimonial-vlad:checked ~ #testimonial-indicators > [for="testimonial-vlad"],
   #testimonial-nazar:checked ~ #testimonial-indicators > [for="testimonial-nazar"],
   #testimonial-anna:checked ~ #testimonial-indicators > [for="testimonial-anna"] {
-    @apply bg-indigo-500;
+    @apply bg-primary-500;
   }
 </style>
