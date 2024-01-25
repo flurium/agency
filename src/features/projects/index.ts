@@ -1,8 +1,7 @@
 export const projects = [
   {
     name: "Spentoday",
-    description:
-      "Ukrainian e-commerce platform. Create your online shop fast and simple. No complexity, no hiring designers, no ton of services.",
+    description: "Ukrainian e-commece with great user experience and design by default.",
     slug: "spentoday",
     github: "https://github.com/flurium/spentoday",
     hasPage: true,

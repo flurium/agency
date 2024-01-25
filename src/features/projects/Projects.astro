@@ -18,7 +18,7 @@ const { latest } = Astro.props
 ---
 
 {
-  (latest === true ? projects.slice(0, 2) : projects).map((x) => {
+  (latest === true ? projects.slice(0, 1) : projects).map((x) => {
     const img = projectImages[x.slug]
 
     return (
@@ -28,6 +28,7 @@ const { latest } = Astro.props
           width={img.width * 2}
           height={img.height * 2}
           alt={x.name}
+          quality={100}
           class="rounded-xl col-span-2"
         />
 
