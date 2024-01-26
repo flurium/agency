@@ -1,72 +1,60 @@
 ---
-import RightArrow from "../icons/RightArrow.astro"
+import Application from "../icons/Application.astro"
+import Website from "../icons/Website.astro"
+import Optimization from "../icons/Optimization.astro"
+import WhatWeBuild from "./WhatWeBuild.astro"
 
-const solutions = [
-  {
-    name: "Content websites",
-    description:
-      "Escape the chaos of website builders. Our content websites promise a clutter-free, lightning-fast experience to enhance your online presence.",
-  },
-  {
-    name: "Web Apps",
-    description:
-      "It's not just about functionality; it's about an unforgettable user journey. Let us transform your ideas into dynamic, user-friendly web applications that set you apart.",
-  },
-  {
-    name: "API",
-    description:
-      "Avoid system disarray with our robust API solutions. We specialize in creating connections that make your digital infrastructure cohesive and efficient.",
-  },
-  {
-    name: "SEO",
-    description:
-      "Move beyond keywords. Our SEO services employ a nuanced strategy, optimizing technically and strategically to boost your brand's visibility and drive organic traffic.",
-  },
-]
+/**
+ * 
+- Websites
+  - marketing pages
+  - blogs
+  - company services
+  - portfolio
+- Web apps
+  - dashboarrds
+  - inventory management
+  - travel bookings
+  - software as a service
+- Optimization
+  - SEO
+  - loading speed improvement
+  - accesibility
+  - performance
+- API
+  - analytics
+  - event calendar
+  - notification systems
+ */
 ---
 
-<section
-  class="py-20 md:py-28 px-6 grid grid-cols-1 md:grid-cols-2 gap-20"
-  id="solutions"
->
-  <div>
-    <div class="md:sticky md:top-10">
-      <h3 class="text-5xl font-bold mt-4 mb-12 leading-tight">
-        What we build for you. Always performant. Always better than your competitors.
-      </h3>
-      <div class="flex gap-4">
-        <a
-          href="/#contact"
-          class="py-4 px-6 bg-secondary-100 rounded hover:bg-secondary-200"
-          >GET A WEBSITE</a
-        >
-        <a href="/portfolio" class="py-4 px-6 flex gap-2 items-center">
-          SEE WORK
-          <RightArrow />
-        </a>
-      </div>
+<section class="py-20 md:py-28 px-6" id="solutions">
+  <WhatWeBuild class="mb-20 w-full max-w-3xl" />
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
+    <div>
+      <Application class="h-16" />
+      <h3 class="my-6 font-bold text-2xl">Applications</h3>
+      <p class="text-xl text-secondary-600">
+        Web applications differ from sites by having a lot of interactivity: dashboards,
+        inventory management systems, software as a service.
+      </p>
+    </div>
+    <div>
+      <Website class="h-16" />
+      <h3 class="my-6 font-bold text-2xl">Websites</h3>
+      <p class="text-xl text-secondary-600">
+        Online presence is essential nowadays. Marketing pages, blogs, portfolios,
+        business services sites are all made to reach more people.
+      </p>
+    </div>
+    <div>
+      <Optimization class="h-16" />
+      <h3 class="my-6 font-bold text-2xl">Optimization</h3>
+      <p class="text-xl text-secondary-600">
+        We optimize SEO, loading speed, accesibility and many other aspects, so your
+        clients are always comming back.
+      </p>
     </div>
   </div>
-  <ul class="flex flex-col gap-4">
-    {
-      solutions.map((x, i) => (
-        <li class="grid grid-cols-[auto_1fr] gap-x-10 gap-y-4 ">
-          <div class="rounded-full h-10 w-10 bg-primary-500" />
-          <h4 class="font-semibold text-xl self-center">{x.name}</h4>
-
-          {i == solutions.length - 1 ? (
-            <>
-              <div />
-              <p class="text-secondary-600">{x.description}</p>
-            </>
-          ) : (
-            <>
-              <div class="w-[2px] h-full bg-secondary-200 place-self-center" />
-              <p class="pb-14 text-secondary-600">{x.description}</p>
-            </>
-          )}
-        </li>
-      ))
-    }
-  </ul>
 </section>
