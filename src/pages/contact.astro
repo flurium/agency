@@ -23,7 +23,7 @@ if (Astro.request.method === "POST") {
   if (data == null) return Astro.redirect("/")
 
   if (data.name.value != null && data.email.value != null) {
-    const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nCommunication: ${data.communication}\nContext: ${data.context}`
+    const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nContext: ${data.context}`
     sent = await sendMessage(text)
   }
 }

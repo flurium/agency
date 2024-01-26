@@ -9,7 +9,7 @@ import anna from "../assets/testimonials/anna.jpg"
 
 const testimonials = [
   {
-    id: "vlad",
+    id: "1",
     img: vlad,
     name: "Vlad Syvorka",
     position: "Mentor, STEP IT Academy",
@@ -19,7 +19,7 @@ const testimonials = [
     elements gave the project freshness and originality."`,
   },
   {
-    id: "nazar",
+    id: "2",
     img: nazar,
     name: "Nazar Balaban",
     position: "Mentor, STEP IT Academy",
@@ -28,10 +28,10 @@ const testimonials = [
     cooperation with this team!"`,
   },
   {
-    id: "anna",
+    id: "3",
     img: anna,
     name: "Anna Zakharova",
-    position: "Education Manager, STEP IT Academy",
+    position: "Manager, STEP IT Academy",
     content: `"I believe that the team's project serves as an excellent example of teamwork 
     and the high level of preparation. The project has the potential to be implemented 
     and meet market demand due to its relevance and modernity."`,
@@ -127,25 +127,25 @@ const testimonials = [
     but Astro doesn't have built in addition to the head 
   */
 
-  #testimonial-nazar:checked ~ #testimonial-slides {
+  #testimonial-2:checked ~ #testimonial-slides {
     transform: translateX(-100%);
   }
-  #testimonial-anna:checked ~ #testimonial-slides {
+  #testimonial-3:checked ~ #testimonial-slides {
     transform: translateX(-200%);
   }
 
-  #testimonial-vlad:checked ~ label[for="testimonial-anna"].prev,
-  #testimonial-nazar:checked ~ label[for="testimonial-vlad"].prev,
-  #testimonial-anna:checked ~ label[for="testimonial-nazar"].prev,
-  #testimonial-vlad:checked ~ label[for="testimonial-nazar"].next,
-  #testimonial-nazar:checked ~ label[for="testimonial-anna"].next,
-  #testimonial-anna:checked ~ label[for="testimonial-vlad"].next {
+  #testimonial-1:checked ~ label[for="testimonial-3"].prev,
+  #testimonial-2:checked ~ label[for="testimonial-1"].prev,
+  #testimonial-3:checked ~ label[for="testimonial-2"].prev,
+  #testimonial-1:checked ~ label[for="testimonial-2"].next,
+  #testimonial-2:checked ~ label[for="testimonial-3"].next,
+  #testimonial-3:checked ~ label[for="testimonial-1"].next {
     display: grid;
   }
 
-  #testimonial-vlad:checked ~ #testimonial-indicators > [for="testimonial-vlad"],
-  #testimonial-nazar:checked ~ #testimonial-indicators > [for="testimonial-nazar"],
-  #testimonial-anna:checked ~ #testimonial-indicators > [for="testimonial-anna"] {
+  #testimonial-1:checked ~ #testimonial-indicators > [for="testimonial-1"],
+  #testimonial-2:checked ~ #testimonial-indicators > [for="testimonial-2"],
+  #testimonial-3:checked ~ #testimonial-indicators > [for="testimonial-3"] {
     @apply bg-primary-500;
   }
 </style>

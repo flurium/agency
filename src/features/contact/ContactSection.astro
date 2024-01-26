@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 import contactImg from "../../assets/contact.png"
 import type { ContactFormData } from "."
+import GetInTouch from "./GetInTouch.astro"
 
 type Props = {
   data?: ContactFormData | null
@@ -10,71 +11,58 @@ type Props = {
 const { data } = Astro.props
 ---
 
-<form
-  class="py-20 md:py-28 px-6 m-auto max-w-screen-md"
-  id="contact"
-  action="/contact"
-  method="post"
->
-  <h3 class="font-bold text-6xl">Reach out</h3>
-  <p class="mt-6 mb-8 text-secondary-600">Don't miss competition. Contact right now.</p>
+<div class="py-20 md:py-28 px-6 grid grid-cols-1 md:grid-cols-5 gap-20">
+  <GetInTouch class="md:col-span-2 w-full" />
 
-  <label for="name">Your name</label>
-  <input
-    value={data?.name.value}
-    type="text"
-    id="name"
-    name="name"
-    required
-    class="py-3 px-4 rounded border border-secondary-200 w-full mt-2 mb-6"
-  />
-  {data?.name.error ? <p>{data.name.error}</p> : <Fragment />}
+  <form class="md:col-span-3" id="contact" action="/contact" method="post">
+    <label for="name">Your name</label>
+    <input
+      value={data?.name.value}
+      type="text"
+      id="name"
+      name="name"
+      required
+      placeholder="Roman Koshchei"
+      class="py-4 px-5 rounded border border-secondary-200 w-full mt-2 mb-6"
+    />
+    {data?.name.error ? <p>{data.name.error}</p> : <Fragment />}
 
-  <label for="email">Email</label>
-  <input
-    onclick="if(this.value === '') { umami.track('Email input click') }"
-    value={data?.email.value}
-    type="email"
-    id="email"
-    name="email"
-    required
-    class="py-3 px-4 rounded border border-secondary-200 w-full mt-2 mb-6"
-  />
-  {data?.email.error ? <p>{data.email.error}</p> : <Fragment />}
+    <label for="email">Email</label>
+    <input
+      onclick="if(this.value === '') { umami.track('Email input click') }"
+      value={data?.email.value}
+      type="email"
+      id="email"
+      name="email"
+      required
+      placeholder="your@email.com"
+      class="py-4 px-5 rounded border border-secondary-200 w-full mt-2 mb-6"
+    />
+    {data?.email.error ? <p>{data.email.error}</p> : <Fragment />}
 
-  <label for="communication">Communication preferences</label>
-  <input
-    value={data?.communication}
-    type="text"
-    placeholder="Telegram @yournickname, phone +..."
-    id="communication"
-    name="communication"
-    class="py-3 px-4 rounded border border-secondary-200 w-full mt-2 mb-6"
-  />
+    <label for="context">Context</label>
+    <textarea
+      id="context"
+      name="context"
+      placeholder="Tell us about your case..."
+      class="py-4 px-5 rounded border border-secondary-200 w-full mt-2 mb-6"
+      rows="7"
+    >
+      {data?.context ?? ""}
+    </textarea>
 
-  <label for="context">Context</label>
-  <textarea
-    id="context"
-    name="context"
-    placeholder="Tell us about your case..."
-    class="py-3 px-4 rounded border border-secondary-200 w-full mt-2 mb-6"
-    rows="7"
-  >
-    {data?.context}
-  </textarea>
+    <input
+      type="text"
+      name="address"
+      id="address"
+      value=""
+      tabindex="-1" 
+      autocomplete="off"
+    />
 
-  <input
-    type="text"
-    name="address"
-    id="address"
-    value=""
-    tabindex="-1"
-    autocomplete="off"
-  />
-
-  <button class="py-4 px-6 bg-primary-500 text-white rounded">SEND</button>
-</form>
-
+    <button class="py-4 px-6 bg-primary-500 text-white rounded">SEND</button>
+  </form>
+</div>
 <style>
   #address {
     display: none;

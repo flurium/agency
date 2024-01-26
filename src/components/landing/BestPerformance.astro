@@ -4,54 +4,33 @@ import RightArrow from "../icons/RightArrow.astro"
 import MetricCircle from "./MetricCircle.astro"
 ---
 
-<section class="py-20 md:py-28 px-6 grid grid-cols-1 md:grid-cols-2 gap-20">
-  <div>
-    <PageSpeed class="h-10" />
+<section class="py-20 md:py-28 px-6">
+  <!-- <PageSpeed class="h-10" /> -->
 
-    <h3 class="text-5xl font-bold mt-6 leading-tight">
-      Best loading times on the market
-    </h3>
+  <h3 class="text-7xl font-bold mt-6 leading-tight">BEST LOADING TIMES</h3>
 
-    <p class="mt-6 text-secondary-600">
-      Secret tricks and knowledge learned from experience coupled with right choice of
-      modern technologies and team provide the best performance on the market.
-    </p>
+  <p class="mt-6 text-secondary-600">
+    Secret tricks and knowledge learned from experience coupled with right choice of
+    modern technologies and team provide the best performance on the market.
+  </p>
 
-    <div class="flex gap-4 mt-10">
-      <a
-        href="/#contact"
-        class="py-4 px-6 bg-secondary-100 rounded hover:bg-secondary-200">CONTACT</a
-      >
-      <a
-        href="https://pagespeed.web.dev/analysis/https-www-flurium-com/vahq6aukda?form_factor=mobile"
-        class="py-4 px-6 flex gap-2 items-center"
-      >
-        CHECK PAGESPEED RESULTS
-        <RightArrow />
-      </a>
-    </div>
+  <div class="grid grid-cols-4 gap-x-2 gap-y-8 mt-14">
+    <MetricCircle metric="Performance" class="justify-self-center" />
+    <MetricCircle metric="Accessibility" class="justify-self-center" />
+    <MetricCircle metric="Best Practices" class="justify-self-center" />
+    <MetricCircle metric="SEO" class="justify-self-center" />
   </div>
 
-  <div class="flex flex-col justify-center gap-12">
-    <div class="grid grid-cols-[1fr_auto] gap-4">
-      <div
-        class="p-4 border border-secondary-500 text-secondary-700 rounded text-lg font-mono"
-      >
-        https://flurium.com
-      </div>
-      <a
-        href="https://pagespeed.web.dev/analysis/https-www-flurium-com/vahq6aukda?form_factor=mobile"
-        class="font-semibold bg-blue-500 py-4 px-7 rounded text-white text-lg"
-      >
-        Analyze
-      </a>
-    </div>
-
-    <div class="grid grid-cols-3 gap-x-2 gap-y-8">
-      <MetricCircle metric="Performance" class="justify-self-end" />
-      <MetricCircle metric="Accessibility" class="justify-self-center" />
-      <MetricCircle metric="Best Practices" class="justify-self-start" />
-      <MetricCircle metric="SEO" class="col-start-2 justify-self-center" />
-    </div>
+  <div class="flex justify-center gap-4 mt-10">
+    <a href="/#contact" class="py-4 px-6 bg-secondary-100 rounded hover:bg-secondary-200"
+      >CONTACT</a
+    >
+    <a
+      href="https://pagespeed.web.dev/analysis/https-www-flurium-com/vahq6aukda?form_factor=mobile"
+      class="py-4 px-6 flex gap-2 items-center"
+    >
+      CHECK PAGESPEED RESULTS
+      <RightArrow />
+    </a>
   </div>
 </section>

@@ -3,7 +3,6 @@ import * as v from "valibot"
 export type ContactFormData = {
   name: { value: string; error: null } | { value: null; error: string }
   email: { value: string; error: null } | { value: null; error: string }
-  communication: string
   context: string
 }
 
@@ -19,7 +18,6 @@ export function validateContactFormData(form: FormData): ContactFormData | null 
     v.string("Email is incorrect", [v.minLength(1), v.email()]),
     email,
   )
-  const communication = form.get("communication")
   const context = form.get("context")
 
   return {
@@ -29,7 +27,6 @@ export function validateContactFormData(form: FormData): ContactFormData | null 
     email: emailValidation.success
       ? { value: emailValidation.output, error: null }
       : { value: null, error: emailValidation.issues[0].message },
-    communication: (communication ?? "") as string,
     context: (context ?? "") as string,
   }
 }
