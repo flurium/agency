@@ -13,6 +13,7 @@ import dima from "../assets/team/dima.png"
 import BestPerformance from "../components/landing/BestPerformance.astro"
 import TestimonialCarousel from "../features/TestimonialCarousel.astro"
 import Companies from "../components/landing/Companies.astro"
+import Impression from "../components/landing/Impression.astro"
 
 const team = [
   {
@@ -73,22 +74,16 @@ const techStack = [
 
 <Layout title="Flurium" description="Web development team">
   <section class="py-20 md:py-28 px-6">
+    <Impression class="w-full" />
     <h1
-      class="font-bold text-5xl md:text-6xl lg:text-7xl
-      max-w-screen-lg m-auto text-center text-secondary-800"
-      style="line-height: 1.2;"
-    >
-      Pushing user experience. <br /> Fast. Performant.
-    </h1>
-    <h2
       class="mt-14 mb-12 max-w-screen-md mx-auto text-center text-xl text-secondary-600 leading-normal"
     >
-      Flurium delivers high-performing web solutions with
-      <span class="font-semibold text-secondary-800">great user-experience</span>. Which
-      leads to <span class="font-semibold text-secondary-800"
-        >rising amount of clients</span
-      >.
-    </h2>
+      Empower your business with exceptional <span
+        class="font-semibold text-secondary-800">user experiences</span
+      > and <span class="font-semibold text-secondary-800">unmatched performance</span>.
+      We build <span class="font-semibold text-secondary-800">web</span> solutions
+      committed to your <span class="font-semibold text-secondary-800">success</span>.
+    </h1>
     <div class="flex justify-center gap-4">
       <a
         href="/#contact"
