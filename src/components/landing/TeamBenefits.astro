@@ -1,18 +1,10 @@
 ---
-import { Image } from "astro:assets"
-import benefitsImg from "../../assets/benefits.png"
+import Trophy from "../icons/Trophy.astro"
 ---
 
 <section class="py-20 md:py-28 px-6 grid grid-cols-1 md:grid-cols-2 gap-20" id="benefits">
-  <div class="order-last md:order-first mb-8 md:mb-0">
-    <Image
-      src={benefitsImg}
-      alt="benefits"
-      class="rounded-xl w-full md:order-first"
-      width={benefitsImg.width * 2}
-      height={benefitsImg.height * 2}
-      quality={100}
-    />
+  <div class="mb-8 md:mb-0">
+    <Trophy class="w-full p-4" />
   </div>
   <div class="place-self-center">
     <div
