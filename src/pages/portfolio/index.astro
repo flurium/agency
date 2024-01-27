@@ -1,5 +1,6 @@
 ---
 import ImageCta from "../../components/ImageCta.astro"
+import ContactSection from "../../features/contact/ContactSection.astro"
 import Projects from "../../features/projects/Projects.astro"
 import Layout from "../../layouts/Layout.astro"
 ---
@@ -26,7 +27,7 @@ import Layout from "../../layouts/Layout.astro"
     <div class="flex justify-center gap-4">
       <a
         href="/#contact"
-        class="py-4 px-6 bg-primary-500 text-white rounded-input hover:bg-primary-600"
+        class="py-4 px-8 bg-primary-500 text-white rounded-input hover:bg-primary-600"
         data-umami-event="Hero Contact"
       >
         CONTACT
@@ -34,7 +35,9 @@ import Layout from "../../layouts/Layout.astro"
     </div>
   </section>
 
-  <Projects />
+  <div class="pb-20 md:pb-28 px-6">
+    <Projects />
+  </div>
 
-  <ImageCta />
+  <ContactSection />
 </Layout>

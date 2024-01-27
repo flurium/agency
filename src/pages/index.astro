@@ -10,13 +10,11 @@ import maria from "../assets/team/maria.png"
 import roman from "../assets/team/roman.png"
 import vitalii from "../assets/team/vitalii.png"
 import dima from "../assets/team/dima.png"
-import BestPerformance from "../components/landing/BestPerformance.astro"
-import TestimonialCarousel from "../features/testimonials/TestimonialCarousel.astro"
 import Companies from "../components/landing/Companies.astro"
 import Impression from "../components/landing/Impression.astro"
 import TestimonialList from "../features/testimonials/TestimonialList.astro"
-import Portfolio from "../components/landing/Portfolio.astro"
 import FeaturedWorks from "../components/landing/FeaturedWorks.astro"
+import TechStack from "../components/landing/TechStack.astro"
 
 const team = [
   {
@@ -50,29 +48,6 @@ const team = [
       "Write a lot of boilerplate code. Searching for tasks, need a bit of supervision.",
   },
 ]
-
-const techStack = [
-  {
-    group: "Languages",
-    items: ["C#", "TypeScript", "JavaScript"],
-  },
-  {
-    group: "Frontend",
-    items: ["Svelte", "Astro", "Tailwind"],
-  },
-  {
-    group: "Backend",
-    items: ["ASP NET Core"],
-  },
-  {
-    group: "Deployments",
-    items: ["Fly.io", "Vercel", "CockroachDB"],
-  },
-  {
-    group: "Design & Collaboration",
-    items: ["GitHub", "Figma"],
-  },
-]
 ---
 
 <Layout
@@ -93,7 +68,7 @@ const techStack = [
     <div class="flex justify-center flex-wrap gap-4">
       <a
         href="/#contact"
-        class="py-4 px-6 bg-primary-500 text-white rounded-input hover:bg-primary-600"
+        class="py-4 px-8 bg-primary-500 text-white rounded-input hover:bg-primary-600"
         data-umami-event="Hero Contact"
       >
         CONTACT
@@ -101,7 +76,7 @@ const techStack = [
       <a
         data-umami-event="Hero Portfolio"
         href="/portfolio"
-        class="py-4 px-6 bg-secondary-100 rounded-input hover:bg-secondary-200"
+        class="py-4 px-8 bg-secondary-100 rounded-input hover:bg-secondary-200"
       >
         SEE PORTFOLIO
       </a>
@@ -136,7 +111,7 @@ const techStack = [
     <div class="text-center pt-16">
       <a
         href="/portfolio"
-        class="rounded-input py-4 px-6 bg-secondary-100 hover:bg-secondary-200 inline-block"
+        class="rounded-input py-4 px-8 bg-secondary-100 hover:bg-secondary-200 inline-block"
         data-umami-event="Portfolio View All"
       >
         VIEW ALL
@@ -146,51 +121,32 @@ const techStack = [
 
   <ContactSection />
 
-  <section class="py-20 md:py-28 px-6 grid grid-cols-2 md:grid-cols-4 gap-8" id="team">
-    {
-      team.map((x) => (
-        <div class="p-6 border-2 rounded-lg border-dashed border-secondary-300">
-          <Image
-            src={x.img}
-            width={160}
-            height={160}
-            alt={x.name}
-            class="rounded-full h-20 w-20"
-            quality={100}
-          />
-          <p class="font-semibold text-xl mt-6">{x.name}</p>
-          <p class="text-lg mt-1">{x.position}</p>
-          <p class="mt-4 mb-6">{x.about}</p>
-          {/* <a href={`/team/${x.slug}`}>LEARN MORE {">"}</a> */}
-        </div>
-      ))
-    }
+  <section class="py-20 md:py-28 px-6" id="team">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4
+      border-2 rounded-lg border-dashed border-secondary-300"
+    >
+      {
+        team.map((x, i) => (
+          <div
+            class={`p-6 border-dashed border-secondary-300 
+              ${i != team.length - 1 ? "border-b-2 md:border-b-0 md:border-r-2" : ""}
+              ${i >= team.length - 2 ? "sm:border-b-0" : ""} 
+              ${i % 2 == 0 ? "sm:border-r-2" : ""} `}
+          >
+            <Image src={x.img} alt={x.name} class="rounded-lg w-full" quality={100} />
+            <p class="font-semibold text-xl mt-6">{x.name}</p>
+            <p class="text-lg mt-1">{x.position}</p>
+            <p class="mt-4">{x.about}</p>
+          </div>
+        ))
+      }
+    </div>
   </section>
 
   <TeamBenefits />
 
-  <section class="py-20 md:py-28 px-6">
-    <h3 class="text-5xl font-bold">Tech Stack</h3>
-    <p class="mt-4 text-secondary-600">
-      Primary technologies we use and push in development. Always expanded over time and
-      projects.
-    </p>
-
-    <table class="table-auto w-full border-collapse mt-8 text-left">
-      {
-        techStack.map((x) => (
-          <tr class="border-y border-secondary-200">
-            <td class="p-7 font-semibold">{x.group}</td>
-            <td class="p-7 flex flex-col md:flex-row gap-8">
-              {x.items.map((item) => (
-                <span>{item}</span>
-              ))}
-            </td>
-          </tr>
-        ))
-      }
-    </table>
-  </section>
+  <TechStack />
 
   <ImageCta />
 </Layout>

@@ -13,15 +13,32 @@ export const projectImages = { bidme, roadtovostok, spentoday, thing, onest }
 
 type Props = { latest?: boolean }
 const { latest } = Astro.props
+
+const items = latest === true ? projects.slice(0, 2) : projects
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-2 gap-14">
+<section
+  class="grid grid-cols-1 md:grid-cols-2
+  border-2 rounded-lg border-dashed border-secondary-300"
+>
   {
-    (latest === true ? projects.slice(0, 2) : projects).map((x) => {
+    items.map((x, i) => {
       const img = projectImages[x.slug]
 
       return (
-        <div class="p-6 border-2 rounded-lg border-dashed border-secondary-300 block">
+        <div
+          class={`p-8 block border-dashed border-secondary-300 
+            ${i % 2 == 0 ? "md:border-r-2" : ""} 
+            
+            ${
+              i == items.length - 1
+                ? ""
+                : items.length % 2 == 0 && i == items.length - 2
+                  ? "border-b-2 md:border-b-0"
+                  : "border-b-2"
+            }
+            `}
+        >
           <Image
             src={img}
             width={img.width * 2}
@@ -49,5 +66,19 @@ const { latest } = Astro.props
         </div>
       )
     })
+  }
+
+  {
+    items.length % 2 != 0 ? (
+      <div class="grid place-content-center">
+        <h3 class="text-3xl mb-4">Your product</h3>
+        <a href="/#contact" class="flex gap-2 items-center">
+          Contact
+          <RightArrow class="h-4 w-4" />
+        </a>
+      </div>
+    ) : (
+      <Fragment />
+    )
   }
 </section>

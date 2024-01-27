@@ -97,19 +97,30 @@ const testimonials = [
 
   <label
     for="show-more-testimonials"
-    class="mx-auto mt-16 w-fit block py-4 px-6 bg-secondary-100 rounded-input
+    class="mx-auto mt-16 w-fit block py-4 px-8 bg-secondary-100 rounded-input
     hover:bg-secondary-200 cursor-pointer"
   >
     SEE MORE
   </label>
+
+  <label
+    id="show-less-testimonials"
+    for="show-more-testimonials"
+    class="mx-auto mt-16 w-fit block py-4 px-8 bg-secondary-100 rounded-input
+    hover:bg-secondary-200 cursor-pointer"
+  >
+    SHOW LESS
+  </label>
 </section>
 
 <style>
+  #show-less-testimonials,
   .hidden-at-first {
     display: none;
   }
 
-  #show-more-testimonials:checked + div > .hidden-at-first {
+  #show-more-testimonials:checked + div > .hidden-at-first,
+  #show-more-testimonials:checked ~ #show-less-testimonials {
     display: block;
   }
 
