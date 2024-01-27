@@ -1,15 +1,13 @@
 ---
 import { Image } from "astro:assets"
-
 import { projects } from "."
-
 import bidme from "../../assets/projects/bidme.png"
 import roadtovostok from "../../assets/projects/roadtovostok.png"
 import spentoday from "../../assets/projects/spentoday.png"
 import thing from "../../assets/projects/thing.png"
 import onest from "../../assets/projects/onest.png"
 import RightArrow from "../../components/icons/RightArrow.astro"
-import GitHubLogo from "./GitHubLogo.astro"
+import TopRightArrow from "../../components/icons/TopRightArrow.astro"
 
 export const projectImages = { bidme, roadtovostok, spentoday, thing, onest }
 
@@ -17,40 +15,39 @@ type Props = { latest?: boolean }
 const { latest } = Astro.props
 ---
 
-{
-  (latest === true ? projects.slice(0, 1) : projects).map((x) => {
-    const img = projectImages[x.slug]
+<section class="grid grid-cols-1 md:grid-cols-2 gap-14">
+  {
+    (latest === true ? projects.slice(0, 2) : projects).map((x) => {
+      const img = projectImages[x.slug]
 
-    return (
-      <div class="mt-20">
-        <Image
-          src={img}
-          width={img.width * 2}
-          height={img.height * 2}
-          alt={x.name}
-          quality={100}
-          class="rounded-xl col-span-2"
-        />
+      return (
+        <div class="p-6 border-2 rounded-lg border-dashed border-secondary-300 block">
+          <Image
+            src={img}
+            width={img.width * 2}
+            height={img.height * 2}
+            alt={x.name}
+            quality={100}
+            class="rounded-lg col-span-2"
+          />
 
-        <div class="flex justify-between items-baseline mt-6">
-          <h4 class="text-2xl font-bold">{x.name}</h4>
-          <div class="flex gap-2 items-center">
-            <a href={x.github} target="_blank">
-              <GitHubLogo class="h-5 w-5" />
+          <h3 class="font-semibold text-2xl mt-6 mb-2">{x.name}</h3>
+
+          <p class=" mb-6">{x.description}</p>
+
+          {x.hasPage ? (
+            <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
+              View project
+              <RightArrow class="h-4 w-4" />
             </a>
-            |
-            {x.hasPage ? (
-              <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
-                VIEW PROJECT
-                <RightArrow />
-              </a>
-            ) : (
-              <span>Details coming soon</span>
-            )}
-          </div>
+          ) : (
+            <a href={x.github} target="_blank" class="flex items-center gap-2">
+              GitHub
+              <TopRightArrow class="h-4 w-4" />
+            </a>
+          )}
         </div>
-        <p class="mt-2">{x.description}</p>
-      </div>
-    )
-  })
-}
+      )
+    })
+  }
+</section>

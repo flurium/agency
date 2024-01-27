@@ -69,7 +69,7 @@ const testimonials = [
   >
     {
       testimonials.map((x, i) => (
-        <div class={`p-10 ${i > 2 ? "hidden-at-first transition-all" : ""}`}>
+        <div class={`p-7 md:p-10 ${i > 2 ? "hidden-at-first" : ""}`}>
           <div class="flex items-center space-x-4">
             {x.img ? (
               <Image
@@ -84,8 +84,8 @@ const testimonials = [
               <Fragment />
             )}
             <div>
-              <h3 class="font-semibold text-lg">{x.name}</h3>
-              <p class="text-base text-secondary-500">{x.position}</p>
+              <h3 class="font-semibold">{x.name}</h3>
+              <p class="text-base text-secondary-600">{x.position}</p>
             </div>
           </div>
 
