@@ -9,7 +9,6 @@ import spentoday from "../../assets/projects/spentoday.png"
 import thing from "../../assets/projects/thing.png"
 import onest from "../../assets/projects/onest.png"
 import RightArrow from "../../components/icons/RightArrow.astro"
-import GitHubLogo from "./GitHubLogo.astro"
 
 export const projectImages = { bidme, roadtovostok, spentoday, thing, onest }
 
@@ -17,40 +16,38 @@ type Props = { latest?: boolean }
 const { latest } = Astro.props
 ---
 
-{
-  (latest === true ? projects.slice(0, 1) : projects).map((x) => {
-    const img = projectImages[x.slug]
+<section class="grid grid-cols-1 md:grid-cols-2 gap-14">
+  {
+    (latest === true ? projects.slice(0, 2) : projects).map((x) => {
+      const img = projectImages[x.slug]
 
-    return (
-      <div class="mt-20">
-        <Image
-          src={img}
-          width={img.width * 2}
-          height={img.height * 2}
-          alt={x.name}
-          quality={100}
-          class="rounded-xl col-span-2"
-        />
+      return (
+        <div class="p-6 border-2 rounded-lg border-dashed border-secondary-300">
+          <Image
+            src={img}
+            width={img.width * 2}
+            height={img.height * 2}
+            alt={x.name}
+            quality={100}
+            class="rounded-lg col-span-2"
+          />
 
-        <div class="flex justify-between items-baseline mt-6">
-          <h4 class="text-2xl font-bold">{x.name}</h4>
-          <div class="flex gap-2 items-center">
-            <a href={x.github} target="_blank">
-              <GitHubLogo class="h-5 w-5" />
-            </a>
-            |
-            {x.hasPage ? (
-              <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
-                VIEW PROJECT
-                <RightArrow />
-              </a>
-            ) : (
-              <span>Details coming soon</span>
-            )}
+          <div class="flex justify-between items-baseline mt-8">
+            <h4 class="text-2xl font-bold">{x.name}</h4>
+            <div class="flex gap-2 items-center">
+              {x.hasPage ? (
+                <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
+                  VIEW PROJECT
+                  <RightArrow />
+                </a>
+              ) : (
+                <span>Details coming soon</span>
+              )}
+            </div>
           </div>
+          <p class="mt-2 text-secondary-600">{x.description}</p>
         </div>
-        <p class="mt-2">{x.description}</p>
-      </div>
-    )
-  })
-}
+      )
+    })
+  }
+</section>
