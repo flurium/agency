@@ -1,14 +1,13 @@
 ---
 import { Image } from "astro:assets"
-
 import { projects } from "."
-
 import bidme from "../../assets/projects/bidme.png"
 import roadtovostok from "../../assets/projects/roadtovostok.png"
 import spentoday from "../../assets/projects/spentoday.png"
 import thing from "../../assets/projects/thing.png"
 import onest from "../../assets/projects/onest.png"
 import RightArrow from "../../components/icons/RightArrow.astro"
+import TopRightArrow from "../../components/icons/TopRightArrow.astro"
 
 export const projectImages = { bidme, roadtovostok, spentoday, thing, onest }
 
@@ -22,7 +21,7 @@ const { latest } = Astro.props
       const img = projectImages[x.slug]
 
       return (
-        <div class="p-6 border-2 rounded-lg border-dashed border-secondary-300">
+        <div class="p-6 border-2 rounded-lg border-dashed border-secondary-300 block">
           <Image
             src={img}
             width={img.width * 2}
@@ -32,20 +31,21 @@ const { latest } = Astro.props
             class="rounded-lg col-span-2"
           />
 
-          <div class="flex justify-between items-baseline mt-8">
-            <h4 class="text-2xl font-bold">{x.name}</h4>
-            <div class="flex gap-2 items-center">
-              {x.hasPage ? (
-                <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
-                  VIEW PROJECT
-                  <RightArrow />
-                </a>
-              ) : (
-                <span>Details coming soon</span>
-              )}
-            </div>
-          </div>
-          <p class="mt-2 text-secondary-600">{x.description}</p>
+          <h3 class="font-semibold text-2xl mt-6 mb-2">{x.name}</h3>
+
+          <p class=" mb-6">{x.description}</p>
+
+          {x.hasPage ? (
+            <a href={`/portfolio/${x.slug}`} class="flex gap-2 items-center">
+              View project
+              <RightArrow class="h-4 w-4" />
+            </a>
+          ) : (
+            <a href={x.github} target="_blank" class="flex items-center gap-2">
+              GitHub
+              <TopRightArrow class="h-4 w-4" />
+            </a>
+          )}
         </div>
       )
     })

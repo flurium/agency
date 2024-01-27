@@ -15,6 +15,8 @@ import TestimonialCarousel from "../features/testimonials/TestimonialCarousel.as
 import Companies from "../components/landing/Companies.astro"
 import Impression from "../components/landing/Impression.astro"
 import TestimonialList from "../features/testimonials/TestimonialList.astro"
+import Portfolio from "../components/landing/Portfolio.astro"
+import FeaturedWorks from "../components/landing/FeaturedWorks.astro"
 
 const team = [
   {
@@ -116,18 +118,18 @@ const techStack = [
 
   <!-- <TestimonialCarousel /> -->
 
-  <ContactSection />
-
   <!-- <BestPerformance /> -->
 
   <section class="py-20 md:py-28 px-6">
-    <div class="text-center mb-20">
+    <!-- <div class="text-center mb-20">
       <h3 class="text-5xl font-bold mt-4 mb-6">Discover Our Projects</h3>
       <p>
         Our portfolio provides clear evidence of our skills and experience in web
         development.
       </p>
-    </div>
+    </div> -->
+
+    <FeaturedWorks class="mb-20 max-w-3xl w-full" />
 
     <Projects latest />
 
@@ -142,35 +144,30 @@ const techStack = [
     </div>
   </section>
 
-  <TeamBenefits />
+  <ContactSection />
 
-  <section class="py-20 md:py-28 px-6" id="team">
-    <h3 class="font-bold text-5xl">Our Team</h3>
-    <p class="mt-6 mb-20">
-      Work with people, not layers of management. Be in reliable and fast interactions.
-    </p>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      {
-        team.map((x) => (
-          <div class="p-6 border-2 rounded-lg border-dashed border-secondary-300">
-            <Image
-              src={x.img}
-              width={160}
-              height={160}
-              alt={x.name}
-              class="rounded-full h-20 w-20"
-              quality={100}
-            />
-            <p class="font-semibold text-xl mt-6">{x.name}</p>
-            <p class="text-lg mt-1">{x.position}</p>
-            <p class="mt-4 mb-6">{x.about}</p>
-            {/* <a href={`/team/${x.slug}`}>LEARN MORE {">"}</a> */}
-          </div>
-        ))
-      }
-    </div>
+  <section class="py-20 md:py-28 px-6 grid grid-cols-2 md:grid-cols-4 gap-8" id="team">
+    {
+      team.map((x) => (
+        <div class="p-6 border-2 rounded-lg border-dashed border-secondary-300">
+          <Image
+            src={x.img}
+            width={160}
+            height={160}
+            alt={x.name}
+            class="rounded-full h-20 w-20"
+            quality={100}
+          />
+          <p class="font-semibold text-xl mt-6">{x.name}</p>
+          <p class="text-lg mt-1">{x.position}</p>
+          <p class="mt-4 mb-6">{x.about}</p>
+          {/* <a href={`/team/${x.slug}`}>LEARN MORE {">"}</a> */}
+        </div>
+      ))
+    }
   </section>
+
+  <TeamBenefits />
 
   <section class="py-20 md:py-28 px-6">
     <h3 class="text-5xl font-bold">Tech Stack</h3>
