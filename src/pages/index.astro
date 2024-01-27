@@ -11,9 +11,10 @@ import roman from "../assets/team/roman.png"
 import vitalii from "../assets/team/vitalii.png"
 import dima from "../assets/team/dima.png"
 import BestPerformance from "../components/landing/BestPerformance.astro"
-import TestimonialCarousel from "../features/TestimonialCarousel.astro"
+import TestimonialCarousel from "../features/testimonials/TestimonialCarousel.astro"
 import Companies from "../components/landing/Companies.astro"
 import Impression from "../components/landing/Impression.astro"
+import TestimonialList from "../features/testimonials/TestimonialList.astro"
 
 const team = [
   {
@@ -72,7 +73,10 @@ const techStack = [
 ]
 ---
 
-<Layout title="Flurium" description="Web development team">
+<Layout
+  title="Flurium Team"
+  description="Empower your business with exceptional user experiences and unmatched performance. We build web solutions committed to your success."
+>
   <section class="py-20 md:py-28 px-6">
     <Impression class="w-full" />
     <h1
@@ -87,7 +91,7 @@ const techStack = [
     <div class="flex justify-center gap-4">
       <a
         href="/#contact"
-        class="py-4 px-6 bg-primary-500 text-white rounded-lg hover:bg-primary-600"
+        class="py-4 px-6 bg-primary-500 text-white rounded-input hover:bg-primary-600"
         data-umami-event="Hero Contact"
       >
         CONTACT
@@ -95,7 +99,7 @@ const techStack = [
       <a
         data-umami-event="Hero Portfolio"
         href="/portfolio"
-        class="py-4 px-6 bg-secondary-100 rounded-lg hover:bg-secondary-200"
+        class="py-4 px-6 bg-secondary-100 rounded-input hover:bg-secondary-200"
       >
         SEE PORTFOLIO
       </a>
@@ -108,7 +112,9 @@ const techStack = [
 
   <Solutions />
 
-  <TestimonialCarousel />
+  <TestimonialList />
+
+  <!-- <TestimonialCarousel /> -->
 
   <ContactSection />
 

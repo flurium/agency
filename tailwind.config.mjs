@@ -9,6 +9,9 @@ export default {
         primary: colors.indigo,
         secondary: colors.zinc,
       },
+      borderRadius: {
+        input: "0.5rem",
+      },
     },
   },
   plugins: [],

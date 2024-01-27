@@ -1,9 +1,24 @@
+---
+import GitHub from "../icons/GitHub.astro"
+---
+
 <!-- 
   TODO: Make a drowdown without JS. It's challenge! 
 -->
 <header class="grid grid-cols-[auto_1fr] py-5 px-6">
   <a href="/" class="flex items-center gap-4 font-semibold">
-    <div class="rounded-full h-10 w-10 bg-primary-500"></div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-12 w-12"
+      viewBox="0 0 49 51"
+      fill="none"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M48.4992 29.6894C48.3855 34.6273 46.7093 40.3636 41.8243 44.5487C34.9642 50.4258 25.9729 51.0274 18.8886 49.0002C11.8042 46.9729 4.49232 41.7058 1.77977 33.0894C-2.595 19.1929 6.20809 4.15523 20.4672 1.16708C26.7631 -0.152283 32.3314 2.01748 36.3142 4.93866C40.2497 7.82515 43.26 11.8297 45.2668 15.906C47.2735 19.9823 48.6115 24.8102 48.4992 29.6894Z"
+        fill="#636CF1"></path>
+    </svg>
      FLURIUM
   </a>
 
@@ -34,16 +49,19 @@
     flex-col md:flex-row md:gap-8 md:items-center justify-self-end"
   >
     <a href="/portfolio" class="py-3">PORTFOLIO</a>
+
+    <a href="/#solutions" class="py-3">SOLUTIONS</a>
+    <a href="/ui" class="py-3">UI</a>
     <a
       href="https://github.com/flurium"
       target="_blank"
       class="py-3"
-      data-umami-event="Navbar GitHub">GITHUB</a
+      data-umami-event="Navbar GitHub"
     >
-    <a href="/#solutions" class="py-3">SOLUTIONS</a>
-    <a href="/ui" class="py-3">UI</a>
+      <GitHub class="h-5" />
+    </a>
     <a
-      class="py-3 px-6 w-full md:w-fit mt-4 md:mt-0 text-center rounded bg-primary-500 text-white font-semibold"
+      class="py-3 px-6 w-full md:w-fit mt-4 md:mt-0 text-center bg-secondary-100 rounded-input hover:bg-secondary-200"
       href="/#contact"
       data-umami-event="Navbar Hire"
     >
