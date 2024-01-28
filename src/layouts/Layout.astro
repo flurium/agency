@@ -35,6 +35,12 @@ const { title, description } = Astro.props
     <meta property="og:description" content={description} />
     <!-- <meta property="og:image" content="https://www.flurium.com/og-image.png" /> -->
     <meta property="og:type" content="website" />
+    <meta
+      name="keywords"
+      content={`web, development, web development, app development, application, 
+      agency, seo, seo boosting, website seo, website, site, product, design, 
+      user experience, online presence, physical product, digital product`}
+    />
     <meta property="og:locale" content="en" />
     <meta property="og:image:alt" content={title} />
     <meta property="og:image:width" content="1200" />
@@ -48,7 +54,7 @@ const { title, description } = Astro.props
     </style>
   </head>
 
-  <body class="max-w-7xl m-auto text-secondary-800 text-lg">
+  <body class="max-w-7xl m-auto text-secondary-800 text-lg relative">
     <Navbar />
 
     <main>
