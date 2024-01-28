@@ -11,11 +11,14 @@ import roman from "../assets/team/roman.png"
 import vitalii from "../assets/team/vitalii.png"
 import dima from "../assets/team/dima.png"
 import Companies from "../components/landing/Companies.astro"
-import Impression from "../components/landing/Impression.astro"
+import Impression from "../components/letterings/Impression.astro"
 import TestimonialList from "../features/testimonials/TestimonialList.astro"
-import FeaturedWorks from "../components/landing/FeaturedWorks.astro"
+import FeaturedWorks from "../components/letterings/FeaturedWorks.astro"
 import TechStack from "../components/landing/TechStack.astro"
-import EvolvingTeam from "../components/landing/EvolvingTeam.astro"
+import EvolvingTeam from "../components/letterings/EvolvingTeam.astro"
+import Boosting from "../components/letterings/Boosting.astro"
+import Online from "../components/letterings/Online.astro"
+import Presence from "../components/letterings/Presence.astro"
 
 const team = [
   {
@@ -55,9 +58,16 @@ const team = [
   title="Flurium Team"
   description="Empower your business with exceptional user experiences and unmatched performance. We build web solutions committed to your success."
 >
-  <section class="py-20 md:py-28 px-6">
-    <Impression class="w-full" />
+  <section class="pb-20 pt-12 md:pt-16 md:pb-28 px-6">
     <h1
+      aria-label="Boosting Online Presence"
+      class="flex flex-wrap items-end justify-center max-w-4xl gap-8 mx-auto"
+    >
+      <Boosting class="h-32 lg:h-44" />
+      <Online class="h-32 lg:h-44" />
+      <Presence class="h-24 lg:h-32" />
+    </h1>
+    <h2
       class="mt-14 mb-12 max-w-screen-md mx-auto text-center text-xl text-secondary-600 leading-normal"
     >
       Empower your business with exceptional <span
@@ -65,7 +75,7 @@ const team = [
       > and <span class="font-semibold text-secondary-800">unmatched performance</span>.
       We build <span class="font-semibold text-secondary-800">web</span> solutions
       committed to your <span class="font-semibold text-secondary-800">success</span>.
-    </h1>
+    </h2>
     <div class="flex justify-center flex-wrap gap-4">
       <a
         href="/#contact"
