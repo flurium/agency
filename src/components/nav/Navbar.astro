@@ -48,24 +48,20 @@ import GitHub from "../icons/GitHub.astro"
     class="hidden col-span-2 py-10 w-full md:w-fit md:py-0 md:col-span-1 md:flex
     flex-col md:flex-row md:gap-8 md:items-center justify-self-end"
   >
-    <a href="/portfolio" class="py-3">PORTFOLIO</a>
+    <a href="/portfolio" data-umami-event="Navbar Portfolio" class="py-3">PORTFOLIO</a>
 
     <a href="/#solutions" class="py-3">SOLUTIONS</a>
     <a href="/ui" class="py-3">UI</a>
-    <a
-      href="https://github.com/flurium"
-      target="_blank"
-      class="py-3"
-      data-umami-event="Navbar GitHub"
-    >
+    <a href="https://github.com/flurium" target="_blank" class="py-3">
       <GitHub class="h-5" />
     </a>
     <a
-      class="py-3 px-6 w-full md:w-fit mt-4 md:mt-0 text-center bg-secondary-100 rounded-input hover:bg-secondary-200"
+      class="py-3 px-6 w-full md:w-fit mt-4 md:mt-0
+      text-center text-white bg-primary-500 rounded-input hover:bg-primary-600"
       href="/#contact"
       data-umami-event="Navbar Hire"
     >
-      CONTACT
+      CONTACT US
     </a>
   </nav>
 </header>

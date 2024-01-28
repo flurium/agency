@@ -7,18 +7,18 @@ export const projects = [
     hasPage: true,
   },
   {
+    name: "BidMe",
+    description: "Auction platform made with MVC in 2 weeks.",
+    slug: "bidme",
+    github: "https://github.com/flurium/bidme",
+    hasPage: false,
+  },
+  {
     name: "Onest Remake",
     description:
       "Onest Font website remake for performance improvements as well as reducing javascript dependencies.",
     slug: "onest",
     github: "https://github.com/flurium/onest",
-    hasPage: false,
-  },
-  {
-    name: "BidMe",
-    description: "Auction platform made with MVC in 2 weeks.",
-    slug: "bidme",
-    github: "https://github.com/flurium/bidme",
     hasPage: false,
   },
   {
