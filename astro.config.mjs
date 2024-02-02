@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config"
 import tailwind from "@astrojs/tailwind"
 import sitemap from "@astrojs/sitemap"
 import vercel from "@astrojs/vercel/serverless"
+import icon from "astro-icon"
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +11,6 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap(), icon()],
   adapter: vercel({}),
 })
