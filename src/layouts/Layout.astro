@@ -1,4 +1,5 @@
 ---
+import Seo from "../components/Seo.astro"
 import Navbar from "../components/nav/Navbar.astro"
 
 interface Props {
@@ -21,8 +22,39 @@ const isProd = import.meta.env.PROD
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <title>{title}</title>
-    <meta name="description" content={description} />
+    <Seo
+      title={title}
+      description={description}
+      siteName="Flurium Team"
+      url={url}
+      img="https://www.flurium.com/og.png"
+      imgType="image/png"
+      lang="en"
+      twitterProfile="https://twitter.com/fluriumteam"
+      linkedinProfile="https://www.linkedin.com/in/roman-koshchei-726078239"
+      logo="https://www.flurium.com/favicon.svg"
+      contactUrl="https://www.flurium.com/contact"
+      keywords={[
+        "web",
+        "development",
+        "app",
+        "application",
+        "seo",
+        "seo boosting",
+        "lead generation",
+        "product",
+        "site",
+        "user experience",
+        "online presence",
+        "physical product",
+        "digital product",
+        "team",
+        "design",
+        "great work",
+        "professional experience",
+        "client results",
+      ]}
+    />
 
     {
       isProd ? (
@@ -36,24 +68,6 @@ const isProd = import.meta.env.PROD
         <Fragment />
       )
     }
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:title" content={title} />
-    <meta property="og:site_name" content="Flurium" />
-    <meta property="og:url" content={url} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://www.flurium.com/og.png" />
-    <meta property="og:type" content="website" />
-    <meta
-      name="keywords"
-      content={`web, development, web development, app development, application, 
-      agency, seo, seo boosting, website seo, website, site, product, design, 
-      user experience, online presence, physical product, digital product, project
-      team, design, great work, professional experience, clients results`}
-    />
-    <meta property="og:locale" content="en" />
-    <meta property="og:image:alt" content={title} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
 
     <style is:global>
       *,
