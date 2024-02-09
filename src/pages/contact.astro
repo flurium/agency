@@ -23,7 +23,10 @@ if (Astro.request.method === "POST") {
   if (data == null) return Astro.redirect("/")
 
   if (data.name.value != null && data.email.value != null) {
-    if (data.email.value.endsWith("registry.godaddy")) {
+    if (
+      data.email.value.endsWith("registry.godaddy") ||
+      data.name.value.startsWith("Robertnup")
+    ) {
       sent = true
     } else {
       const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nContext: ${data.context}`
