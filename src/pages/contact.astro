@@ -23,8 +23,12 @@ if (Astro.request.method === "POST") {
   if (data == null) return Astro.redirect("/")
 
   if (data.name.value != null && data.email.value != null) {
-    const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nContext: ${data.context}`
-    sent = await sendMessage(text)
+    if (data.email.value.endsWith("registry.godaddy")) {
+      sent = true
+    } else {
+      const text = `New person want to contact us!\nName: ${data.name.value}\nEmail: ${data.email.value}\nContext: ${data.context}`
+      sent = await sendMessage(text)
+    }
   }
 }
 ---
@@ -48,7 +52,9 @@ if (Astro.request.method === "POST") {
         >
           SEE TEAM
         </a>
-        <a class="inline-block py-3 px-6 rounded-input border border-black" href="/"> HOME</a>
+        <a class="inline-block py-3 px-6 rounded-input border border-black" href="/">
+          HOME</a
+        >
       </div>
       <Image src={teamImg} alt="Team" class="w-full rounded-xl mt-10" quality={100} />
     </section>
