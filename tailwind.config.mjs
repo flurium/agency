@@ -1,10 +1,14 @@
-const colors = require("tailwindcss/colors")
+import defaultTheme from "tailwindcss/defaultTheme"
+import colors from "tailwindcss/colors"
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         primary: colors.indigo,
         secondary: {
