@@ -10,43 +10,53 @@ type Props = {
 const { data } = Astro.props
 ---
 
-<div class="py-20 md:py-28 px-6 grid grid-cols-1 md:grid-cols-5 gap-20" id="contact">
-  <GetInTouch class="md:col-span-2 w-full" />
+<div class="my-16 md:my-24" id="contact">
+  <h3 class="text-2xl font-medium mb-2">Reach out</h3>
+  <p class="text-secondary-600">
+    Ready to bring your idea to life? Or just want to ask some question you can’t figure
+    out? We are ready to replay as soon as it is possible.
+  </p>
 
-  <form class="md:col-span-3" action="/contact" method="post">
-    <label for="name">Your name</label>
-    <input
-      value={data?.name.value}
-      type="text"
-      id="name"
-      name="name"
-      required
-      placeholder="Roman Koshchei"
-      class="py-4 px-5 rounded-input border border-secondary-200 w-full mt-2 mb-6"
-    />
-    {data?.name.error ? <p>{data.name.error}</p> : <Fragment />}
+  <form class="grid grid-cols-2 gap-5 mt-10" action="/contact" method="post">
+    <label for="name">
+      Your name
+      <input
+        value={data?.name.value}
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Roman Koshchei"
+        class="py-4 px-5 shadow-sm rounded-input border border-secondary-200 w-full mt-1"
+      />
+      {data?.name.error ? <p>{data.name.error}</p> : <Fragment />}
+    </label>
 
-    <label for="email">Email</label>
-    <input
-      onclick="if(this.value === '') { umami.track('Email input click') }"
-      value={data?.email.value}
-      type="email"
-      id="email"
-      name="email"
-      required
-      placeholder="your@email.com"
-      class="py-4 px-5 rounded-input border border-secondary-200 w-full mt-2 mb-6"
-    />
-    {data?.email.error ? <p>{data.email.error}</p> : <Fragment />}
+    <label for="email">
+      Email address
+      <input
+        onclick="if(this.value === '') { umami.track('Email input click') }"
+        value={data?.email.value}
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="your@email.com"
+        class="py-4 px-5 shadow-sm rounded-input border border-secondary-200 w-full mt-1"
+      />
+      {data?.email.error ? <p>{data.email.error}</p> : <Fragment />}
+    </label>
 
-    <label for="context">Context</label>
-    <textarea
-      id="context"
-      name="context"
-      placeholder="Tell us about your case..."
-      class="py-4 px-5 rounded-input border border-secondary-200 w-full mt-2 mb-6"
-      rows="5">{data?.context ?? ""}</textarea
-    >
+    <label class="col-span-2" for="context">
+      Context
+      <textarea
+        id="context"
+        name="context"
+        placeholder="Tell us about your idea, context or question..."
+        class="py-4 px-5 shadow-sm rounded-input border border-secondary-200 w-full mt-1"
+        rows="5">{data?.context ?? ""}</textarea
+      >
+    </label>
 
     <input
       type="text"
@@ -57,16 +67,15 @@ const { data } = Astro.props
       autocomplete="off"
     />
 
-    <button class="group overflow-hidden px-8 h-[52px] bg-primary-500 text-white rounded-input hover:bg-primary-600">
-      <div class="transition duration-300 group-hover:-translate-y-[52px]">
-        <div class="h-[52px] flex items-center">
-          <span class="text-white">SEND</span>
-        </div>
-        <div class="h-[52px] flex items-center justify-center">
-          <Icon name="icon-park-outline:send" class="h-8 w-8"/>
-        </div>
-      </div>
-    </button>
+    <div class="col-span-2 flex justify-end">
+      <button
+        class="py-2 px-6 border border-primary-500 shadow-sm block w-fit
+        rounded-full hover:bg-primary-500 hover:text-white transition-colors
+        cursor-pointer bg-white"
+      >
+        Contact
+      </button>
+    </div>
   </form>
 </div>
 <style>
