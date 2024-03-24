@@ -17,7 +17,11 @@ const { data } = Astro.props
     out? We are ready to replay as soon as it is possible.
   </p>
 
-  <form class="grid grid-cols-2 gap-5 mt-10" action="/contact" method="post">
+  <form
+    class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10"
+    action="/contact"
+    method="post"
+  >
     <label for="name">
       Your name
       <input
@@ -47,7 +51,7 @@ const { data } = Astro.props
       {data?.email.error ? <p>{data.email.error}</p> : <Fragment />}
     </label>
 
-    <label class="col-span-2" for="context">
+    <label class="md:col-span-2" for="context">
       Context
       <textarea
         id="context"
@@ -67,7 +71,7 @@ const { data } = Astro.props
       autocomplete="off"
     />
 
-    <div class="col-span-2 flex justify-end">
+    <div class="md:col-span-2 flex justify-end">
       <button
         class="py-2 px-6 border border-primary-500 shadow-sm block w-fit
         rounded-full hover:bg-primary-500 hover:text-white transition-colors
