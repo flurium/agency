@@ -37,7 +37,7 @@ const works = [
     <h3 class="text-2xl font-medium mb-2">Today</h3>
     <p class="text-secondary-600">
       We are making software solutions: web applications, content-oriented websites and
-      API.Engineering, SEO and Design is provided by us based on your request.
+      API. Engineering, SEO and Design is provided by us based on your request.
     </p>
   </section>
 
@@ -51,7 +51,11 @@ const works = [
     <div class="flex flex-col gap-6">
       {
         works.map((work) => (
-          <div class="py-7 px-8 shadow-sm border border-secondary-200 bg-white rounded-lg">
+          // w-full max-w-full hover:max-w-2xl
+          <div
+            class="py-7 px-8  transition-all duration-300 
+            shadow-sm border border-secondary-200 bg-white rounded-lg"
+          >
             <h4 class="text-xl font-medium mb-1">{work.name}</h4>
             <p class="text-secondary-600">{work.description}</p>
           </div>
