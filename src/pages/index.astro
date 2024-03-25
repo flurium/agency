@@ -2,167 +2,130 @@
 import { Image } from "astro:assets"
 import Layout from "../layouts/Layout.astro"
 import ContactSection from "../features/contact/ContactSection.astro"
-import Solutions from "../components/landing/Solutions.astro"
-import TeamBenefits from "../components/landing/TeamBenefits.astro"
 import Projects from "../features/projects/Projects.astro"
-import ImageCta from "../components/ImageCta.astro"
-import maria from "../assets/team/maria.png"
-import roman from "../assets/team/roman.png"
-import vitalii from "../assets/team/vitalii.png"
-import dima from "../assets/team/dima.png"
-import Companies from "../components/landing/Companies.astro"
-import Impression from "../components/letterings/Impression.astro"
 import TestimonialList from "../features/testimonials/TestimonialList.astro"
 import FeaturedWorks from "../components/letterings/FeaturedWorks.astro"
-import TechStack from "../components/landing/TechStack.astro"
-import EvolvingTeam from "../components/letterings/EvolvingTeam.astro"
-import Boosting from "../components/letterings/Boosting.astro"
-import Online from "../components/letterings/Online.astro"
-import Presence from "../components/letterings/Presence.astro"
-import Why from "../components/landing/why/Why.astro"
 
-const team = [
+const works = [
   {
-    slug: "koshchei",
-    img: roman,
-    name: "Roman Koshchei",
-    position: "Founder - Team Lead",
-    about:
-      "Make important decisions, manage team. Speak with clients to deliver best results.",
+    name: "App Soluts",
+    description:
+      "Finishing frontend of agency website. As well as fixing bugs, such as horizontal scrolls.",
   },
   {
-    slug: "lytvynenko",
-    img: vitalii,
-    name: "Vitalii Lytvynenko",
-    position: "Core full stack developer",
-    about: "Implements client-server interaction and performs bug inspections.",
+    name: "Acupower",
+    description: "Boosting SEO on marketing page, optimizing loading speed of pages.",
   },
   {
-    slug: "shcherbak",
-    img: maria,
-    name: "Mariia Shcherbak",
-    position: "Full stack developer",
-    about: "Focusing on frontend interactions, animations and responsive layouts.",
+    name: "Otterdev",
+    description:
+      "Migrating content to Sanity CMS for several projects, in addition to frontend development.",
   },
   {
-    slug: "fluid",
-    img: dima,
-    name: "Dmytro Fliud",
-    position: "Coder",
-    about:
-      "Write a lot of boilerplate code. Searching for tasks, need a bit of supervision.",
+    name: "Spentoday",
+    description:
+      "Full development of E-commerce platform designed to be simple and fast to start, oriented on Ukrainian market.",
   },
 ]
 ---
 
 <Layout
-  title="Flurium Team"
+  title="Flurium - Software development team led by Roman Koshchei"
   description="Empower your business with exceptional user experiences and unmatched performance. We build web solutions committed to your success."
 >
-  <section class="pb-20 pt-12 md:pt-16 md:pb-28 px-6">
-    <h1
-      aria-label="Boosting Online Presence"
-      class="flex flex-wrap items-end justify-center max-w-4xl gap-8 mx-auto"
-    >
-      <Boosting class="h-32 lg:h-44" />
-      <Online class="h-32 lg:h-44" />
-      <Presence class="h-24 lg:h-32" />
-    </h1>
-    <h2
-      class="mt-14 mb-12 max-w-screen-md mx-auto text-center text-xl text-secondary-600 leading-normal"
-    >
-      Empower your business with exceptional <span
-        class="font-semibold text-secondary-800">user experiences</span
-      > and <span class="font-semibold text-secondary-800">unmatched performance</span>.
-      We build <span class="font-semibold text-secondary-800">web</span> solutions
-      committed to your <span class="font-semibold text-secondary-800">success</span>.
-    </h2>
-    <div class="flex justify-center flex-wrap gap-4">
-      <a
-        href="/#contact"
-        class="py-4 px-8 bg-primary-500 text-white rounded-input hover:bg-primary-600"
-        data-umami-event="Hero Contact"
-      >
-        CONTACT US
-      </a>
-      <a
-        data-umami-event="Hero Portfolio"
-        href="/portfolio"
-        class="py-4 px-8 bg-secondary-100 rounded-input hover:bg-secondary-200"
-      >
-        SEE PORTFOLIO
-      </a>
-    </div>
+  <section class="my-16 md:my-24">
+    <h3 class="text-2xl font-medium mb-2">Today</h3>
+    <p class="text-secondary-600">
+      We are making software solutions: web applications, content-oriented websites and
+      API. Engineering, SEO and Design is provided by us based on your request.
+    </p>
   </section>
 
-  <!-- <iframe src="/contact" class="w-full h-[80rem] overflow-hidden"></iframe> -->
+  <section class="my-16 md:my-24">
+    <h3 class="text-2xl font-medium mb-2">Works</h3>
+    <p class="text-secondary-600 mb-6">
+      Here are latest projects and clients we worked with. Some of them have written story
+      about development process, so try to click on it!
+    </p>
 
-  <Companies />
-
-  <Why />
-
-  <!-- <Solutions /> -->
-
-  <TestimonialList />
-
-  <!-- <TestimonialCarousel /> -->
-
-  <!-- <BestPerformance /> -->
-
-  <section class="py-20 md:py-28 px-6">
-    <!-- <div class="text-center mb-20">
-      <h3 class="text-5xl font-bold mt-4 mb-6">Discover Our Projects</h3>
-      <p>
-        Our portfolio provides clear evidence of our skills and experience in web
-        development.
-      </p>
-    </div> -->
-
-    <FeaturedWorks class="mb-20 max-w-3xl w-full" />
-
-    <Projects latest />
-
-    <div class="text-center pt-16">
-      <a
-        href="/portfolio"
-        class="rounded-input py-4 px-8 bg-secondary-100 hover:bg-secondary-200 inline-block"
-        data-umami-event="Portfolio View All"
-      >
-        VIEW ALL
-      </a>
-    </div>
-  </section>
-
-  <ContactSection />
-
-  <section class="py-20 md:py-28 px-6" id="team">
-    <EvolvingTeam class="w-full max-w-3xl mb-14" />
-
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4
-      border-2 rounded-lg border-dashed border-secondary-300"
-    >
+    <div class="flex flex-col gap-6">
       {
-        team.map((x, i) => (
+        works.map((work) => (
+          // w-full max-w-full hover:max-w-2xl
           <div
-            class={`p-6 border-dashed border-secondary-300 
-              ${i != team.length - 1 ? "border-b-2 md:border-b-0 md:border-r-2" : ""}
-              ${i >= team.length - 2 ? "sm:border-b-0" : ""} 
-              ${i % 2 == 0 ? "sm:border-r-2" : ""} `}
+            class="py-7 px-8  transition-all duration-300 
+            shadow-sm border border-secondary-200 bg-white rounded-lg"
           >
-            <Image src={x.img} alt={x.name} class="rounded-lg w-full" quality={100} />
-            <p class="font-semibold text-xl mt-6">{x.name}</p>
-            <p class="text-lg mt-1">{x.position}</p>
-            <p class="mt-4">{x.about}</p>
+            <h4 class="text-xl font-medium mb-1">{work.name}</h4>
+            <p class="text-secondary-600">{work.description}</p>
           </div>
         ))
       }
     </div>
   </section>
 
-  <!-- <TeamBenefits /> -->
+  <ContactSection />
 
-  <TechStack />
+  <section class="my-16 md:my-24">
+    <h3 class="text-2xl font-medium mb-2">Pricing</h3>
+    <p class="text-secondary-600">
+      People will never be able to predict exactly how much time it will take to develop
+      certain software. So our pricing is subscription based. If you want to know
+      approximately expected number of hours for your project, then contact us we will
+      help!
+    </p>
 
-  <!-- <ImageCta /> -->
+    <div class="grid md:grid-cols-2 mt-10 gap-5">
+      <div class="border bg-white border-secondary-200 shadow-sm py-7 px-8 rounded-lg">
+        <h4 class="text-2xl">Part-time</h4>
+        <p class="mt-1 mb-5 text-secondary-600">
+          Suitable to fix or maintain already existing projects, creating small-medium
+          websites
+        </p>
+
+        <p class="text-2xl">400$</p>
+        <p class="text-secondary-600 text-sm">USD per week</p>
+
+        <ul class="mt-5 list-disc list-inside text-secondary-600">
+          <li>Single team member at a time</li>
+          <li>Text communication</li>
+        </ul>
+      </div>
+
+      <div class="border bg-white border-secondary-200 shadow-sm py-7 px-8 rounded-lg">
+        <h4 class="text-2xl">Full dedication</h4>
+        <p class="mt-1 mb-5 text-secondary-600">
+          Building from the ground, big websites and web applications
+        </p>
+
+        <p class="text-2xl">900$</p>
+        <p class="text-secondary-600 text-sm">USD per week</p>
+
+        <ul class="mt-5 list-disc list-inside text-secondary-600">
+          <li>Several team members</li>
+          <li>Priority support</li>
+          <li>Video meetings if needed</li>
+          <li>Text communication</li>
+        </ul>
+      </div>
+
+      <div
+        class="md:col-span-2 bg-white border border-secondary-200 shadow-sm py-7 px-8 rounded-lg"
+      >
+        <h4 class="text-2xl">Something else?</h4>
+        <p class="mt-1 mb-5 text-secondary-600">
+          If you are unsure about picking plan for you, then let’s chat. We will help to
+          find right solution for you or create personal plan.
+        </p>
+        <a
+          class="py-2 px-6 border border-secondary-200 shadow-sm inline-block rounded-full hover:bg-secondary-100"
+          href="/#contact"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <TestimonialList />
 </Layout>

@@ -5,7 +5,6 @@ import yuriy from "../../assets/testimonials/yuriy.jpg"
 import vlad from "../../assets/testimonials/vlad.png"
 import anna from "../../assets/testimonials/anna.jpg"
 import soham from "../../assets/testimonials/soham.jpg"
-import ClientsLoveUs from "../../components/letterings/ClientsLoveUs.astro"
 
 const testimonials = [
   {
@@ -56,8 +55,9 @@ const testimonials = [
 ]
 ---
 
-<section class="py-20 md:py-28 px-6">
-  <ClientsLoveUs class="w-ful mb-14 max-w-3xl" />
+<section class="my-16 md:my-24">
+  <h3 class="text-2xl font-medium mb-2">Testimonials</h3>
+  <p class="text-secondary-600 mb-10">Hear out what people say about us.</p>
 
   <input
     type="checkbox"
@@ -68,7 +68,7 @@ const testimonials = [
   />
 
   <div
-    class="divide-y-2 border-2 rounded-input divide-dashed border-dashed border-secondary-300 divide-secondary-300"
+    class="divide-y rounded-input shadow-sm bg-white border border-secondary-200 divide-secondary-200"
   >
     {
       testimonials.map((x, i) => (
@@ -87,7 +87,7 @@ const testimonials = [
               <Fragment />
             )}
             <div>
-              <h3 class="font-semibold">{x.name}</h3>
+              <h3 class="text-xl">{x.name}</h3>
               <p class="text-base text-secondary-600">{x.position}</p>
             </div>
           </div>
@@ -100,19 +100,19 @@ const testimonials = [
 
   <label
     for="show-more-testimonials"
-    class="mx-auto mt-16 w-fit block py-4 px-8 bg-secondary-100 rounded-input
-    hover:bg-secondary-200 cursor-pointer"
+    class="mx-auto mt-12 py-2 px-6 border border-secondary-200 shadow-sm block w-fit
+    rounded-full hover:bg-secondary-100 cursor-pointer"
   >
-    SEE MORE
+    See more
   </label>
 
   <label
     id="show-less-testimonials"
     for="show-more-testimonials"
-    class="mx-auto mt-16 w-fit block py-4 px-8 bg-secondary-100 rounded-input
-    hover:bg-secondary-200 cursor-pointer"
+    class="mx-auto mt-12 py-2 px-6 border border-secondary-200 shadow-sm block w-fit
+    rounded-full bg-white hover:bg-secondary-100 cursor-pointer"
   >
-    SHOW LESS
+    I got it
   </label>
 </section>
 

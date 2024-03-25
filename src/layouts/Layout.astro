@@ -1,6 +1,6 @@
 ---
 import Seo from "../components/Seo.astro"
-import Navbar from "../components/nav/Navbar.astro"
+import "@fontsource/poppins"
 
 interface Props {
   title: string
@@ -77,8 +77,28 @@ const isProd = import.meta.env.PROD
     </style>
   </head>
 
-  <body class="max-w-7xl m-auto text-secondary-800 text-lg relative">
-    <Navbar />
+  <body
+    class="max-w-3xl mx-auto py-12 md:py-20 px-6 text-lg bg-secondary-25 text-secondary-800"
+  >
+    <header class="flex items-center justify-between">
+      <div>
+        <a href="/">
+          <h1 class="text-2xl font-medium text-primary-500">Flurium</h1>
+        </a>
+        <h2>
+          Software development team led by <a href="https://twitter.com/roman_koshchei">
+            Roman Koshchei
+          </a>
+        </h2>
+      </div>
+      <a
+        class="py-2 px-6 border bg-white border-secondary-200 shadow-sm
+        inline-block rounded-full hover:bg-secondary-100"
+        href="/#contact"
+      >
+        Contact
+      </a>
+    </header>
 
     <main>
       <slot />
