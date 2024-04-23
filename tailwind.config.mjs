@@ -10,7 +10,10 @@ export default {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.indigo,
+        primary: {
+          500: "#0A1E25",
+          600: "#051014"
+        },
         secondary: {
           25: "#FDFDFC",
           50: colors.stone[50],

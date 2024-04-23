@@ -2,26 +2,33 @@
 import { Image } from "astro:assets"
 import Layout from "../layouts/Layout.astro"
 import ContactSection from "../features/contact/ContactSection.astro"
-import Projects from "../features/projects/Projects.astro"
 import TestimonialList from "../features/testimonials/TestimonialList.astro"
-import FeaturedWorks from "../components/letterings/FeaturedWorks.astro"
+
+import appsolutsLogo from "../assets/works/appsoluts/logo.svg"
+import acupowerLogo from "../assets/works/acupower/logo.svg"
+import otterdevLogo from "../assets/works/otterdev/logo.svg"
+import spentodayLogo from "../assets/works/spentoday/logo.svg"
 
 const works = [
   {
+    img: appsolutsLogo,
     name: "App Soluts",
     description:
       "Finishing frontend of agency website. As well as fixing bugs, such as horizontal scrolls.",
   },
   {
+    img: acupowerLogo,
     name: "Acupower",
     description: "Boosting SEO on marketing page, optimizing loading speed of pages.",
   },
   {
+    img: otterdevLogo,
     name: "Otterdev",
     description:
       "Migrating content to Sanity CMS for several projects, in addition to frontend development.",
   },
   {
+    img: spentodayLogo,
     name: "Spentoday",
     description:
       "Full development of E-commerce platform designed to be simple and fast to start, oriented on Ukrainian market.",
@@ -51,13 +58,13 @@ const works = [
     <div class="flex flex-col gap-6">
       {
         works.map((work) => (
-          // w-full max-w-full hover:max-w-2xl
-          <div
-            class="py-7 px-8  transition-all duration-300 
-            shadow-sm border border-secondary-200 bg-white rounded-lg"
-          >
-            <h4 class="text-xl font-medium mb-1">{work.name}</h4>
-            <p class="text-secondary-600">{work.description}</p>
+          // w-full max-w-full hover:max-w-2xl transition-all duration-300
+          <div class="flex gap-6 md:gap-8 flex-col md:flex-row items-start p-8 shadow-sm border border-secondary-200 bg-white rounded-lg">
+            <Image class=" w-16 h-auto" src={work.img} alt={`${work.name} logo`} />
+            <div class="">
+              <h4 class="text-xl font-medium mb-1">{work.name}</h4>
+              <p class="text-secondary-600">{work.description}</p>
+            </div>
           </div>
         ))
       }
