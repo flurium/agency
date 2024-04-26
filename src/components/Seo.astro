@@ -76,6 +76,6 @@ const schema = `{
 <meta name="twitter:creator" content={twitterProfile} />
 <meta name="twitter:image" content={img} />
 
-<script type="application/ld+json" set:html={schema} />
+<script is:inline type="application/ld+json" set:html={schema} />
 
 <meta name="keywords" content={keywords.join(", ")} />
