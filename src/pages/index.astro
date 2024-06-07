@@ -12,6 +12,7 @@ import architectureLogo from "../assets/works/architecture-and-tradition/logo.sv
 
 const works = [
   {
+    link: "https://www.architectureandtradition.com",
     img: architectureLogo,
     name: "Architecture & Tradition",
     description:
@@ -24,6 +25,7 @@ const works = [
       "Finishing frontend of agency website. As well as fixing bugs, such as horizontal scrolls.",
   },
   {
+    link: "https://acupower.co.uk",
     img: acupowerLogo,
     name: "Acupower",
     description: "Boosting SEO on marketing page, optimizing loading speed of pages.",
@@ -35,6 +37,7 @@ const works = [
       "Migrating content to Sanity CMS for several projects, in addition to frontend development.",
   },
   {
+    link: "/portfolio/spentoday",
     img: spentodayLogo,
     name: "Spentoday",
     description:
@@ -48,10 +51,11 @@ const works = [
   description="Empower your business with exceptional user experiences and unmatched performance. We build web solutions committed to your success."
 >
   <section class="my-16 md:my-24">
-    <h3 class="text-2xl font-medium mb-2">Today</h3>
+    <h3 class="text-2xl font-medium mb-2">Straigth to the point!</h3>
     <p class="text-secondary-600">
-      We are making software solutions: web applications, content-oriented websites and
-      API. Engineering, SEO and Design is provided by us based on your request.
+      We are making WEB software with the best SEO results. Done fast with
+      straight-forward communication and good pricing. No fake marketing tricks, just as
+      it is.
     </p>
   </section>
 
@@ -59,21 +63,34 @@ const works = [
     <h3 class="text-2xl font-medium mb-2">Works</h3>
     <p class="text-secondary-600 mb-6">
       Here are latest projects and clients we worked with. Some of them have written story
-      about development process, so try to click on it!
+      about development process or link to the website, so try to click on it!
     </p>
 
     <div class="flex flex-col gap-6">
       {
-        works.map((work) => (
-          // w-full max-w-full hover:max-w-2xl transition-all duration-300
-          <div class="flex gap-6 md:gap-8 flex-col md:flex-row items-start p-8 shadow-sm border border-secondary-200 bg-white rounded-lg">
-            <Image class=" w-16 h-auto" src={work.img} alt={`${work.name} logo`} />
-            <div class="">
-              <h4 class="text-xl font-medium mb-1">{work.name}</h4>
-              <p class="text-secondary-600">{work.description}</p>
+        works.map((work) => {
+          return work.link ? (
+            <a
+              href={work.link}
+              target={work.link.startsWith("http") ? "_blank" : "_self"}
+              class="flex gap-6 md:gap-8 flex-col md:flex-row items-start p-8 shadow-sm border border-secondary-200 bg-white rounded-lg transition-colors hover:border-primary-500 duration-500"
+            >
+              <Image class=" w-16 h-auto" src={work.img} alt={`${work.name} logo`} />
+              <div class="">
+                <h4 class="text-xl font-medium mb-1">{work.name}</h4>
+                <p class="text-secondary-600">{work.description}</p>
+              </div>
+            </a>
+          ) : (
+            <div class="flex gap-6 md:gap-8 flex-col md:flex-row items-start p-8 shadow-sm border border-secondary-200 bg-white rounded-lg">
+              <Image class=" w-16 h-auto" src={work.img} alt={`${work.name} logo`} />
+              <div class="">
+                <h4 class="text-xl font-medium mb-1">{work.name}</h4>
+                <p class="text-secondary-600">{work.description}</p>
+              </div>
             </div>
-          </div>
-        ))
+          )
+        })
       }
     </div>
   </section>
