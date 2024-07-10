@@ -56,8 +56,11 @@ const testimonials = [
 ---
 
 <section class="my-16 md:my-24">
-  <h3 class="text-2xl font-medium mb-2">Testimonials</h3>
-  <p class="text-secondary-600 mb-10">Hear out what people say about us.</p>
+  <h3 class="text-4xl md:text-5xl font-serif font-medium mb-5">Testimonials</h3>
+  <p class="text-secondary-600 mb-10 text-xl">
+    Hear out what people say about us. Hopefully you will also leave comment here in
+    future.
+  </p>
 
   <input
     type="checkbox"
@@ -67,9 +70,7 @@ const testimonials = [
     hidden
   />
 
-  <div
-    class="divide-y rounded-input shadow-sm bg-white border border-secondary-200 divide-secondary-200"
-  >
+  <div class="divide-y bg-white border border-secondary-200 divide-secondary-200">
     {
       testimonials.map((x, i) => (
         <div class={`p-7 md:p-10 ${i > 2 ? "hidden-at-first" : ""}`}>
@@ -100,7 +101,7 @@ const testimonials = [
 
   <label
     for="show-more-testimonials"
-    class="mx-auto mt-12 py-2 px-6 border border-secondary-200 shadow-sm block w-fit
+    class="mx-auto mt-12 py-2 px-6 border border-secondary-200 block w-fit
     rounded-full hover:bg-secondary-100 cursor-pointer"
   >
     See more
@@ -109,7 +110,7 @@ const testimonials = [
   <label
     id="show-less-testimonials"
     for="show-more-testimonials"
-    class="mx-auto mt-12 py-2 px-6 border border-secondary-200 shadow-sm block w-fit
+    class="mx-auto mt-12 py-2 px-6 border border-secondary-200 block w-fit
     rounded-full bg-white hover:bg-secondary-100 cursor-pointer"
   >
     I got it

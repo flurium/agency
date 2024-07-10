@@ -19,16 +19,17 @@ const works = [
       "Created a blog website for famous account Architecture & Tradition. Twitter of account: @archi_tradition.",
   },
   {
+    link: "/works/acupower",
+    img: acupowerLogo,
+    name: "Acupower",
+    description:
+      "Rebuild marketing website, admin panel, as well as increase SEO from technical side and fix Google Analytics.",
+  },
+  {
     img: appsolutsLogo,
     name: "App Soluts",
     description:
       "Finishing frontend of agency website. As well as fixing bugs, such as horizontal scrolls.",
-  },
-  {
-    link: "https://acupower.co.uk",
-    img: acupowerLogo,
-    name: "Acupower",
-    description: "Boosting SEO on marketing page, optimizing loading speed of pages.",
   },
   {
     img: otterdevLogo,
@@ -37,7 +38,7 @@ const works = [
       "Migrating content to Sanity CMS for several projects, in addition to frontend development.",
   },
   {
-    link: "/portfolio/spentoday",
+    link: "/works/spentoday",
     img: spentodayLogo,
     name: "Spentoday",
     description:
@@ -50,20 +51,23 @@ const works = [
   title="Flurium - Software development team led by Roman Koshchei"
   description="We are making WEB software with the best SEO results. Done fast with straight-forward communication and good pricing. No fake marketing."
 >
-  <section class="my-16 md:my-24">
-    <h3 class="text-2xl font-medium mb-2">Straigth to the point!</h3>
-    <p class="text-secondary-600">
-      We are making WEB software with the best SEO results. Done fast with
-      straight-forward communication and good pricing. No fake marketing tricks, just as
-      it is.
-    </p>
+  <section class="mb-16 md:mb-24">
+    <h1
+      class="font-serif text-5xl md:text-6xl text-wrap-balance font-medium leading-tight"
+    >
+      Go-to team for software development and SEO
+    </h1>
+    <h2 class="text-wrap-balance text-2xl mt-6">
+      Established team of software developers. We help enterprise companies, content
+      creators and startups to ship the web.
+    </h2>
   </section>
 
   <section class="my-16 md:my-24">
-    <h3 class="text-2xl font-medium mb-2">Works</h3>
-    <p class="text-secondary-600 mb-6">
-      Here are latest projects and clients we worked with. Some of them have written story
-      about development process or link to the website, so try to click on it!
+    <h3 class="text-4xl md:text-5xl font-serif font-medium mb-5">Works</h3>
+    <p class="text-secondary-600 mb-6 text-xl">
+      Here are the latest products and clients we worked with. Some of them have written
+      story about development process or link to the website, so try to click on it!
     </p>
 
     <div class="flex flex-col gap-6">
@@ -73,7 +77,7 @@ const works = [
             <a
               href={work.link}
               target={work.link.startsWith("http") ? "_blank" : "_self"}
-              class="flex gap-6 md:gap-8 flex-col md:flex-row items-start p-8 shadow-sm border border-secondary-200 bg-white rounded-lg transition-colors hover:border-primary-500 duration-500"
+              class="flex gap-6 md:gap-8 flex-col md:flex-row items-start p-8 border border-secondary-200 bg-white transition-colors hover:border-primary-500 duration-500"
             >
               <Image class=" w-16 h-auto" src={work.img} alt={`${work.name} logo`} />
               <div class="">
@@ -82,7 +86,7 @@ const works = [
               </div>
             </a>
           ) : (
-            <div class="flex gap-6 md:gap-8 flex-col md:flex-row items-start p-8 shadow-sm border border-secondary-200 bg-white rounded-lg">
+            <div class="flex gap-6 md:gap-8 flex-col md:flex-row items-start p-8 border border-secondary-200 bg-white ">
               <Image class=" w-16 h-auto" src={work.img} alt={`${work.name} logo`} />
               <div class="">
                 <h4 class="text-xl font-medium mb-1">{work.name}</h4>
@@ -96,64 +100,17 @@ const works = [
   </section>
 
   <section class="my-16 md:my-24">
-    <h3 class="text-2xl font-medium mb-2">Pricing</h3>
-    <p class="text-secondary-600">
-      People will never be able to predict exactly how much time it will take to develop
-      certain software. So our pricing is subscription based. If you want to know
-      approximately expected number of hours for your project, then contact us we will
-      help!
+    <h3 class="text-4xl md:text-5xl font-medium font-serif mb-5">Pricing</h3>
+    <p class="text-secondary-600 text-xl">
+      Software differs a lot and we can’t exactly predict how much time it will take to
+      develop. That’s why pricing will be different for each client. Most of the time we
+      charge based on hours or weekly payments, but we are ready to hear your propositions
+      as well.
     </p>
 
-    <div class="grid md:grid-cols-2 mt-10 gap-5">
-      <div class="border bg-white border-secondary-200 shadow-sm py-7 px-8 rounded-lg">
-        <h4 class="text-2xl">Part-time</h4>
-        <p class="mt-1 mb-5 text-secondary-600">
-          Suitable to fix or maintain already existing projects, creating small-medium
-          websites
-        </p>
-
-        <p class="text-2xl">400$</p>
-        <p class="text-secondary-600 text-sm">USD per week</p>
-
-        <ul class="mt-5 list-disc list-inside text-secondary-600">
-          <li>Single team member at a time</li>
-          <li>Text communication</li>
-        </ul>
-      </div>
-
-      <div class="border bg-white border-secondary-200 shadow-sm py-7 px-8 rounded-lg">
-        <h4 class="text-2xl">Full dedication</h4>
-        <p class="mt-1 mb-5 text-secondary-600">
-          Building from the ground, big websites and web applications
-        </p>
-
-        <p class="text-2xl">900$</p>
-        <p class="text-secondary-600 text-sm">USD per week</p>
-
-        <ul class="mt-5 list-disc list-inside text-secondary-600">
-          <li>Several team members</li>
-          <li>Priority support</li>
-          <li>Video meetings if needed</li>
-          <li>Text communication</li>
-        </ul>
-      </div>
-
-      <div
-        class="md:col-span-2 bg-white border border-secondary-200 shadow-sm py-7 px-8 rounded-lg"
-      >
-        <h4 class="text-2xl">Something else?</h4>
-        <p class="mt-1 mb-5 text-secondary-600">
-          If you are unsure about picking plan for you, then let’s chat. We will help to
-          find right solution for you or create personal plan.
-        </p>
-        <a
-          class="py-2 px-6 border border-secondary-200 shadow-sm inline-block rounded-full hover:bg-secondary-100"
-          href="/#contact"
-        >
-          Contact
-        </a>
-      </div>
-    </div>
+    <a class="bg-primary-500 text-white py-3 px-5 inline-block mt-12" href="/#contact"
+      >Ask for estimations {"->"}</a
+    >
   </section>
 
   <ContactSection />

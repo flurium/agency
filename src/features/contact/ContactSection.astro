@@ -9,9 +9,9 @@ const { data } = Astro.props
 ---
 
 <div class="my-16 md:my-24" id="contact">
-  <h3 class="text-2xl font-medium mb-2">Reach out</h3>
-  <p class="text-secondary-600">
-    Ready to bring your idea to life? Or just want to ask some question you can’t figure
+  <h3 class="text-4xl md:text-5xl font-medium font-serif mb-5">Contact</h3>
+  <p class="text-secondary-600 text-xl text-wrap-balance">
+    Ready to bring your idea to life? Or just want to ask some question you can't figure
     out? We are ready to replay as soon as it is possible.
   </p>
 
@@ -29,7 +29,7 @@ const { data } = Astro.props
         name="name"
         required
         placeholder="Roman Koshchei"
-        class="py-4 px-5 shadow-sm rounded-input border border-secondary-200 w-full mt-1"
+        class="py-3 px-5 border border-secondary-200 w-full mt-1"
       />
       {data?.name.error ? <p>{data.name.error}</p> : <Fragment />}
     </label>
@@ -44,7 +44,7 @@ const { data } = Astro.props
         name="email"
         required
         placeholder="your@email.com"
-        class="py-4 px-5 shadow-sm rounded-input border border-secondary-200 w-full mt-1"
+        class="py-3 px-5 border border-secondary-200 w-full mt-1"
       />
       {data?.email.error ? <p>{data.email.error}</p> : <Fragment />}
     </label>
@@ -55,7 +55,7 @@ const { data } = Astro.props
         id="context"
         name="context"
         placeholder="Tell us about your idea, context or question..."
-        class="py-4 px-5 shadow-sm rounded-input border border-secondary-200 w-full mt-1"
+        class="py-3 px-5 border border-secondary-200 w-full mt-1"
         rows="5">{data?.context ?? ""}</textarea
       >
     </label>
@@ -71,12 +71,10 @@ const { data } = Astro.props
 
     <div class="md:col-span-2 flex justify-end">
       <button
-        class="py-2 px-6 border border-primary-500 shadow-sm block w-fit
-        rounded-full hover:bg-primary-500 hover:text-white transition-colors
-        cursor-pointer bg-white"
+        class="py-3 px-5 bg-primary-500 inline-block text-white hover:bg-primary-600"
       >
-        Contact
-      </button>
+        Contact</button
+      >
     </div>
   </form>
 </div>

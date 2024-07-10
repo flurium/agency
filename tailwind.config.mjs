@@ -1,5 +1,6 @@
 import defaultTheme from "tailwindcss/defaultTheme"
 import colors from "tailwindcss/colors"
+import plugin from "tailwindcss/plugin"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,12 +8,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        sans: [...defaultTheme.fontFamily.sans],
+        serif: ["Playfair Display Variable", ...defaultTheme.fontFamily.serif],
       },
       colors: {
         primary: {
           500: "#0A1E25",
-          600: "#051014"
+          600: "#051014",
         },
         secondary: {
           25: "#FDFDFC",
@@ -34,5 +36,13 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
+      addUtilities({
+        ".text-wrap-balance": {
+          textWrap: "balance",
+        },
+      })
+    }),
+  ],
 }
