@@ -6,7 +6,7 @@ date: "10 July 2024"
 
 ### Overview
 
-[Acupower company](https://acupower.co.uk/) provides All-In-One Cloud ERP Solution to manage your business more efficiently.
+<a href="https://acupower.co.uk/" target="_blank">Acupower company</a> provides All-In-One Cloud ERP Solution to manage your business more efficiently.
 
 While their main development team is focused on improving the ERP system,
 Me and 2 of my devs took the landing/marketing website for development.

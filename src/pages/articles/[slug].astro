@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro"
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
+import ContactSection from "../../features/contact/ContactSection.astro"
 
 export const getStaticPaths = (async () => {
   const articles = await getCollection("articles")
@@ -31,6 +32,8 @@ const { Content } = await article.render()
   <section class="md">
     <Content />
   </section>
+
+  <ContactSection />
 </Layout>
 
 <style>
