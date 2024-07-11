@@ -36,7 +36,7 @@ We used <a href="https://www.semrush.com/" target="_blank">Semrush</a> to analyz
 
 Here is a latest results we achieved: 97%. Which puts us above top 10% of websites in terms of technical implementation of SEO.
 
-<!-- ![Semrush results](./seo.jpg) -->
+![Semrush results](../../assets/articles/seo-and-admin-panel-for-erp-company/seo.png)
 
 Pushing SEO to high results from technical side consists of many rather small changes. Not like with other features, where you just implement certain thing and boom.
 

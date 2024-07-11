@@ -40,19 +40,21 @@ const { Content } = await article.render()
   <ContactSection />
 </Layout>
 
-<style>
-  .md {
-    h3 {
-      @apply text-4xl md:text-5xl font-serif font-medium mt-12 mb-5;
-    }
-    p {
-      @apply text-secondary-600 my-5;
-    }
-    ul {
-      @apply text-secondary-600 list-disc ml-4;
-    }
-    a {
-      @apply text-primary-500 underline;
-    }
+<style is:global>
+  .md h3 {
+    @apply text-4xl md:text-5xl font-serif font-medium mt-12 mb-5;
+  }
+
+  .md p {
+    @apply text-secondary-600 my-5;
+  }
+  .md ul {
+    @apply text-secondary-600 list-disc ml-4;
+  }
+  .md a {
+    @apply text-primary-500 underline;
+  }
+  .md img {
+    @apply border-8 border-primary-500/20 my-6;
   }
 </style>
