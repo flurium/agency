@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro"
 import { getCollection } from "astro:content"
+import Layout from "../../layouts/Layout.astro"
 
 export const getStaticPaths = (async () => {
   const articles = await getCollection("articles")
@@ -15,6 +16,36 @@ const { article } = Astro.props
 const { Content } = await article.render()
 ---
 
-<h1>{article.data.title}</h1>
+<Layout title={article.data.title} description={article.data.description}>
+  <section class="mb-16 md:mb-24">
+    <h1
+      class="font-serif text-5xl md:text-6xl text-wrap-balance font-medium leading-tight"
+    >
+      {article.data.title}
+    </h1>
+    <h2 class="text-wrap-balance text-2xl mt-6">
+      {article.data.description}
+    </h2>
+  </section>
 
-<Content />
+  <section class="md">
+    <Content />
+  </section>
+</Layout>
+
+<style>
+  .md {
+    h3 {
+      @apply text-4xl md:text-5xl font-serif font-medium mt-12 mb-5;
+    }
+    p {
+      @apply text-secondary-600 my-5;
+    }
+    ul {
+      @apply text-secondary-600 list-disc ml-4;
+    }
+    a {
+      @apply text-primary-500 underline;
+    }
+  }
+</style>
