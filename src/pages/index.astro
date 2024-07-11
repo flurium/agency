@@ -9,6 +9,7 @@ import acupowerLogo from "../assets/works/acupower/logo.svg"
 import otterdevLogo from "../assets/works/otterdev/logo.svg"
 import spentodayLogo from "../assets/works/spentoday/logo.svg"
 import architectureLogo from "../assets/works/architecture-and-tradition/logo.svg"
+import { getCollection } from "astro:content"
 
 const works = [
   {
@@ -45,6 +46,8 @@ const works = [
       "E-commerce platform for Ukrainian market, designed to be simple and fast. Developed from the ground.",
   },
 ]
+
+const articles = await getCollection("articles")
 ---
 
 <Layout
@@ -100,15 +103,40 @@ const works = [
   </section>
 
   <section class="my-16 md:my-24">
+    <h3 class="text-4xl md:text-5xl font-serif font-medium mb-5">Articles</h3>
+    <p class="text-xl text-secondary-600 mb-10">
+      Sometimes we write articles about products we worked on or our opinions of certain
+      technologies.
+    </p>
+
+    <div class="divide-y bg-white border border-secondary-200 divide-secondary-200">
+      {
+        articles.map((article) => (
+          <a
+            href={`/articles/${article.slug}`}
+            class="p-7 md:p-10 flex flex-col-reverse md:flex-row justify-between gap-4"
+          >
+            <div>
+              <h4>{article.data.title}</h4>
+              <p class="text-secondary-600 mt-1">{article.data.description}</p>
+            </div>
+            <p class="text-secondary-600 min-w-max">{article.data.date}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="my-16 md:my-24">
     <h3 class="text-4xl md:text-5xl font-medium font-serif mb-5">Pricing</h3>
     <p class="text-secondary-600 text-xl">
-      Software differs a lot and we can’t exactly predict how much time it will take to
-      develop. That’s why pricing will be different for each client. Most of the time we
+      Software differs a lot and we can't exactly predict how much time it will take to
+      develop. That's why pricing will be different for each client. Most of the time we
       charge based on hours or weekly payments, but we are ready to hear your propositions
       as well.
     </p>
 
-    <a class="bg-primary-500 text-white py-3 px-5 inline-block mt-12" href="/#contact"
+    <a class="bg-primary-500 text-white py-3 px-5 inline-block mt-10" href="/#contact"
       >Ask for estimations {"->"}</a
     >
   </section>
