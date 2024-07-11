@@ -2,6 +2,7 @@
 title: "Technical SEO and Admin panel for ERP company"
 description: "How we pushed SEO from technical side and rewrote almost whole admin panel."
 date: "10 July 2024"
+image: "https://www.flurium.com/images/seo-and-admin-panel-for-erp-company-og.png"
 ---
 
 ### Overview

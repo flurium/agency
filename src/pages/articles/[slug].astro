@@ -17,7 +17,11 @@ const { article } = Astro.props
 const { Content } = await article.render()
 ---
 
-<Layout title={article.data.title} description={article.data.description}>
+<Layout
+  image={article.data.image}
+  title={article.data.title}
+  description={article.data.description}
+>
   <section class="mb-16 md:mb-24">
     <h1
       class="font-serif text-5xl md:text-6xl text-wrap-balance font-medium leading-tight"
