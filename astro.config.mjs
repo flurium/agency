@@ -1,12 +1,12 @@
 import { defineConfig } from "astro/config"
 import tailwind from "@astrojs/tailwind"
 import sitemap from "@astrojs/sitemap"
-import vercel from "@astrojs/vercel/serverless"
+import vercel from "@astrojs/vercel/static"
 import icon from "astro-icon"
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
+  output: "static",
   site: "https://flurium.com",
   prefetch: {
     prefetchAll: true,
