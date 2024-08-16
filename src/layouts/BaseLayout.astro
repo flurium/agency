@@ -1,0 +1,85 @@
+---
+import Seo from "../components/Seo.astro"
+
+interface Props {
+  title: string
+  description: string
+  image?: string
+}
+
+const url = Astro.url.href
+const { title, description, image } = Astro.props
+
+const isProd = import.meta.env.PROD
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <Seo
+      title={title}
+      description={description}
+      siteName="Flurium Team"
+      url={url}
+      img={image ?? "https://www.flurium.com/og.png"}
+      imgType="image/png"
+      lang="en"
+      twitterProfile="https://twitter.com/fluriumteam"
+      linkedinProfile="https://www.linkedin.com/in/roman-koshchei-726078239"
+      logo="https://www.flurium.com/favicon.svg"
+      contactUrl="https://www.flurium.com/contact"
+      keywords={[
+        "web",
+        "development",
+        "app",
+        "application",
+        "seo",
+        "seo boosting",
+        "lead generation",
+        "product",
+        "site",
+        "user experience",
+        "online presence",
+        "physical product",
+        "digital product",
+        "team",
+        "design",
+        "great work",
+        "professional experience",
+        "client results",
+      ]}
+    />
+
+    {
+      isProd ? (
+        <script
+          is:inline
+          defer
+          src="/scripts/index.js"
+          data-website-id="ef4d8def-1065-4e15-a93b-63f7cc790184"
+        />
+      ) : (
+        <Fragment />
+      )
+    }
+
+    <style is:global>
+      *,
+      *:focus {
+        outline: none !important;
+      }
+    </style>
+  </head>
+
+  <body class="text-lg bg-secondary-25 text-secondary-800">
+    <main class="max-w-5xl mx-auto px-6 py-12 md:py-20">
+      <slot />
+    </main>
+  </body>
+</html>

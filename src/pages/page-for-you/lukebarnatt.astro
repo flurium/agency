@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+---
+
+<BaseLayout
+  title="Luke Barnatt Mentorship"
+  description="Hack Your Mindset With The Exact Method That Got Me To The UFC in Record Time and Made Me Financially Free"
+>
+  <div class="text-center">
+    <p class="rounded-lg bg-gray-100 px-3 py-1 inline-block text-sm md:text-base">
+      Clarity of Purpose - Free Case Study
+    </p>
+    <h1
+      class="mt-6 !leading-tight text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
+    >
+      Hack Your Mindset with the
+      <span class="text-blue-500 underline font-bold"> Exact Method</span>
+       that got Me to the <span class="text-red-500 underline font-bold">UFC</span> in
+      Record Time and made me
+      <span class="text-blue-500 underline font-bold"> Financially Free</span>
+    </h1>
+  </div>
+
+  <h2 class="text-xl md:text-2xl font-bold mt-16 mb-1">
+    <span class="text-red-500">Step 1:</span> Watch the video
+  </h2>
+  <p class="text-gray-500 mb-4">Tap on the center to start watching the video.</p>
+
+  <div class="pb-[56.25%] relative rounded-lg overflow-hidden">
+    <iframe
+      src="https://player.vimeo.com/video/882519435?badge=0&autopause=0&quality_selector=1&player_id=0&app_id=58479"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      class="absolute top-0 left-0 w-full h-full"
+      title="Video"
+      data-ready="true"
+    >
+    </iframe>
+  </div>
+
+  <div class="flex-col md:flex-row flex justify-between gap-4 mt-16 md:items-center">
+    <div>
+      <h3 class="text-xl md:text-2xl font-bold mb-1">
+        <span class="text-red-500">Step 2:</span> Apply to see if you qualify
+      </h3>
+      <p class="text-gray-500">Only after you have watched the video above.</p>
+    </div>
+    <a
+      class:list={[
+        "px-6 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg text-center font-bold text-white",
+        "text-xl",
+      ]}
+      href="https://calendly.com/luke-barnatt/45min">Apply Now</a
+    >
+  </div>
+</BaseLayout>
